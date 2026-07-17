@@ -1,0 +1,99 @@
+{
+  "empty": {
+    "description": [
+      "An empty chamber. Dust settles on cracked stone.",
+      "A bare room. Water drips from the ceiling.",
+      "Nothing of interest here. Just cold, damp walls.",
+      "A silent room. Your torch flickers in the breeze."
+    ],
+    "danger": 0.0
+  },
+  "monster": {
+    "description": [
+      "You hear growling ahead. Something lurks in the shadows.",
+      "The stench of blood hangs in the air.",
+      "Bones litter the floor. A creature watches you.",
+      "Dark shapes move in the corners of this room."
+    ],
+    "danger": 1.0
+  },
+  "treasure": {
+    "description": [
+      "A golden light emanates from a chest in the center.",
+      "Old crates and barrels line the walls. Something glints inside.",
+      "A treasure room! Piles of gold dust the floor.",
+      "An ornate chest sits on a stone pedestal."
+    ],
+    "danger": 0.0
+  },
+  "mimic": {
+    "description": [
+      "A chest sits alone in the room. Something feels off about it...",
+      "A pristine chest catches your eye. Is it breathing?",
+      "The chest here looks too perfect. The air feels tense.",
+      "You spot a chest. A faint heartbeat echoes through the room."
+    ],
+    "danger": 0.8
+  },
+  "shop": {
+    "description": [
+      "A merchant waves from behind a makeshift counter.",
+      "Torches illuminate a hidden shop. Wares line the shelves.",
+      "A cloaked figure beckons you closer. 'I have what you need.'"
+    ],
+    "danger": 0.0
+  },
+  "npc": {
+    "description": [
+      "A figure huddles in the corner. They seem friendly.",
+      "A weary traveler rests against the wall.",
+      "Someone in shining armor raises a hand in greeting."
+    ],
+    "danger": 0.0
+  },
+  "trap": {
+    "description": [
+      "The floor tiles here look slightly different...",
+      "A thin wire stretches across the doorway.",
+      "You notice scratch marks on the walls. Traps?"
+    ],
+    "danger": 0.5
+  },
+  "stairs": {
+    "description": [
+      "A spiral staircase descends into darkness below.",
+      "Stone steps lead down. Cold air rises from the depths.",
+      "A shaft in the floor reveals a ladder going deeper."
+    ],
+    "danger": 0.0
+  },
+  "boss": {
+    "description": [
+      "The ground trembles. A massive presence awaits below.",
+      "The air is thick with dread. This is no ordinary room.",
+      "Dragon bones line the walls. The boss lurks nearby."
+    ],
+    "danger": 1.0
+  },
+  "locked_door": {
+    "description": [
+      "A massive iron door with a skeleton-shaped keyhole seals the passage below.",
+      "Iron bars block a staircase downward. A skeleton lock holds them shut.",
+      "A reinforced door blocks the way. The keyhole is shaped like a skull.",
+      "Ancient iron bars block a descending stairway. They radiate cold energy."
+    ],
+    "danger": 0.0
+  },
+  "lore_notes": [
+    "Scratched into the wall: \"The Grail does not give. It takes.\"",
+    "A faded note on the floor: \"I wished. I regretted. I came back. I wished again.\"",
+    "Words carved into stone: \"Valdris fell because one man wanted power. The Grail obliged.\"",
+    "A torn journal page: \"The dragon was once a man. The man was once a king. The king was once a hero.\"",
+    "A message in old ink: \"If you find this, do not wish. Destroy the Grail.\"",
+    "A scratched tally mark with a note: \"Cycle 47. I think this is cycle 47.\"",
+    "A weathered scroll: \"The paladins prayed. The god was silent. The paladins stopped praying.\"",
+    "A crumpled letter: \"I don't remember writing this. I don't remember my name.\"",
+    "Words painted in something dark: \"Every adventurer who came here before you made a wish. None of them left.\"",
+    "A broken tablet: \"Kaelan opened the gates. The dragon entered. The kingdom ended. The Grail... watched.\""
+  ]
+}

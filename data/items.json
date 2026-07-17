@@ -1,0 +1,1732 @@
+{
+  "weapons": {
+    "rusty_sword": {
+      "name": "Rusty Sword",
+      "type": "weapon",
+      "weapon_type": "sword",
+      "atk": 2,
+      "description": "A corroded blade from Valdris's armory. The kingdom's last defenders fell with these.",
+      "value": 10,
+      "tier": 1
+    },
+    "iron_blade": {
+      "name": "Iron Blade",
+      "type": "weapon",
+      "weapon_type": "sword",
+      "atk": 4,
+      "description": "Standard-issue sword of the King's Guard. Sir Aldric's company carried these.",
+      "value": 30,
+      "tier": 2
+    },
+    "rusty_dagger": {
+      "name": "Rusty Dagger",
+      "type": "weapon",
+      "weapon_type": "dagger",
+      "atk": 2,
+      "description": "A small blade favored by Valdris's thieves' guild. Quick and silent.",
+      "value": 10,
+      "tier": 1
+    },
+    "shadow_dagger": {
+      "name": "Shadow Dagger",
+      "type": "weapon",
+      "weapon_type": "dagger",
+      "atk": 5,
+      "accuracy_bonus": 5,
+      "description": "Forged by the assassin's guild of Valdris. They say it was used to open the gates.",
+      "value": 40,
+      "tier": 2
+    },
+    "wooden_staff": {
+      "name": "Wooden Staff",
+      "type": "weapon",
+      "weapon_type": "staff",
+      "atk": 2,
+      "description": "A gnarled staff from the mages of Valdris. Faint energy still hums within.",
+      "value": 15,
+      "tier": 1
+    },
+    "arcane_staff": {
+      "name": "Arcane Staff",
+      "type": "weapon",
+      "weapon_type": "staff",
+      "atk": 4,
+      "description": "Crystals from the arcane wells beneath Valdris. They pulse with power.",
+      "value": 45,
+      "tier": 2
+    },
+    "battle_axe": {
+      "name": "Battle Axe",
+      "type": "weapon",
+      "weapon_type": "axe",
+      "atk": 5,
+      "description": "A heavy axe wielded by Valdris's vanguard. It cleaves through armor and bone.",
+      "value": 35,
+      "tier": 2
+    },
+    "war_hammer": {
+      "name": "War Hammer",
+      "type": "weapon",
+      "weapon_type": "axe",
+      "atk": 7,
+      "speed_penalty": 2,
+      "description": "Forged for the siege of the northern wall. It crushes steel and hope alike.",
+      "value": 60,
+      "tier": 3
+    },
+    "holy_sword": {
+      "name": "Holy Sword",
+      "type": "weapon",
+      "weapon_type": "holy",
+      "atk": 5,
+      "description": "Blessed by the temple of Valdris. The light is fading -- the god has turned away.",
+      "value": 50,
+      "tier": 2
+    },
+    "flame_tongue": {
+      "name": "Flame Tongue",
+      "type": "weapon",
+      "weapon_type": "axe",
+      "atk": 8,
+      "speed_penalty": 1,
+      "description": "Forged in dragonfire. Its edge burns eternally. The dragon shed this metal when it grew.",
+      "value": 100,
+      "tier": 4,
+      "artifact": true
+    },
+    "dragon_slayer": {
+      "name": "Dragon Slayer",
+      "type": "weapon",
+      "weapon_type": "sword",
+      "atk": 10,
+      "speed_penalty": 3,
+      "description": "A massive sword forged to slay Kael'thrax. The previous wielder failed. You see their bones nearby.",
+      "value": 150,
+      "tier": 5,
+      "artifact": true
+    },
+    "wand_of_frost": {
+      "name": "Wand of Frost",
+      "type": "weapon",
+      "weapon_type": "staff",
+      "atk": 6,
+      "description": "Ice crystals from the frozen depths of Valdris. Freezes on contact. Cold to the touch.",
+      "value": 80,
+      "tier": 3,
+      "artifact": true
+    },
+    "rusty_axe": {
+      "name": "Rusty Axe",
+      "type": "weapon",
+      "weapon_type": "axe",
+      "atk": 2,
+      "description": "A battered woodcutter's axe. It has seen better days. So have you.",
+      "value": 10,
+      "tier": 1
+    },
+    "berserker_axe": {
+      "name": "Berserker Axe",
+      "type": "weapon",
+      "weapon_type": "axe",
+      "atk": 5,
+      "crit_bonus": 8,
+      "description": "A wild blade that rewards fury over form. The wielder bleeds, but so does everything else.",
+      "value": 50,
+      "tier": 3
+    },
+    "executioners_axe": {
+      "name": "Executioner's Axe",
+      "type": "weapon",
+      "weapon_type": "axe",
+      "atk": 7,
+      "speed_penalty": 3,
+      "crit_bonus": 15,
+      "description": "The royal executioner's tool. It only needs to fall once.",
+      "value": 80,
+      "tier": 4
+    },
+    "world_ender": {
+      "name": "World Ender",
+      "type": "weapon",
+      "weapon_type": "axe",
+      "atk": 11,
+      "speed_penalty": 3,
+      "description": "A colossal axe forged from meteorite iron. The ground trembles when it falls.",
+      "value": 140,
+      "tier": 5,
+      "artifact": true
+    },
+    "storm_cleaver": {
+      "name": "Storm Cleaver",
+      "type": "weapon",
+      "weapon_type": "axe",
+      "atk": 9,
+      "speed_bonus": 3,
+      "description": "Lightning courses through its edge. It strikes as fast as thunder.",
+      "value": 130,
+      "tier": 5,
+      "artifact": true
+    },
+    "doom_cleaver": {
+      "name": "Doom Cleaver",
+      "type": "weapon",
+      "weapon_type": "axe",
+      "atk": 14,
+      "speed_penalty": 4,
+      "description": "Every kingdom it has touched has fallen. You are next. Or your enemies are.",
+      "value": 200,
+      "tier": 6,
+      "artifact": true
+    },
+    "venom_fang": {
+      "name": "Venom Fang",
+      "type": "weapon",
+      "weapon_type": "dagger",
+      "atk": 7,
+      "crit_bonus": 10,
+      "description": "Coated in the venom of a dungeon serpent. It bites twice -- once with steel, once with poison.",
+      "value": 65,
+      "tier": 3
+    },
+    "swift_blade": {
+      "name": "Swift Blade",
+      "type": "weapon",
+      "weapon_type": "dagger",
+      "atk": 5,
+      "speed_bonus": 3,
+      "dodge_bonus": 5,
+      "description": "A whisper of steel. You barely feel it in your hand. Neither do they.",
+      "value": 55,
+      "tier": 3
+    },
+    "assassins_kris": {
+      "name": "Assassin's Kris",
+      "type": "weapon",
+      "weapon_type": "dagger",
+      "atk": 9,
+      "speed_penalty": 1,
+      "crit_bonus": 15,
+      "description": "The weapon of choice for Valdris's kill squad. It always finds the gap.",
+      "value": 90,
+      "tier": 4
+    },
+    "shadow_reaper": {
+      "name": "Shadow Reaper",
+      "type": "weapon",
+      "weapon_type": "dagger",
+      "atk": 12,
+      "speed_penalty": 2,
+      "crit_bonus": 20,
+      "lifesteal": 5,
+      "description": "Forged in the Shadow Realm. It drinks what it spills.",
+      "value": 150,
+      "tier": 5,
+      "artifact": true
+    },
+    "zephyr_edge": {
+      "name": "Zephyr Edge",
+      "type": "weapon",
+      "weapon_type": "dagger",
+      "atk": 9,
+      "speed_bonus": 3,
+      "dodge_bonus": 15,
+      "crit_bonus": 8,
+      "description": "A blade made of wind and spite. It cuts through the air and everything in it.",
+      "value": 140,
+      "tier": 5,
+      "artifact": true
+    },
+    "voidfang": {
+      "name": "Voidfang",
+      "type": "weapon",
+      "weapon_type": "dagger",
+      "atk": 15,
+      "speed_penalty": 2,
+      "crit_bonus": 25,
+      "description": "It drinks light. It drinks life. It drinks everything. It is never full.",
+      "value": 210,
+      "tier": 6,
+      "artifact": true
+    },
+    "staff_of_thunder": {
+      "name": "Staff of Thunder",
+      "type": "weapon",
+      "weapon_type": "staff",
+      "atk": 8,
+      "mp_bonus": 10,
+      "description": "Storm clouds gather when you raise it. The air crackles with potential.",
+      "value": 85,
+      "tier": 4
+    },
+    "crystal_scepter": {
+      "name": "Crystal Scepter",
+      "type": "weapon",
+      "weapon_type": "staff",
+      "atk": 6,
+      "mp_bonus": 20,
+      "description": "Pure crystallized mana shaped into a focus. It hums with infinite possibility.",
+      "value": 80,
+      "tier": 4
+    },
+    "staff_of_the_archmage": {
+      "name": "Staff of the Archmage",
+      "type": "weapon",
+      "weapon_type": "staff",
+      "atk": 11,
+      "speed_penalty": 1,
+      "mp_bonus": 15,
+      "crit_bonus": 5,
+      "description": "The last Archmage's focus. Her power still lingers in the crystal.",
+      "value": 145,
+      "tier": 5,
+      "artifact": true
+    },
+    "ethereal_wand": {
+      "name": "Ethereal Wand",
+      "type": "weapon",
+      "weapon_type": "staff",
+      "atk": 8,
+      "mp_bonus": 30,
+      "description": "It phases between dimensions. The magic is not of this world.",
+      "value": 135,
+      "tier": 5,
+      "artifact": true
+    },
+    "staff_of_oblivion": {
+      "name": "Staff of Oblivion",
+      "type": "weapon",
+      "weapon_type": "staff",
+      "atk": 14,
+      "speed_penalty": 2,
+      "mp_bonus": 20,
+      "crit_bonus": 10,
+      "description": "It does not destroy. It erases. What it touches ceases to have existed.",
+      "value": 220,
+      "tier": 6,
+      "artifact": true
+    },
+    "blessed_mace": {
+      "name": "Blessed Mace",
+      "type": "weapon",
+      "weapon_type": "holy",
+      "atk": 2,
+      "hp_bonus": 3,
+      "description": "A simple mace blessed by the temple priests. The light is faint, but it is there.",
+      "value": 12,
+      "tier": 1
+    },
+    "divine_hammer": {
+      "name": "Divine Hammer",
+      "type": "weapon",
+      "weapon_type": "holy",
+      "atk": 7,
+      "speed_penalty": 1,
+      "hp_bonus": 5,
+      "mp_bonus": 5,
+      "description": "Forged in the sacred fires of the temple. It carries the weight of faith.",
+      "value": 70,
+      "tier": 3
+    },
+    "radiant_blade": {
+      "name": "Radiant Blade",
+      "type": "weapon",
+      "weapon_type": "holy",
+      "atk": 5,
+      "hp_bonus": 10,
+      "description": "A blade that glows with inner light. It does not cut -- it purifies.",
+      "value": 60,
+      "tier": 3
+    },
+    "crusaders_edge": {
+      "name": "Crusader's Edge",
+      "type": "weapon",
+      "weapon_type": "holy",
+      "atk": 9,
+      "speed_penalty": 2,
+      "hp_bonus": 8,
+      "mp_bonus": 8,
+      "description": "The weapon of the Holy Crusade. It has cleansed a thousand unholy things.",
+      "value": 100,
+      "tier": 4
+    },
+    "judgments_hammer": {
+      "name": "Judgment's Hammer",
+      "type": "weapon",
+      "weapon_type": "holy",
+      "atk": 12,
+      "speed_penalty": 2,
+      "hp_bonus": 12,
+      "mp_bonus": 10,
+      "description": "When it falls, the verdict is final. No appeal. No mercy.",
+      "value": 160,
+      "tier": 5,
+      "artifact": true
+    },
+    "paladins_oath": {
+      "name": "Paladin's Oath",
+      "type": "weapon",
+      "weapon_type": "holy",
+      "atk": 9,
+      "hp_bonus": 20,
+      "description": "An oath made manifest. It will not break. Neither will you.",
+      "value": 145,
+      "tier": 5,
+      "artifact": true
+    },
+    "aegis_lightbringer": {
+      "name": "Aegis Lightbringer",
+      "type": "weapon",
+      "weapon_type": "holy",
+      "atk": 15,
+      "speed_penalty": 3,
+      "hp_bonus": 15,
+      "mp_bonus": 15,
+      "crit_bonus": 10,
+      "description": "The weapon of the First Paladin. It brought light to the darkest age.",
+      "value": 250,
+      "tier": 6,
+      "artifact": true
+    },
+    "knights_blade": {
+      "name": "Knight's Blade",
+      "type": "weapon",
+      "weapon_type": "sword",
+      "atk": 6,
+      "hp_bonus": 3,
+      "description": "A well-balanced sword from the knightly orders of Valdris. Reliable in any hand.",
+      "value": 55,
+      "tier": 3
+    },
+    "steel_longsword": {
+      "name": "Steel Longsword",
+      "type": "weapon",
+      "weapon_type": "sword",
+      "atk": 8,
+      "speed_penalty": 1,
+      "description": "Tempered steel from the forges beneath the castle. It holds an edge forever.",
+      "value": 90,
+      "tier": 4
+    },
+    "void_blade": {
+      "name": "Void Blade",
+      "type": "weapon",
+      "weapon_type": "sword",
+      "atk": 13,
+      "speed_penalty": 2,
+      "crit_bonus": 5,
+      "description": "A sword that cuts through reality itself. The void stares back from its edge.",
+      "value": 180,
+      "tier": 6,
+      "artifact": true
+    }
+  },
+  "armor": {
+    "leather_armor": {
+      "name": "Leather Armor",
+      "type": "armor",
+      "armor_type": "light",
+      "def": 2,
+      "description": "Light leather from Valdris's hunters. Doesn't slow you down.",
+      "value": 15,
+      "tier": 1
+    },
+    "chainmail": {
+      "name": "Chainmail",
+      "type": "armor",
+      "armor_type": "medium",
+      "def": 4,
+      "speed_penalty": 2,
+      "description": "Valdris infantry armor. The links are worn thin from decades of use.",
+      "value": 40,
+      "tier": 2
+    },
+    "plate_armor": {
+      "name": "Plate Armor",
+      "type": "armor",
+      "armor_type": "heavy",
+      "def": 6,
+      "speed_penalty": 3,
+      "description": "Royal guard plate. Only the king's personal protectors wore this. It still bears his crest.",
+      "value": 70,
+      "tier": 3
+    },
+    "shadow_cloak": {
+      "name": "Shadow Cloak",
+      "type": "armor",
+      "armor_type": "light",
+      "def": 3,
+      "speed_bonus": 2,
+      "description": "Woven by the assassins of Valdris. It moves like a living shadow.",
+      "value": 55,
+      "tier": 2,
+      "artifact": true
+    },
+    "dragon_scale": {
+      "name": "Dragon Scale Shield",
+      "type": "armor",
+      "armor_type": "heavy",
+      "def": 8,
+      "speed_penalty": 3,
+      "description": "Forged from Kael'thrax's own scales. The dragon shed them when it grew. Nearly unbreakable.",
+      "value": 120,
+      "tier": 4,
+      "artifact": true
+    },
+    "robes_of_arcana": {
+      "name": "Robes of Arcana",
+      "type": "armor",
+      "armor_type": "light",
+      "def": 3,
+      "accuracy_bonus": 5,
+      "description": "Worn by the court mages of Valdris. They amplify spell power at a cost.",
+      "value": 65,
+      "tier": 2,
+      "artifact": true,
+      "mp_bonus": 10
+    },
+    "iron_vest": {
+      "name": "Iron Vest",
+      "type": "armor",
+      "armor_type": "heavy",
+      "def": 2,
+      "description": "A crude iron vest hammered into shape. It will stop a blade. Maybe two.",
+      "value": 12,
+      "tier": 1
+    },
+    "warriors_lamellar": {
+      "name": "Warrior's Lamellar",
+      "type": "armor",
+      "armor_type": "medium",
+      "def": 3,
+      "hp_bonus": 5,
+      "description": "Lamellar armor favored by Valdris's front-line fighters. Light enough to fight in.",
+      "value": 38,
+      "tier": 2
+    },
+    "reinforced_mail": {
+      "name": "Reinforced Mail",
+      "type": "armor",
+      "armor_type": "medium",
+      "def": 4,
+      "speed_penalty": 1,
+      "hp_bonus": 10,
+      "description": "Chainmail reinforced with steel plates. The best of both worlds.",
+      "value": 65,
+      "tier": 3
+    },
+    "wardens_plate": {
+      "name": "Warden's Plate",
+      "type": "armor",
+      "armor_type": "heavy",
+      "def": 6,
+      "speed_penalty": 2,
+      "hp_bonus": 15,
+      "description": "Worn by the wardens of Valdris's prison. They never let anyone through.",
+      "value": 95,
+      "tier": 4
+    },
+    "titan_plate": {
+      "name": "Titan Plate",
+      "type": "armor",
+      "armor_type": "heavy",
+      "def": 10,
+      "speed_penalty": 3,
+      "hp_bonus": 25,
+      "description": "Forged from titan bone. The wearer becomes a walking fortress.",
+      "value": 160,
+      "tier": 5,
+      "artifact": true
+    },
+    "aegis_of_the_fallen": {
+      "name": "Aegis of the Fallen",
+      "type": "armor",
+      "armor_type": "heavy",
+      "def": 13,
+      "speed_penalty": 4,
+      "hp_bonus": 35,
+      "reflect": 10,
+      "description": "Carried by every king who fell defending Valdris. Their will remains.",
+      "value": 230,
+      "tier": 6,
+      "artifact": true
+    },
+    "assassins_garb": {
+      "name": "Assassin's Garb",
+      "type": "armor",
+      "armor_type": "light",
+      "def": 3,
+      "speed_bonus": 2,
+      "dodge_bonus": 10,
+      "description": "Tailored for silence and speed. The wearer becomes a whisper.",
+      "value": 60,
+      "tier": 3
+    },
+    "windwalker_wraps": {
+      "name": "Windwalker Wraps",
+      "type": "armor",
+      "armor_type": "light",
+      "def": 2,
+      "speed_bonus": 4,
+      "dodge_bonus": 8,
+      "description": "Silk wraps that channel wind currents. You barely touch the ground.",
+      "value": 50,
+      "tier": 3
+    },
+    "phantom_vestments": {
+      "name": "Phantom Vestments",
+      "type": "armor",
+      "armor_type": "light",
+      "def": 4,
+      "speed_bonus": 2,
+      "dodge_bonus": 15,
+      "description": "Woven from phantom silk. It phases between dimensions as you move.",
+      "value": 85,
+      "tier": 4
+    },
+    "nightstalkers_shroud": {
+      "name": "Nightstalker's Shroud",
+      "type": "armor",
+      "armor_type": "light",
+      "def": 3,
+      "speed_bonus": 4,
+      "dodge_bonus": 12,
+      "description": "A cloak of living shadow. It drinks the darkness and gives it back.",
+      "value": 80,
+      "tier": 4
+    },
+    "shadowdance_raiment": {
+      "name": "Shadowdance Raiment",
+      "type": "armor",
+      "armor_type": "light",
+      "def": 5,
+      "speed_bonus": 3,
+      "dodge_bonus": 20,
+      "crit_bonus": 5,
+      "description": "The assassin's ultimate garment. You become the shadow itself.",
+      "value": 155,
+      "tier": 5,
+      "artifact": true
+    },
+    "cloak_of_the_unseen": {
+      "name": "Cloak of the Unseen",
+      "type": "armor",
+      "armor_type": "light",
+      "def": 6,
+      "speed_bonus": 4,
+      "dodge_bonus": 25,
+      "crit_bonus": 10,
+      "description": "It does not hide you. It un-makes you. You were never here.",
+      "value": 220,
+      "tier": 6,
+      "artifact": true
+    },
+    "apprentice_robes": {
+      "name": "Apprentice Robes",
+      "type": "armor",
+      "armor_type": "light",
+      "def": 1,
+      "mp_bonus": 5,
+      "description": "Simple robes worn by mages-in-training. The power is in the wearer, not the cloth.",
+      "value": 10,
+      "tier": 1
+    },
+    "mages_raiment": {
+      "name": "Mage's Raiment",
+      "type": "armor",
+      "armor_type": "light",
+      "def": 3,
+      "mp_bonus": 12,
+      "description": "Robes woven with mana threads. They hum with arcane potential.",
+      "value": 60,
+      "tier": 3
+    },
+    "archmages_regalia": {
+      "name": "Archmage's Regalia",
+      "type": "armor",
+      "armor_type": "light",
+      "def": 4,
+      "mp_bonus": 15,
+      "accuracy_bonus": 5,
+      "description": "The ceremonial robes of the Archmage. Power radiates from every thread.",
+      "value": 95,
+      "tier": 4
+    },
+    "mantle_of_the_primordial": {
+      "name": "Mantle of the Primordial",
+      "type": "armor",
+      "armor_type": "light",
+      "def": 5,
+      "speed_penalty": 1,
+      "mp_bonus": 20,
+      "accuracy_bonus": 8,
+      "crit_bonus": 5,
+      "description": "Woven from the first magic ever cast. It remembers everything.",
+      "value": 165,
+      "tier": 5,
+      "artifact": true
+    },
+    "cosmosweave_vestments": {
+      "name": "Cosmosweave Vestments",
+      "type": "armor",
+      "armor_type": "light",
+      "def": 6,
+      "speed_penalty": 1,
+      "mp_bonus": 30,
+      "accuracy_bonus": 10,
+      "crit_bonus": 8,
+      "description": "Threads of starlight woven into cloth. The universe whispers its secrets.",
+      "value": 240,
+      "tier": 6,
+      "artifact": true
+    },
+    "holy_vestments": {
+      "name": "Holy Vestments",
+      "type": "armor",
+      "armor_type": "light",
+      "def": 2,
+      "hp_bonus": 5,
+      "mp_bonus": 3,
+      "description": "Simple vestments blessed by the temple. The light is faint, but it warms you.",
+      "value": 14,
+      "tier": 1
+    },
+    "blessed_mail": {
+      "name": "Blessed Mail",
+      "type": "armor",
+      "armor_type": "medium",
+      "def": 3,
+      "hp_bonus": 8,
+      "mp_bonus": 5,
+      "description": "Chainmail blessed by the high priest. It turns aside both blade and dark magic.",
+      "value": 45,
+      "tier": 2
+    },
+    "crusaders_plate": {
+      "name": "Crusader's Plate",
+      "type": "armor",
+      "armor_type": "heavy",
+      "def": 5,
+      "speed_penalty": 1,
+      "hp_bonus": 10,
+      "mp_bonus": 8,
+      "description": "Worn by the Holy Crusade. It protects the faithful and breaks the unholy.",
+      "value": 75,
+      "tier": 3
+    },
+    "templar_guard": {
+      "name": "Templar Guard",
+      "type": "armor",
+      "armor_type": "heavy",
+      "def": 7,
+      "speed_penalty": 2,
+      "hp_bonus": 15,
+      "mp_bonus": 10,
+      "description": "The Templar Order's finest armor. It has never been breached by mortal hand.",
+      "value": 110,
+      "tier": 4
+    },
+    "aegis_of_light": {
+      "name": "Aegis of Light",
+      "type": "armor",
+      "armor_type": "heavy",
+      "def": 9,
+      "speed_penalty": 2,
+      "hp_bonus": 25,
+      "mp_bonus": 15,
+      "description": "A shield-armor forged from divine light. It burns the unholy on contact.",
+      "value": 175,
+      "tier": 5,
+      "artifact": true
+    },
+    "divine_bulwark": {
+      "name": "Divine Bulwark",
+      "type": "armor",
+      "armor_type": "heavy",
+      "def": 12,
+      "speed_penalty": 3,
+      "hp_bonus": 35,
+      "mp_bonus": 20,
+      "reflect": 5,
+      "description": "The armor of a god's chosen. It does not just protect -- it punishes.",
+      "value": 260,
+      "tier": 6,
+      "artifact": true
+    },
+    "iron_plate": {
+      "name": "Iron Plate",
+      "type": "armor",
+      "armor_type": "heavy",
+      "def": 5,
+      "speed_penalty": 2,
+      "description": "Solid iron plate armor. Heavy, but it will keep you alive.",
+      "value": 55,
+      "tier": 3
+    },
+    "light_brigandine": {
+      "name": "Light Brigandine",
+      "type": "armor",
+      "armor_type": "light",
+      "def": 3,
+      "speed_bonus": 1,
+      "description": "Armor plates sewn into leather. Light and mobile.",
+      "value": 45,
+      "tier": 3
+    },
+    "steel_plate": {
+      "name": "Steel Plate",
+      "type": "armor",
+      "armor_type": "heavy",
+      "def": 7,
+      "speed_penalty": 3,
+      "description": "Tempered steel plate. The standard for those who walk into danger.",
+      "value": 85,
+      "tier": 4
+    },
+    "titanium_guard": {
+      "name": "Titanium Guard",
+      "type": "armor",
+      "armor_type": "heavy",
+      "def": 9,
+      "speed_penalty": 3,
+      "description": "Lighter than steel, stronger than iron. The future of armor.",
+      "value": 140,
+      "tier": 5
+    },
+    "adamant_aegis": {
+      "name": "Adamant Aegis",
+      "type": "armor",
+      "armor_type": "heavy",
+      "def": 12,
+      "speed_penalty": 4,
+      "description": "Forged from adamantine. Nothing has ever cracked it. Nothing ever will.",
+      "value": 210,
+      "tier": 6,
+      "artifact": true
+    }
+  },
+  "consumables": {
+    "health_potion": {
+      "name": "Health Potion",
+      "type": "consumable",
+      "effect": "heal",
+      "value": 15,
+      "description": "Valdris alchemists once perfected healing draughts. This is all that remains.",
+      "tier": 1
+    },
+    "greater_health_potion": {
+      "name": "Greater Health Potion",
+      "type": "consumable",
+      "effect": "heal",
+      "value": 30,
+      "description": "A potent elixir from the royal apothecary. The recipe died with the kingdom.",
+      "tier": 2
+    },
+    "superior_health_potion": {
+      "name": "Superior Health Potion",
+      "type": "consumable",
+      "effect": "heal",
+      "value": 50,
+      "description": "An exceedingly rare healing draught. The last bottle in all of Valdris.",
+      "tier": 3
+    },
+    "mana_crystal": {
+      "name": "Mana Crystal",
+      "type": "consumable",
+      "effect": "restore_mp",
+      "value": 15,
+      "description": "Crystallized mana from the arcane wells beneath Valdris. It hums with power.",
+      "tier": 1
+    },
+    "superior_mana_crystal": {
+      "name": "Superior Mana Crystal",
+      "type": "consumable",
+      "effect": "restore_mp",
+      "value": 40,
+      "description": "A dense shard of pure mana. The mages of Valdris would kill for this.",
+      "tier": 3
+    },
+    "full_restore": {
+      "name": "Full Restore",
+      "type": "consumable",
+      "effect": "full_heal",
+      "value": 999,
+      "description": "The rarest elixir of Valdris. It restores everything. But it cannot restore what is lost.",
+      "tier": 3
+    },
+    "strength_elixir": {
+      "name": "Strength Elixir",
+      "type": "consumable",
+      "effect": "buff_atk",
+      "value": 3,
+      "description": "Brewed for Valdris's champions. It surges through your veins.",
+      "tier": 2
+    },
+    "iron_skin_potion": {
+      "name": "Iron Skin Potion",
+      "type": "consumable",
+      "effect": "buff_def",
+      "value": 3,
+      "description": "Hardens the skin like steel. The royal guard drank this before battle.",
+      "tier": 2
+    },
+    "swift_potion": {
+      "name": "Swift Potion",
+      "type": "consumable",
+      "effect": "buff_speed",
+      "value": 3,
+      "description": "Brewed from the tendons of a wyvern. Time seems to slow around you.",
+      "tier": 2
+    },
+    "precision_tincture": {
+      "name": "Precision Tincture",
+      "type": "consumable",
+      "effect": "buff_accuracy",
+      "value": 20,
+      "description": "Sharpens the senses to a razor's edge. The assassin's tool of choice.",
+      "tier": 2
+    },
+    "antidote": {
+      "name": "Antidote",
+      "type": "consumable",
+      "effect": "cleanse",
+      "value": 0,
+      "description": "Purges toxins and curses from the body. Distilled from dungeon herbs.",
+      "tier": 1
+    },
+    "fire_resist_potion": {
+      "name": "Fire Resist Potion",
+      "type": "consumable",
+      "effect": "ele_resist_fire",
+      "value": 50,
+      "description": "Coats the skin in a heat-resistant film. Smells of sulfur and ash.",
+      "tier": 2
+    },
+    "ice_resist_potion": {
+      "name": "Ice Resist Potion",
+      "type": "consumable",
+      "effect": "ele_resist_ice",
+      "value": 50,
+      "description": "A shimmering blue draught that numbs the senses to cold. From the frost caves.",
+      "tier": 2
+    },
+    "lightning_resist_potion": {
+      "name": "Lightning Resist Potion",
+      "type": "consumable",
+      "effect": "ele_resist_lightning",
+      "value": 50,
+      "description": "Crackles faintly when shaken. Grounds electrical energy on contact.",
+      "tier": 2
+    },
+    "red_mushroom": {
+      "name": "Red Mushroom",
+      "type": "consumable",
+      "effect": "heal",
+      "value": 10,
+      "description": "A crimson cap fungus from the dungeon depths. Tastes faintly of iron.",
+      "tier": 1,
+      "scavenge_item": true
+    },
+    "blue_mushroom": {
+      "name": "Blue Mushroom",
+      "type": "consumable",
+      "effect": "restore_mp",
+      "value": 8,
+      "description": "A luminescent blue mushroom. It hums with arcane energy.",
+      "tier": 1,
+      "scavenge_item": true
+    },
+    "purple_mushroom": {
+      "name": "Purple Mushroom",
+      "type": "consumable",
+      "effect": "full_heal_small",
+      "value": 12,
+      "description": "A deep violet mushroom that restores both body and mind.",
+      "tier": 1,
+      "scavenge_item": true
+    },
+    "brown_mushroom": {
+      "name": "Brown Mushroom",
+      "type": "consumable",
+      "effect": "heal",
+      "value": 5,
+      "description": "A plain brown cap. Edible, barely. Better than nothing.",
+      "tier": 1,
+      "scavenge_item": true
+    },
+    "rainbow_mushroom": {
+      "name": "Rainbow Mushroom",
+      "type": "consumable",
+      "effect": "random_mushroom",
+      "value": 0,
+      "description": "An iridescent cap that shifts colors. Its effect is... unpredictable.",
+      "tier": 1,
+      "scavenge_item": true
+    }
+  },
+  "keys": {
+    "silver_key": {
+      "name": "Silver Key",
+      "type": "key",
+      "key_type": "silver",
+      "description": "A tarnished silver key from Valdris's treasury. Opens silver locks.",
+      "value": 0
+    },
+    "gold_key": {
+      "name": "Gold Key",
+      "type": "key",
+      "key_type": "gold",
+      "description": "An ornate golden key. It opens the royal vault. The vault that held the Grail.",
+      "value": 0
+    },
+    "chest_key": {
+      "name": "Chest Key",
+      "type": "key",
+      "key_type": "chest",
+      "description": "A sturdy iron key. Opens any sealed chest found in the dungeon.",
+      "value": 15
+    }
+  },
+  "artifacts": {
+    "ring_of_shadows": {
+      "name": "Ring of Shadows",
+      "type": "accessory",
+      "atk_bonus": 3,
+      "class_bonus": "rogue",
+      "class_atk_bonus": 6,
+      "description": "A dark ring worn by Valdris's master assassin. It whispers power to the stealthy.",
+      "value": 80,
+      "tier": 3
+    },
+    "holy_grail": {
+      "name": "Holy Grail",
+      "type": "consumable",
+      "effect": "revive",
+      "description": "The Grail of Wishes. It promises everything. It takes everything.",
+      "value": 200,
+      "tier": 5
+    },
+    "berserker_belt": {
+      "name": "Berserker Belt",
+      "type": "accessory",
+      "atk_bonus": 4,
+      "def_penalty": 2,
+      "description": "Worn by Valdris's berserkers. Rage courses through you. More attack, less defense.",
+      "value": 60,
+      "tier": 3
+    },
+    "amulet_of_fortitude": {
+      "name": "Amulet of Fortitude",
+      "type": "accessory",
+      "hp_bonus": 15,
+      "description": "An ancient amulet from the temples of Valdris. It bolsters vitality.",
+      "value": 75,
+      "tier": 3
+    },
+    "thief_cloak": {
+      "name": "Thief's Cloak",
+      "type": "accessory",
+      "dodge_bonus": 20,
+      "speed_bonus": 1,
+      "description": "Worn by the rogues of Valdris. Makes you harder to hit. They never died clean.",
+      "value": 70,
+      "tier": 3
+    },
+    "arcane_crystal": {
+      "name": "Arcane Crystal",
+      "type": "accessory",
+      "mp_bonus": 15,
+      "class_bonus": "mage",
+      "class_mp_bonus": 30,
+      "description": "Pulses with raw magical energy from the arcane wells. The mages died trying to contain it.",
+      "value": 85,
+      "tier": 3
+    },
+    "cartographers_eye": {
+      "name": "Cartographer's Eye",
+      "type": "accessory",
+      "effect": "map_reveal",
+      "description": "An ancient eye that reveals the dungeon's full layout. The map seers of Valdris wore these.",
+      "value": 120,
+      "tier": 4
+    },
+    "warlords_crest": {
+      "name": "Warlord's Crest",
+      "type": "accessory",
+      "atk_bonus": 5,
+      "def_bonus": 2,
+      "hp_bonus": 10,
+      "class_bonus": "warrior",
+      "class_atk_bonus": 4,
+      "description": "The crest of Valdris's warlords. It demands strength and rewards it.",
+      "value": 110,
+      "tier": 4
+    },
+    "crown_of_conquest": {
+      "name": "Crown of Conquest",
+      "type": "accessory",
+      "atk_bonus": 6,
+      "def_bonus": 3,
+      "hp_bonus": 20,
+      "speed_bonus": 1,
+      "class_bonus": "warrior",
+      "class_atk_bonus": 5,
+      "description": "Worn by those who conquered nations. It weighs nothing. It weighs everything.",
+      "value": 170,
+      "tier": 5
+    },
+    "shadow_band": {
+      "name": "Shadow Band",
+      "type": "accessory",
+      "atk_bonus": 4,
+      "speed_bonus": 3,
+      "crit_bonus": 10,
+      "class_bonus": "rogue",
+      "class_atk_bonus": 5,
+      "description": "A ring of solidified shadow. It hums with lethal potential.",
+      "value": 105,
+      "tier": 4
+    },
+    "assassins_signet": {
+      "name": "Assassin's Signet",
+      "type": "accessory",
+      "atk_bonus": 5,
+      "speed_bonus": 4,
+      "crit_bonus": 15,
+      "class_bonus": "rogue",
+      "class_atk_bonus": 6,
+      "description": "The mark of the guild master. Every contract was fulfilled. Every target fell.",
+      "value": 165,
+      "tier": 5
+    },
+    "void_ring": {
+      "name": "Void Ring",
+      "type": "accessory",
+      "atk_bonus": 6,
+      "speed_bonus": 5,
+      "crit_bonus": 20,
+      "lifesteal": 5,
+      "class_bonus": "rogue",
+      "class_atk_bonus": 8,
+      "description": "A ring of pure void. It takes what it needs. It always needs more.",
+      "value": 230,
+      "tier": 6
+    },
+    "mana_shard": {
+      "name": "Mana Shard",
+      "type": "accessory",
+      "mp_bonus": 20,
+      "accuracy_bonus": 5,
+      "class_bonus": "mage",
+      "class_mp_bonus": 15,
+      "description": "A shard of crystallized mana. It amplifies spell power and precision.",
+      "value": 100,
+      "tier": 4
+    },
+    "orb_of_the_nexus": {
+      "name": "Orb of the Nexus",
+      "type": "accessory",
+      "mp_bonus": 30,
+      "accuracy_bonus": 10,
+      "crit_bonus": 5,
+      "class_bonus": "mage",
+      "class_mp_bonus": 20,
+      "description": "A crystal orb that channels the nexus of all magical energy. The archmage's tool.",
+      "value": 160,
+      "tier": 5
+    },
+    "eye_of_the_void": {
+      "name": "Eye of the Void",
+      "type": "accessory",
+      "mp_bonus": 40,
+      "accuracy_bonus": 15,
+      "crit_bonus": 10,
+      "atk_bonus": 3,
+      "class_bonus": "mage",
+      "class_mp_bonus": 25,
+      "description": "An eye torn from a void creature. It sees everything. It knows everything.",
+      "value": 240,
+      "tier": 6
+    },
+    "holy_symbol": {
+      "name": "Holy Symbol",
+      "type": "accessory",
+      "hp_bonus": 10,
+      "mp_bonus": 8,
+      "def_bonus": 3,
+      "class_bonus": "paladin",
+      "class_hp_bonus": 10,
+      "description": "A sacred symbol that bolsters body and spirit. The faithful are rewarded.",
+      "value": 80,
+      "tier": 3
+    },
+    "paladins_seal": {
+      "name": "Paladin's Seal",
+      "type": "accessory",
+      "hp_bonus": 15,
+      "mp_bonus": 12,
+      "def_bonus": 5,
+      "class_bonus": "paladin",
+      "class_hp_bonus": 15,
+      "class_mp_bonus": 10,
+      "description": "The seal of the paladin order. It grants power to those who serve the light.",
+      "value": 130,
+      "tier": 4
+    },
+    "divine_crown": {
+      "name": "Divine Crown",
+      "type": "accessory",
+      "hp_bonus": 20,
+      "mp_bonus": 18,
+      "def_bonus": 5,
+      "atk_bonus": 3,
+      "class_bonus": "paladin",
+      "class_hp_bonus": 20,
+      "class_mp_bonus": 15,
+      "description": "A crown blessed by the gods. It makes the wearer a beacon of divine power.",
+      "value": 190,
+      "tier": 5
+    },
+    "avatars_blessing": {
+      "name": "Avatar's Blessing",
+      "type": "accessory",
+      "hp_bonus": 30,
+      "mp_bonus": 25,
+      "def_bonus": 8,
+      "atk_bonus": 5,
+      "crit_bonus": 5,
+      "class_bonus": "paladin",
+      "class_hp_bonus": 25,
+      "class_mp_bonus": 20,
+      "class_atk_bonus": 5,
+      "description": "The blessing of the avatar incarnate. You become more than mortal.",
+      "value": 270,
+      "tier": 6
+    },
+    "ring_of_power": {
+      "name": "Ring of Power",
+      "type": "accessory",
+      "atk_bonus": 4,
+      "def_bonus": 3,
+      "description": "A simple ring that bolsters both offense and defense. Universal and reliable.",
+      "value": 90,
+      "tier": 4
+    },
+    "crown_of_the_conqueror": {
+      "name": "Crown of the Conqueror",
+      "type": "accessory",
+      "atk_bonus": 6,
+      "def_bonus": 5,
+      "hp_bonus": 10,
+      "description": "Worn by those who subjugated nations. It grants dominion over all.",
+      "value": 155,
+      "tier": 5
+    },
+    "orb_of_eternity": {
+      "name": "Orb of Eternity",
+      "type": "accessory",
+      "atk_bonus": 8,
+      "def_bonus": 8,
+      "hp_bonus": 15,
+      "mp_bonus": 10,
+      "description": "An orb that contains a universe. It grants power beyond comprehension.",
+      "value": 280,
+      "tier": 6
+    }
+  },
+  "relics": {
+    "tin_amulet": {
+      "name": "Tin Amulet",
+      "type": "relic",
+      "hp_bonus": 5,
+      "tier": 1,
+      "description": "A plain amulet. Nothing special, but it keeps you alive.",
+      "lore": "Mass-produced in the foundries of Valdris's lower quarter. The workers wore three each."
+    },
+    "copper_ring": {
+      "name": "Copper Ring",
+      "type": "relic",
+      "mp_bonus": 5,
+      "tier": 1,
+      "description": "Faint mana hums within the cheap metal.",
+      "lore": "The first thing apprentice mages learn to enchant. Most of them die before they finish."
+    },
+    "wooden_charm": {
+      "name": "Wooden Charm",
+      "type": "relic",
+      "regen_per_turn": 1,
+      "tier": 1,
+      "description": "Carved from a tree that never dies.",
+      "lore": "The World Tree's last branch. The druids of Valdris carved it into a thousand charms."
+    },
+    "rusty_locket": {
+      "name": "Rusty Locket",
+      "type": "relic",
+      "atk_bonus": 1,
+      "tier": 1,
+      "description": "Its previous owner fought well enough to die.",
+      "lore": "Found on a skeleton in the eastern corridors. The locket held a portrait of someone forgotten."
+    },
+    "leather_strap": {
+      "name": "Leather Strap",
+      "type": "relic",
+      "def_bonus": 1,
+      "tier": 1,
+      "description": "Simple armor reinforcement.",
+      "lore": "Cut from the hide of a dungeon beast. Even its leather is tougher than steel."
+    },
+    "feather_pendant": {
+      "name": "Feather Pendant",
+      "type": "relic",
+      "dodge_bonus": 3,
+      "tier": 1,
+      "description": "Light as air. You move quicker wearing it.",
+      "lore": "A feather from a griffin that once served the kingdom's aerial cavalry."
+    },
+    "dull_shard": {
+      "name": "Dull Shard",
+      "type": "relic",
+      "crit_bonus": 2,
+      "tier": 1,
+      "description": "A fragment of something once powerful.",
+      "lore": "It was whole once. Something broke it. Something very old and very angry."
+    },
+    "withered_talisman": {
+      "name": "Withered Talisman",
+      "type": "relic",
+      "atk_bonus": 3,
+      "tier": 1,
+      "cursed": true,
+      "curse_effect": "poison",
+      "curse_value": 2,
+      "curse_duration": 999,
+      "description": "It pulses with a sickly warmth.",
+      "lore": "A healer's charm that absorbed too much sickness. The sickness learned to fight back."
+    },
+    "iron_amulet": {
+      "name": "Iron Amulet",
+      "type": "relic",
+      "hp_bonus": 10,
+      "tier": 2,
+      "description": "Forged in the smithies of Valdris.",
+      "lore": "The royal smiths made these for every soldier. Most soldiers did not survive to wear them long."
+    },
+    "silver_ring": {
+      "name": "Silver Ring",
+      "type": "relic",
+      "mp_bonus": 10,
+      "tier": 2,
+      "description": "Engraved with forgotten runes.",
+      "lore": "The runes are in a language older than Valdris. No one living can read them."
+    },
+    "jade_charm": {
+      "name": "Jade Charm",
+      "type": "relic",
+      "regen_per_turn": 2,
+      "tier": 2,
+      "description": "A druid blessed this stone long ago.",
+      "lore": "The druid who blessed it is long dead. The stone remembers his voice."
+    },
+    "bronze_locket": {
+      "name": "Bronze Locket",
+      "type": "relic",
+      "atk_bonus": 2,
+      "tier": 2,
+      "description": "Etched with a war cry from a dead age.",
+      "lore": "The war cry of the First King. Speak it aloud and feel strength return."
+    },
+    "steel_buckle": {
+      "name": "Steel Buckle",
+      "type": "relic",
+      "def_bonus": 2,
+      "tier": 2,
+      "description": "Tested against blade and fang.",
+      "lore": "From the belt of Sir Kaelan's lieutenant. He died holding the western gate."
+    },
+    "hawk_feather": {
+      "name": "Hawk Feather",
+      "type": "relic",
+      "dodge_bonus": 5,
+      "tier": 2,
+      "description": "From a hawk that outlived three hunters.",
+      "lore": "The hunters all died in these dungeons. The hawk still circles above."
+    },
+    "glowing_shard": {
+      "name": "Glowing Shard",
+      "type": "relic",
+      "crit_bonus": 4,
+      "tier": 2,
+      "description": "It hums when danger is near.",
+      "lore": "A fragment of the Grail's prison. It senses dark things. It is never wrong."
+    },
+    "blood_pact_ring": {
+      "name": "Blood Pact Ring",
+      "type": "relic",
+      "lifesteal": 8,
+      "tier": 2,
+      "cursed": true,
+      "curse_effect": "burn",
+      "curse_value": 2,
+      "curse_duration": 999,
+      "description": "Warm to the touch. Always.",
+      "lore": "Forged in dragon's blood. It grants the power of the beast. The beast takes its share."
+    },
+    "gold_amulet": {
+      "name": "Gold Amulet",
+      "type": "relic",
+      "hp_bonus": 15,
+      "regen_per_turn": 1,
+      "tier": 3,
+      "description": "Melted down from a king's ransom.",
+      "lore": "The gold was looted from the treasury the night the city fell. It still smells of smoke."
+    },
+    "sapphire_ring": {
+      "name": "Sapphire Ring",
+      "type": "relic",
+      "mp_bonus": 15,
+      "mp_regen_per_turn": 1,
+      "tier": 3,
+      "description": "Cool to the touch. Focuses the mind.",
+      "lore": "From the crown of the last Archmage. She wore it when she sealed the darkness. She did not survive."
+    },
+    "emerald_charm": {
+      "name": "Emerald Charm",
+      "type": "relic",
+      "lifesteal": 5,
+      "tier": 3,
+      "description": "Drains life from the living to feed the wearer.",
+      "lore": "The emerald weeps when worn. It is not the stone that weeps."
+    },
+    "knights_locket": {
+      "name": "Knight's Locket",
+      "type": "relic",
+      "atk_bonus": 3,
+      "armor_pen": 10,
+      "tier": 3,
+      "description": "Sir Kaelan wore this before the betrayal.",
+      "lore": "He removed it before opening the gates. He wanted to remember what he was sacrificing."
+    },
+    "guardians_buckle": {
+      "name": "Guardian's Buckle",
+      "type": "relic",
+      "def_bonus": 3,
+      "thorns": 2,
+      "tier": 3,
+      "description": "Punishes those who strike the wearer.",
+      "lore": "The Guardian of the Gate wore this. Every blade that struck him broke. Some attackers did not."
+    },
+    "phoenix_feather": {
+      "name": "Phoenix Feather",
+      "type": "relic",
+      "dodge_bonus": 7,
+      "speed_bonus": 2,
+      "tier": 3,
+      "description": "Burns once, then reforms. Never dies.",
+      "lore": "The phoenixes of Valdris went extinct when the dragon came. This feather is all that remains."
+    },
+    "sharp_crystal": {
+      "name": "Sharp Crystal",
+      "type": "relic",
+      "crit_bonus": 6,
+      "crit_mult_bonus": 0.10,
+      "tier": 3,
+      "description": "Cuts reality at the edges.",
+      "lore": "A shard of crystallized mana. The edges exist in more than one dimension."
+    },
+    "greed_charm_rare": {
+      "name": "Greed Charm",
+      "type": "relic",
+      "gold_mult": 1.15,
+      "tier": 3,
+      "description": "Coins seem to find their way to you.",
+      "lore": "The merchants of Valdris wore these. They died wealthy. They died alone."
+    },
+    "chains_of_binding": {
+      "name": "Chains of Binding",
+      "type": "relic",
+      "def_bonus": 6,
+      "thorns": 4,
+      "tier": 3,
+      "cursed": true,
+      "curse_effect": "speed_down",
+      "curse_value": 3,
+      "curse_duration": 999,
+      "description": "Unbreakable chains. They bind the wearer too.",
+      "lore": "Forged to imprison a demon. The demon escaped. The chains stayed. They always stay."
+    },
+    "dragon_amulet": {
+      "name": "Dragon Amulet",
+      "type": "relic",
+      "hp_bonus": 25,
+      "regen_per_turn": 2,
+      "tier": 4,
+      "description": "Forged in dragonfire. Still warm.",
+      "lore": "Kael'thrax shed the metal that forms this amulet. It remembers the dragon's heartbeat."
+    },
+    "arcane_ring_epic": {
+      "name": "Arcane Ring",
+      "type": "relic",
+      "mp_bonus": 20,
+      "mp_regen_per_turn": 2,
+      "tier": 4,
+      "description": "Pulses with raw arcane energy.",
+      "lore": "The ring was created to channel the power of the arcane wells. The wells are dry now."
+    },
+    "vampiric_fang": {
+      "name": "Vampiric Fang",
+      "type": "relic",
+      "lifesteal": 10,
+      "tier": 4,
+      "description": "Still dripping. Still hungry.",
+      "lore": "Pulled from the mouth of the Vampire King. It still bites."
+    },
+    "bonecrusher": {
+      "name": "Bonecrusher",
+      "type": "relic",
+      "armor_pen": 20,
+      "tier": 4,
+      "description": "Dent the thickest plate like paper.",
+      "lore": "The weapon of the Oathbreaker. Sir Kaelan used it to shatter the kingdom's defenses."
+    },
+    "thornmail_relic": {
+      "name": "Thornmail",
+      "type": "relic",
+      "thorns": 5,
+      "tier": 4,
+      "description": "Pain flows backward through the blade.",
+      "lore": "Woven from the thorns of the World Tree. Every wound inflicted returns to the attacker."
+    },
+    "shadowstep_boots": {
+      "name": "Shadowstep Boots",
+      "type": "relic",
+      "dodge_bonus": 10,
+      "speed_bonus": 3,
+      "tier": 4,
+      "description": "Walk between shadows.",
+      "lore": "The assassin's guild prized these above all else. They allow you to step between darkness."
+    },
+    "berserkers_mark": {
+      "name": "Berserker's Mark",
+      "type": "relic",
+      "crit_mult_bonus": 0.25,
+      "crit_bonus": 5,
+      "tier": 4,
+      "description": "The last thing they see is red.",
+      "lore": "Carved into the flesh of Valdris's berserkers. It drives them to frenzy. It drives them to ruin."
+    },
+    "blighted_talisman": {
+      "name": "Blighted Talisman",
+      "type": "relic",
+      "atk_bonus": 8,
+      "tier": 4,
+      "cursed": true,
+      "curse_effect": "poison",
+      "curse_value": 3,
+      "curse_duration": 999,
+      "description": "A dark presence coils inside.",
+      "lore": "A holy relic corrupted by the dragon's breath. The faith it once held became poison."
+    },
+    "dragon_heart": {
+      "name": "Dragon Heart",
+      "type": "relic",
+      "hp_bonus": 40,
+      "regen_per_turn": 3,
+      "tier": 5,
+      "description": "Still beating. Still burning.",
+      "lore": "The heart of a dragon does not stop when the body dies. It beats for centuries. It burns forever."
+    },
+    "mages_insight": {
+      "name": "Mage's Insight",
+      "type": "relic",
+      "mp_bonus": 30,
+      "mp_regen_per_turn": 3,
+      "tier": 5,
+      "description": "Channels the memories of a dead archmage.",
+      "lore": "The last Archmage poured her consciousness into this ring before sealing the darkness. She is still in there."
+    },
+    "tome_of_wisdom": {
+      "name": "Tome of Wisdom",
+      "type": "relic",
+      "xp_mult": 1.2,
+      "tier": 5,
+      "description": "Every page teaches something new.",
+      "lore": "Written by the Sage King. He knew everything except how to save his kingdom."
+    },
+    "lucky_ring": {
+      "name": "Lucky Ring",
+      "type": "relic",
+      "crit_bonus": 12,
+      "tier": 5,
+      "description": "Fortune favors the bold.",
+      "lore": "The gambler who wore it won every game. He lost the only game that mattered."
+    },
+    "wardens_aegis": {
+      "name": "Warden's Aegis",
+      "type": "relic",
+      "def_bonus": 5,
+      "thorns": 4,
+      "armor_pen": 15,
+      "tier": 5,
+      "description": "The last line of defense.",
+      "lore": "The Warden held the inner sanctum alone. He lasted three days. The dragon lasted four."
+    },
+    "assassins_cloak": {
+      "name": "Assassin's Cloak",
+      "type": "relic",
+      "dodge_bonus": 15,
+      "crit_bonus": 8,
+      "speed_bonus": 2,
+      "tier": 5,
+      "description": "Never seen. Never missed.",
+      "lore": "The Guild Master's cloak. He completed every contract. His last contract was his own death."
+    },
+    "reapers_gift": {
+      "name": "Reaper's Gift",
+      "type": "relic",
+      "lifesteal": 15,
+      "crit_mult_bonus": 0.15,
+      "tier": 5,
+      "description": "Take what you kill.",
+      "lore": "The god of death left this behind. He does not need it. He takes directly."
+    },
+    "crown_of_the_fallen": {
+      "name": "Crown of the Fallen",
+      "type": "relic",
+      "atk_bonus": 10,
+      "crit_bonus": 10,
+      "tier": 5,
+      "cursed": true,
+      "curse_effect": "atk_down",
+      "curse_value": 2,
+      "curse_duration": 999,
+      "description": "Every king who wore it fell.",
+      "lore": "The crown of Valdris. Three kings wore it. Three kings fell. The crown endures."
+    },
+    "heart_of_the_dragon": {
+      "name": "Heart of the Dragon",
+      "type": "relic",
+      "hp_bonus": 50,
+      "regen_per_turn": 4,
+      "atk_bonus": 3,
+      "tier": 6,
+      "description": "The dragon's heart refuses to die.",
+      "lore": "Kael'thrax's true heart. It was torn from his chest by the First King. It still burns with dragonfire."
+    },
+    "archmages_focus": {
+      "name": "Archmage's Focus",
+      "type": "relic",
+      "mp_bonus": 40,
+      "mp_regen_per_turn": 4,
+      "armor_pen": 15,
+      "tier": 6,
+      "description": "A mind that shattered empires.",
+      "lore": "The crystallized will of the last Archmage. Her thoughts still echo within. They are not always sane."
+    },
+    "reapers_scythe": {
+      "name": "Reaper's Scythe",
+      "type": "relic",
+      "lifesteal": 20,
+      "crit_mult_bonus": 0.30,
+      "tier": 6,
+      "description": "Death takes, and takes, and takes.",
+      "lore": "The god of death forged this scythe to reap the dragon. He failed. He does not speak of it."
+    },
+    "aegis_of_ages": {
+      "name": "Aegis of Ages",
+      "type": "relic",
+      "def_bonus": 8,
+      "thorns": 6,
+      "armor_pen": 25,
+      "tier": 6,
+      "description": "Unbroken since the First Age.",
+      "lore": "The shield of the First King. It has never been broken. The First King was broken instead."
+    },
+    "boots_of_swiftness": {
+      "name": "Boots of Swiftness",
+      "type": "relic",
+      "speed_bonus": 5,
+      "dodge_bonus": 12,
+      "tier": 6,
+      "description": "Time bends around the wearer.",
+      "lore": "Crafted from the threads of fate itself. The wearer exists slightly ahead of the present."
+    },
+    "soulchain_amulet": {
+      "name": "Soulchain Amulet",
+      "type": "relic",
+      "hp_bonus": 60,
+      "def_bonus": 6,
+      "regen_per_turn": 5,
+      "tier": 6,
+      "cursed": true,
+      "curse_effect": "burn",
+      "curse_value": 4,
+      "curse_duration": 999,
+      "description": "Bound to something ancient and hungry.",
+      "lore": "Forged to chain a demon lord. The demon is still inside. It is always hungry."
+    },
+    "void_talisman": {
+      "name": "Void Talisman",
+      "type": "relic",
+      "atk_bonus": 15,
+      "crit_bonus": 12,
+      "armor_pen": 30,
+      "tier": 6,
+      "cursed": true,
+      "curse_effect": "poison",
+      "curse_value": 5,
+      "curse_duration": 999,
+      "description": "It whispers promises of power.",
+      "lore": "A tear in reality, sealed and worn as jewelry. The void beyond whispers. It always whispers."
+    },
+    "mask_of_madness": {
+      "name": "Mask of Madness",
+      "type": "relic",
+      "lifesteal": 25,
+      "dodge_bonus": 10,
+      "crit_mult_bonus": 0.40,
+      "tier": 6,
+      "cursed": true,
+      "curse_effect": "stun_self",
+      "curse_value": 1,
+      "curse_duration": 999,
+      "description": "The face behind it is no longer yours.",
+      "lore": "Worn by the court jester who saw the dragon coming. He laughed. He was the only one who knew."
+    }
+  },
+  "loot_bags": {
+    "loot_bag_common": {
+      "name": "Common Loot Bag",
+      "type": "loot_bag",
+      "effect": "open_loot_bag",
+      "tier": 1,
+      "description": "A rough burlap sack. Something rattles inside."
+    },
+    "loot_bag_rare": {
+      "name": "Rare Loot Bag",
+      "type": "loot_bag",
+      "effect": "open_loot_bag",
+      "tier": 2,
+      "description": "A reinforced leather pouch. It glows faintly."
+    },
+    "loot_bag_epic": {
+      "name": "Epic Loot Bag",
+      "type": "loot_bag",
+      "effect": "open_loot_bag",
+      "tier": 3,
+      "description": "A velvet sack sealed with arcane wax. Power pulses within."
+    },
+    "loot_bag_legendary": {
+      "name": "Legendary Loot Bag",
+      "type": "loot_bag",
+      "effect": "open_loot_bag",
+      "tier": 4,
+      "description": "A golden chest pouch bound in dragonhide. It hums with ancient energy."
+    },
+    "loot_bag_mythic": {
+      "name": "Mythic Loot Bag",
+      "type": "loot_bag",
+      "effect": "open_loot_bag",
+      "tier": 5,
+      "description": "A crystalline container that defies physics. Reality bends around it."
+    }
+  }
+}

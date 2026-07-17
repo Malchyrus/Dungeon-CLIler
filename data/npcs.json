@@ -1,0 +1,231 @@
+{
+  "merchants": {
+    "grizzled_merchant": {
+      "name": "Grizzled Merchant",
+      "type": "merchant",
+      "dialogue": {
+        "greeting": "Ah, another adventurer. I have goods if you have coin.",
+        "no_gold": "Come back when you have gold, friend.",
+        "farewell": "Stay sharp down there. The dungeon eats the careless."
+      },
+      "inventory": ["health_potion", "iron_blade", "chainmail", "silver_key"],
+      "buy_multiplier": 0.5,
+      "sell_multiplier": 0.3
+    },
+    "mystic_merchant": {
+      "name": "Mystic Merchant",
+      "type": "merchant",
+      "dialogue": {
+        "greeting": "Welcome, seeker. I deal in arcane wares.",
+        "no_gold": "Magic demands sacrifice. Return with gold.",
+        "farewell": "May the arcane guide your path."
+      },
+      "inventory": ["arcane_staff", "mana_crystal", "robes_of_arcana", "greater_health_potion"],
+      "buy_multiplier": 0.6,
+      "sell_multiplier": 0.35
+    },
+    "black_market": {
+      "name": "Shadowy Figure",
+      "type": "merchant",
+      "dialogue": {
+        "greeting": "Psst... I have what you need. If the price is right.",
+        "no_gold": "No coin, no goods. Simple as that.",
+        "farewell": "Don't tell anyone about me. I have enemies."
+      },
+      "inventory": ["shadow_dagger", "shadow_cloak", "thief_cloak", "full_restore"],
+      "buy_multiplier": 0.7,
+      "sell_multiplier": 0.4
+    }
+  },
+  "quest_givers": {
+    "old_knight": {
+      "name": "Sir Aldric",
+      "type": "quest_giver",
+      "dialogue": {
+        "greeting": "I am Sir Aldric, last of the King's Guard. The dungeon must be cleansed.",
+        "quest": "The skeleton lord lurks on floor 3. Defeat him and bring me his crown.",
+        "quest_complete": "You did it! The realm owes you a debt. Take this blessing.",
+        "no_quest": "The dungeon grows more dangerous. Stay vigilant.",
+        "reward": "holy_sword"
+      },
+      "quest": {
+        "type": "kill",
+        "target": "skeleton",
+        "floor": 3,
+        "amount": 5
+      }
+    },
+    "lost_scholar": {
+      "name": "Elena the Scholar",
+      "type": "quest_giver",
+      "dialogue": {
+        "greeting": "Thank goodness someone found me! I was researching the dungeon's artifacts.",
+        "quest": "I need an Arcane Crystal from the deeper floors. It holds ancient power.",
+        "quest_complete": "This is exactly what I needed! You've helped advance magical knowledge.",
+        "no_quest": "Be careful with the magical creatures. They guard their treasures fiercely.",
+        "reward": "arcane_crystal"
+      },
+      "quest": {
+        "type": "fetch",
+        "target": "arcane_crystal",
+        "floor": 4
+      }
+    }
+  },
+  "key_sellers": {
+    "celdric": {
+      "name": "Sir Celdric",
+      "type": "key_seller",
+      "dialogue": {
+        "greeting": "I am Sir Celdric. I sealed the passage below — something terrible lurks there.",
+        "lore": "The sealed floor holds power beyond imagination. But the lock requires sacrifice.",
+        "sell_success": "The key is yours. Use it wisely. The creatures within show no mercy.",
+        "sell_fail": "You don't have enough gold. Kill the creatures on this floor first.",
+        "already_bought": "You already have the key. Find the locked door on floor 2.",
+        "farewell": "The sealed depths await. But only with the key."
+      }
+    }
+  },
+  "lore_npcs": {
+    "wandering_ghost": {
+      "name": "Wandering Spirit",
+      "type": "lore",
+      "dialogue": {
+        "greeting": "I... I cannot rest. The dragon took everything.",
+        "lore": "This dungeon was once the kingdom of Valdris. The dragon corrupted it from within.",
+        "hint": "The dragon is vulnerable to holy weapons. Seek the Paladin's blade."
+      }
+    },
+    "dungeon_echo": {
+      "name": "Dungeon Echo",
+      "type": "lore",
+      "dialogue": {
+        "greeting": "A spectral whisper echoes through the walls...",
+        "lore": "Five floors deep. The dragon Kael'thrax sits at the bottom. Many have tried. None returned.",
+        "hint": "Stock up on potions before floor 4. The trolls hit hard."
+      }
+    },
+    "fallen_knight": {
+      "name": "Sir Kaelan's Ghost",
+      "type": "lore",
+      "dialogue": {
+        "greeting": "You... you can see me? I am Sir Kaelan. I betrayed my king.",
+        "lore": "I opened the gates for the dragon. I thought I wanted power. The Grail promised me a kingdom. It gave me a tomb.",
+        "hint": "The Grail at the bottom grants one wish. But the wish is never what you think it is. Destroy it. Please."
+      }
+    },
+    "ancient_scholar": {
+      "name": "Valdris Archivist",
+      "type": "lore",
+      "dialogue": {
+        "greeting": "I have been here longer than I remember. Perhaps longer than I have existed.",
+        "lore": "The Grail of Wishes was forged from the bones of the first king. It feeds on desire. Every wish makes it stronger.",
+        "hint": "Look for notes in the walls. Someone has been here before. Many someones. They all made the same mistake."
+      }
+    },
+    "memory_wraith": {
+      "name": "Forgotten One",
+      "type": "lore",
+      "dialogue": {
+        "greeting": "I... I had a name once. I had a class. I had a wish.",
+        "lore": "The Grail took everything. My name. My face. My purpose. I am what remains when a wish is granted.",
+        "hint": "You have been here before. You will be here again. The only way out is to stop wishing."
+      }
+    }
+  },
+  "healers": {
+    "wandering_priest": {
+      "name": "Wandering Priest",
+      "type": "healer",
+      "dialogue": {
+        "greeting": "The light still shines, even in this darkness. I can mend your wounds.",
+        "heal_success": "The wound is mended. Walk carefully.",
+        "heal_fail": "You are already whole. Or perhaps you cannot afford my aid.",
+        "farewell": "May the old light guide your steps."
+      },
+      "heal_cost_per_hp": 2
+    },
+    "dungeon_medic": {
+      "name": "Dungeon Medic",
+      "type": "healer",
+      "dialogue": {
+        "greeting": "I've seen too many die down here. Let me help you survive.",
+        "heal_success": "You'll live a while longer. That's all I can promise.",
+        "heal_fail": "I can't heal what isn't broken. Or what you can't pay for.",
+        "farewell": "Stay alive. That's an order."
+      },
+      "heal_cost_per_hp": 3
+    }
+  },
+  "item_traders": {
+    "cursed_alchemist": {
+      "name": "Cursed Alchemist",
+      "type": "item_trader",
+      "dialogue": {
+        "greeting": "I transmute... Give me two of worth, and I shall give you one of greater worth.",
+        "trade_success": "The alchemy holds! Behold your new treasure.",
+        "trade_fail": "You lack the necessary components. Two weapons or artifacts, please.",
+        "farewell": "The transmutation circle never forgets."
+      },
+      "required_count": 2,
+      "accepted_types": ["weapon", "accessory"]
+    },
+    "forgemaster": {
+      "name": "Forgemaster Kael",
+      "type": "item_trader",
+      "dialogue": {
+        "greeting": "I was the royal forger of Valdris. I can reshape any metal. Bring me two pieces, and I'll make something new.",
+        "trade_success": "The flames speak. Your new weapon is born.",
+        "trade_fail": "Two weapons or artifacts. That is the price of creation.",
+        "farewell": "The forge burns eternal."
+      },
+      "required_count": 2,
+      "accepted_types": ["weapon", "accessory"]
+    }
+  },
+  "map_seekers": {
+    "blind_prophet": {
+      "name": "Blind Prophet",
+      "type": "map_seeker",
+      "dialogue": {
+        "greeting": "I see not with eyes, but with the dungeon's memory. But my memory fails me here.",
+        "quest": "Clear every room on this floor. Kill every creature. Open every chest. Then I will know this place.",
+        "quest_complete": "The floor bows to your will. Behold -- all is revealed to me.",
+        "quest_incomplete": "Not yet. There are still rooms that resist your light.",
+        "farewell": "The map remembers what you forget."
+      }
+    },
+    "lost_mapper": {
+      "name": "Lost Mapper",
+      "type": "map_seeker",
+      "dialogue": {
+        "greeting": "I was mapping this dungeon when I lost my way. I can't leave until I know every room.",
+        "quest": "Please -- clear this entire floor. Every monster, every chest. Then I can draw the map and leave.",
+        "quest_complete": "At last! I can see the shape of this place. Thank you, adventurer.",
+        "quest_incomplete": "I still hear echoes in unexplored rooms. There is more to find.",
+        "farewell": "Don't get lost like me."
+      }
+    }
+  },
+  "trapped_npcs": {
+    "trapped_adventurer": {
+      "name": "Trapped Adventurer",
+      "type": "trapped",
+      "dialogue": {
+        "greeting": "Hey! Over here! I've been stuck for days.",
+        "lore": "The mimics... they look just like chests. Don't trust anything that looks too perfect.",
+        "hint": "Listen for the faint breathing. Real chests don't breathe.",
+        "rescue": "Thank you! I thought I'd die down here. Take this as thanks.",
+        "trade_offer": "I found something valuable but can't use it. Want to trade? I need a Health Potion.",
+        "trade_accept": "Deal! Here, take this. It served me well.",
+        "trade_refuse": "No worries. If you change your mind, I'll be here.",
+        "follow": "I'll follow you for a bit. Watch my back and I'll watch yours.",
+        "no_gold": "I don't have much... but I can share what I know.",
+        "farewell": "Be careful out there. And thanks again."
+      },
+      "trade_item": "silver_key",
+      "trade_want": "health_potion",
+      "reward_item": "iron_blade"
+    }
+  }
+}

@@ -1,0 +1,650 @@
+{
+  "schema_version": 1,
+  "player": {
+    "name": "Td",
+    "class_key": "warrior",
+    "hp": 51,
+    "max_hp": 52,
+    "mp": 18,
+    "max_mp": 18,
+    "base_atk": 15,
+    "base_def": 11,
+    "xp": 2,
+    "level": 4,
+    "gold": 22,
+    "weapon": {
+      "name": "Rusty Dagger",
+      "type": "weapon",
+      "weapon_type": "dagger",
+      "atk": 2,
+      "description": "A small blade favored by Valdris's thieves' guild. Quick and silent.",
+      "value": 10,
+      "tier": 1
+    },
+    "armor": null,
+    "accessory": null,
+    "relics": [],
+    "inventory": [
+      {
+        "name": "Health Potion",
+        "type": "consumable",
+        "effect": "heal",
+        "value": 15,
+        "description": "Valdris alchemists once perfected healing draughts. This is all that remains.",
+        "tier": 1
+      },
+      {
+        "name": "Rare Loot Bag",
+        "type": "loot_bag",
+        "effect": "open_loot_bag",
+        "tier": 2,
+        "description": "A reinforced leather pouch. It glows faintly."
+      },
+      {
+        "name": "Silver Key",
+        "type": "key",
+        "key_type": "silver",
+        "description": "A tarnished silver key from Valdris's treasury. Opens silver locks.",
+        "value": 0,
+        "id": "silver_key",
+        "buy_price": 1
+      },
+      {
+        "name": "Mana Crystal",
+        "type": "consumable",
+        "effect": "restore_mp",
+        "value": 15,
+        "description": "Crystallized mana from the arcane wells beneath Valdris. It hums with power.",
+        "tier": 1
+      },
+      {
+        "name": "Chest Key",
+        "type": "key",
+        "key_type": "chest",
+        "description": "A sturdy iron key. Opens any sealed chest found in the dungeon.",
+        "value": 15
+      },
+      {
+        "name": "Rare Loot Bag",
+        "type": "loot_bag",
+        "effect": "open_loot_bag",
+        "tier": 2,
+        "description": "A reinforced leather pouch. It glows faintly."
+      },
+      {
+        "name": "Rusty Sword",
+        "type": "weapon",
+        "weapon_type": "sword",
+        "atk": 2,
+        "description": "A corroded blade from Valdris's armory. The kingdom's last defenders fell with these.",
+        "value": 10,
+        "tier": 1
+      },
+      {
+        "name": "Skeleton Key",
+        "type": "key",
+        "key_type": "skeleton",
+        "description": "A key shaped like a skeleton. It radiates cold energy."
+      },
+      {
+        "name": "Health Potion",
+        "type": "consumable",
+        "effect": "heal",
+        "value": 15,
+        "description": "Valdris alchemists once perfected healing draughts. This is all that remains.",
+        "tier": 1
+      },
+      {
+        "name": "Strength Elixir",
+        "type": "consumable",
+        "effect": "buff_atk",
+        "value": 3,
+        "description": "Brewed for Valdris's champions. It surges through your veins.",
+        "tier": 2
+      },
+      {
+        "name": "Rare Loot Bag",
+        "type": "loot_bag",
+        "effect": "open_loot_bag",
+        "tier": 2,
+        "description": "A reinforced leather pouch. It glows faintly."
+      }
+    ],
+    "floor": 2,
+    "x": 5,
+    "y": 3,
+    "explored": [
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        4,
+        3
+      ]
+    ],
+    "kills": {
+      "slime": 1,
+      "giant_spider": 2,
+      "mushroom_crawler": 2,
+      "giant_snake": 1
+    },
+    "revive_used": false,
+    "cooldowns": {
+      "war_cry": 0,
+      "shield_bash": 0,
+      "cleave": 0,
+      "battle_stance": 0,
+      "execute": 0
+    },
+    "statuses": []
+  },
+  "rooms": {
+    "4,4": {
+      "x": 4,
+      "y": 4,
+      "room_type": "empty",
+      "floor": 2,
+      "description": "The entrance to the dungeon. Cold air rushes past you.",
+      "doors": {
+        "north": true,
+        "south": true,
+        "east": true,
+        "west": true
+      },
+      "items": [],
+      "enemy": null,
+      "npc": null,
+      "chest": null,
+      "chest_opened": false,
+      "cleared": true,
+      "locked": null,
+      "visited": true,
+      "memory_fragment": null,
+      "lore_note": "A weathered scroll: \"The paladins prayed. The god was silent. The paladins stopped praying.\""
+    },
+    "2,4": {
+      "x": 2,
+      "y": 4,
+      "room_type": "monster",
+      "floor": 2,
+      "description": "A bare room. Water drips from the ceiling.",
+      "doors": {
+        "north": true,
+        "south": true,
+        "east": true,
+        "west": false
+      },
+      "items": [],
+      "enemy": {
+        "name": "Cave Dweller",
+        "hp": 19,
+        "atk": 6,
+        "def": 2,
+        "speed": 10,
+        "accuracy": 100,
+        "crit": 0.05,
+        "xp": 18,
+        "gold": 7,
+        "description": "A hunched humanoid with glowing eyes and a rusty pickaxe.",
+        "loot_table": [
+          {
+            "item": "iron_blade",
+            "chance": 0.12
+          },
+          {
+            "item": "health_potion",
+            "chance": 0.2
+          }
+        ],
+        "abilities": {
+          "pickaxe_strike": {
+            "name": "Pickaxe Strike",
+            "chance": 0.4,
+            "accuracy": 90,
+            "type": "damage",
+            "value": 7,
+            "dmg_scale": 0.4,
+            "message": "The cave dweller swings its pickaxe!"
+          }
+        },
+        "key": "cave_dweller",
+        "max_hp": 19,
+        "statuses": []
+      },
+      "npc": null,
+      "chest": null,
+      "chest_opened": false,
+      "cleared": false,
+      "locked": null,
+      "visited": false,
+      "memory_fragment": null,
+      "lore_note": null
+    },
+    "5,5": {
+      "x": 5,
+      "y": 5,
+      "room_type": "monster",
+      "floor": 2,
+      "description": "An empty chamber. Dust settles on cracked stone.",
+      "doors": {
+        "north": true,
+        "south": false,
+        "east": false,
+        "west": true
+      },
+      "items": [],
+      "enemy": {
+        "name": "Tunnel Worm",
+        "hp": 24,
+        "atk": 6,
+        "def": 2,
+        "speed": 11,
+        "accuracy": 100,
+        "crit": 0.05,
+        "xp": 20,
+        "gold": 9,
+        "description": "A massive burrowing worm. It strikes from the darkness.",
+        "loot_table": [
+          {
+            "item": "health_potion",
+            "chance": 0.25
+          },
+          {
+            "item": "strength_elixir",
+            "chance": 0.15
+          }
+        ],
+        "first_strike": true,
+        "abilities": {
+          "ambush_strike": {
+            "name": "Ambush Strike",
+            "chance": 0.35,
+            "accuracy": 90,
+            "type": "damage",
+            "value": 7,
+            "dmg_scale": 0.4,
+            "message": "The worm lunges from the shadows!"
+          }
+        },
+        "key": "tunnel_worm",
+        "max_hp": 24,
+        "statuses": []
+      },
+      "npc": null,
+      "chest": null,
+      "chest_opened": false,
+      "cleared": false,
+      "locked": null,
+      "visited": false,
+      "memory_fragment": null,
+      "lore_note": null
+    },
+    "3,4": {
+      "x": 3,
+      "y": 4,
+      "room_type": "treasure",
+      "floor": 2,
+      "description": "An empty chamber. Dust settles on cracked stone.",
+      "doors": {
+        "north": false,
+        "south": true,
+        "east": true,
+        "west": true
+      },
+      "items": [],
+      "enemy": null,
+      "npc": null,
+      "chest": {
+        "type": "relic",
+        "tier": 3
+      },
+      "chest_opened": false,
+      "cleared": false,
+      "locked": null,
+      "visited": false,
+      "memory_fragment": null,
+      "lore_note": null
+    },
+    "1,5": {
+      "x": 1,
+      "y": 5,
+      "room_type": "stairs",
+      "floor": 2,
+      "description": "A spiral staircase descends into darkness below.",
+      "doors": {
+        "north": false,
+        "south": false,
+        "east": true,
+        "west": false
+      },
+      "items": [],
+      "enemy": null,
+      "npc": null,
+      "chest": null,
+      "chest_opened": false,
+      "cleared": false,
+      "locked": null,
+      "visited": false,
+      "memory_fragment": null,
+      "lore_note": null
+    },
+    "4,3": {
+      "x": 4,
+      "y": 3,
+      "room_type": "boss",
+      "floor": 2,
+      "description": "A silent room. Your torch flickers in the breeze.",
+      "doors": {
+        "north": false,
+        "south": true,
+        "east": true,
+        "west": false
+      },
+      "items": [],
+      "enemy": null,
+      "npc": null,
+      "chest": null,
+      "chest_opened": false,
+      "cleared": true,
+      "locked": null,
+      "visited": true,
+      "memory_fragment": null,
+      "lore_note": null
+    },
+    "5,4": {
+      "x": 5,
+      "y": 4,
+      "room_type": "monster",
+      "floor": 2,
+      "description": "An empty chamber. Dust settles on cracked stone.",
+      "doors": {
+        "north": true,
+        "south": true,
+        "east": false,
+        "west": true
+      },
+      "items": [],
+      "enemy": {
+        "name": "Tunnel Worm",
+        "hp": 24,
+        "atk": 6,
+        "def": 2,
+        "speed": 11,
+        "accuracy": 100,
+        "crit": 0.05,
+        "xp": 20,
+        "gold": 9,
+        "description": "A massive burrowing worm. It strikes from the darkness.",
+        "loot_table": [
+          {
+            "item": "health_potion",
+            "chance": 0.25
+          },
+          {
+            "item": "strength_elixir",
+            "chance": 0.15
+          }
+        ],
+        "first_strike": true,
+        "abilities": {
+          "ambush_strike": {
+            "name": "Ambush Strike",
+            "chance": 0.35,
+            "accuracy": 90,
+            "type": "damage",
+            "value": 7,
+            "dmg_scale": 0.4,
+            "message": "The worm lunges from the shadows!"
+          }
+        },
+        "key": "tunnel_worm",
+        "max_hp": 24,
+        "statuses": []
+      },
+      "npc": null,
+      "chest": null,
+      "chest_opened": false,
+      "cleared": false,
+      "locked": null,
+      "visited": false,
+      "memory_fragment": null,
+      "lore_note": null
+    },
+    "2,3": {
+      "x": 2,
+      "y": 3,
+      "room_type": "treasure",
+      "floor": 2,
+      "description": "A silent room. Your torch flickers in the breeze.",
+      "doors": {
+        "north": false,
+        "south": true,
+        "east": false,
+        "west": false
+      },
+      "items": [],
+      "enemy": null,
+      "npc": null,
+      "chest": {
+        "type": "equipment",
+        "tier": 3
+      },
+      "chest_opened": false,
+      "cleared": false,
+      "locked": null,
+      "visited": false,
+      "memory_fragment": null,
+      "lore_note": null
+    },
+    "4,5": {
+      "x": 4,
+      "y": 5,
+      "room_type": "monster",
+      "floor": 2,
+      "description": "A bare room. Water drips from the ceiling.",
+      "doors": {
+        "north": true,
+        "south": false,
+        "east": true,
+        "west": true
+      },
+      "items": [],
+      "enemy": {
+        "name": "Stone Golem",
+        "hp": 27,
+        "atk": 4,
+        "def": 5,
+        "speed": 5,
+        "accuracy": 80,
+        "crit": 0.0,
+        "xp": 21,
+        "gold": 10,
+        "description": "A towering construct of living stone. It moves with grinding purpose.",
+        "loot_table": [
+          {
+            "item": "greater_health_potion",
+            "chance": 0.2
+          },
+          {
+            "item": "chainmail",
+            "chance": 0.1
+          }
+        ],
+        "abilities": {
+          "harden": {
+            "name": "Harden",
+            "chance": 0.3,
+            "accuracy": 100,
+            "type": "buff",
+            "value": 3,
+            "stat": "def",
+            "message": "The golem's stone shell hardens!"
+          }
+        },
+        "key": "stone_golem",
+        "max_hp": 27,
+        "statuses": []
+      },
+      "npc": null,
+      "chest": null,
+      "chest_opened": false,
+      "cleared": false,
+      "locked": null,
+      "visited": false,
+      "memory_fragment": null,
+      "lore_note": null
+    },
+    "5,3": {
+      "x": 5,
+      "y": 3,
+      "room_type": "empty",
+      "floor": 2,
+      "description": "An empty chamber. Dust settles on cracked stone.",
+      "doors": {
+        "north": true,
+        "south": true,
+        "east": false,
+        "west": true
+      },
+      "items": [],
+      "enemy": null,
+      "npc": null,
+      "chest": null,
+      "chest_opened": false,
+      "cleared": false,
+      "locked": null,
+      "visited": true,
+      "memory_fragment": null,
+      "lore_note": null
+    },
+    "2,5": {
+      "x": 2,
+      "y": 5,
+      "room_type": "npc",
+      "floor": 2,
+      "description": "A bare room. Water drips from the ceiling.",
+      "doors": {
+        "north": true,
+        "south": false,
+        "east": true,
+        "west": true
+      },
+      "items": [],
+      "enemy": null,
+      "npc": {
+        "name": "Trapped Adventurer",
+        "type": "trapped",
+        "dialogue": {
+          "greeting": "Hey! Over here! I've been stuck for days.",
+          "lore": "The mimics... they look just like chests. Don't trust anything that looks too perfect.",
+          "hint": "Listen for the faint breathing. Real chests don't breathe.",
+          "rescue": "Thank you! I thought I'd die down here. Take this as thanks.",
+          "trade_offer": "I found something valuable but can't use it. Want to trade? I need a Health Potion.",
+          "trade_accept": "Deal! Here, take this. It served me well.",
+          "trade_refuse": "No worries. If you change your mind, I'll be here.",
+          "follow": "I'll follow you for a bit. Watch my back and I'll watch yours.",
+          "no_gold": "I don't have much... but I can share what I know.",
+          "farewell": "Be careful out there. And thanks again."
+        },
+        "trade_item": "silver_key",
+        "trade_want": "health_potion",
+        "reward_item": "iron_blade"
+      },
+      "chest": null,
+      "chest_opened": false,
+      "cleared": false,
+      "locked": null,
+      "visited": false,
+      "memory_fragment": null,
+      "lore_note": null
+    },
+    "3,5": {
+      "x": 3,
+      "y": 5,
+      "room_type": "locked_door",
+      "floor": 2,
+      "description": "A massive iron door with a skeleton-shaped keyhole seals the passage below.",
+      "doors": {
+        "north": true,
+        "south": false,
+        "east": true,
+        "west": true
+      },
+      "items": [],
+      "enemy": null,
+      "npc": null,
+      "chest": null,
+      "chest_opened": false,
+      "cleared": false,
+      "locked": null,
+      "visited": false,
+      "memory_fragment": null,
+      "lore_note": null
+    },
+    "5,2": {
+      "x": 5,
+      "y": 2,
+      "room_type": "monster",
+      "floor": 2,
+      "description": "An empty chamber. Dust settles on cracked stone.",
+      "doors": {
+        "north": false,
+        "south": true,
+        "east": false,
+        "west": false
+      },
+      "items": [],
+      "enemy": {
+        "name": "Crystal Beetle",
+        "hp": 22,
+        "atk": 5,
+        "def": 2,
+        "speed": 8,
+        "accuracy": 100,
+        "crit": 0.0,
+        "xp": 17,
+        "gold": 8,
+        "description": "A beetle with a crystalline shell that refracts light.",
+        "loot_table": [
+          {
+            "item": "health_potion",
+            "chance": 0.25
+          },
+          {
+            "item": "mana_crystal",
+            "chance": 0.15
+          }
+        ],
+        "abilities": {
+          "crystal_armor": {
+            "name": "Crystal Armor",
+            "chance": 0.35,
+            "accuracy": 100,
+            "type": "buff",
+            "value": 2,
+            "stat": "def",
+            "message": "The beetle's shell hardens! Defense increases!"
+          }
+        },
+        "key": "crystal_beetle",
+        "max_hp": 22,
+        "statuses": []
+      },
+      "npc": null,
+      "chest": null,
+      "chest_opened": false,
+      "cleared": false,
+      "locked": null,
+      "visited": false,
+      "memory_fragment": null,
+      "lore_note": null
+    }
+  },
+  "ascension": 0,
+  "lore_entries": []
+}

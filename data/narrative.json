@@ -1,0 +1,116 @@
+{
+  "wish_outcomes": {
+    "warrior_wish": [
+      "The Grail glows. Your kingdom rises from the ashes...",
+      "",
+      "But the citizens are undead. They claw at their thrones.",
+      "The streets are silent except for the moaning of ghosts.",
+      "",
+      "You are king of a graveyard. Your wish is granted.",
+      "You will rule this tomb for eternity.",
+      "",
+      "    WISH GRANTED. CYCLE CONTINUES."
+    ],
+    "rogue_wish": [
+      "The Grail glows. Time rewinds...",
+      "",
+      "The mistake is undone. But you can't remember what it was.",
+      "You search your mind -- nothing. Just a hollow feeling.",
+      "Something important is gone. You will never find it.",
+      "",
+      "    WISH GRANTED. CYCLE CONTINUES."
+    ],
+    "mage_wish": [
+      "The Grail glows. The darkness is sealed...",
+      "",
+      "Inside you. You feel it writhing in your chest.",
+      "You try to speak but your mouth won't move.",
+      "You are a prison. You will always be a prison.",
+      "",
+      "    WISH GRANTED. CYCLE CONTINUES."
+    ],
+    "paladin_wish": [
+      "The Grail glows. A divine presence fills you...",
+      "",
+      "But it's not your god. Something ancient and hungry",
+      "wears the mask of divinity. You feel its hunger.",
+      "You will spread its false faith. You have no choice.",
+      "",
+      "    WISH GRANTED. CYCLE CONTINUES."
+    ]
+  },
+  "true_ending": [
+    "You raise your weapon against the Grail.",
+    "",
+    "The Grail whispers: \"You would destroy me?",
+    "After everything? The wish... it was real...\"",
+    "",
+    "\"No,\" you say. \"It was never what I wanted.\"",
+    "",
+    "The Grail shatters. Light floods the dungeon.",
+    "The walls crack. The monsters dissolve.",
+    "",
+    "You see them -- the other trapped souls.",
+    "Sir Aldric. Elena. The merchant. The wandering spirit.",
+    "They smile. They fade. They are free.",
+    "",
+    "You run. The dungeon collapses behind you.",
+    "You don't look back.",
+    "",
+    "You wake up outside. Grass. Sun. Wind.",
+    "",
+    "You don't know your name.",
+    "You don't know why you're here.",
+    "You don't remember the dungeon, the Grail, or the wish.",
+    "",
+    "But for the first time...",
+    "",
+    "    Y O U  A R E  F R E E",
+    "",
+    "    TRUE ENDING: THE UNBOUND"
+  ],
+  "memory_fragments": [
+    "You find a note in your handwriting. It says: \"DON'T WISH. DESTROY IT.\"",
+    "A skeleton in the corner wears your exact armor. You feel nothing. You've seen this before.",
+    "You've killed this goblin before. You're sure of it. It died the same way.",
+    "The merchant greets you by name. You never told him your name.",
+    "You scratch a tally mark on the wall. There are already hundreds.",
+    "This room feels wrong. Not dangerous -- familiar. Like a dream you can't quite remember.",
+    "You find a mirror. Your reflection moves a beat too late.",
+    "There's a grave with your name on it. The date is today."
+  ],
+  "lore_entries": {
+    "world": [
+      {
+        "title": "The Kingdom of Valdris",
+        "text": "Valdris was a kingdom of light, ruled by a line of kings who possessed the Grail of Wishes. For generations, the Grail ensured prosperity. Crops grew tall. Wars ended. The people believed they were blessed."
+      },
+      {
+        "title": "The Fall of Valdris",
+        "text": "King Aethorn, the last ruler, was betrayed by his most trusted knight, Sir Kaelan. Kaelan made a deal with the dragon Kael'thrax -- in exchange for power, he opened the gates. The dragon consumed the kingdom, corrupting it into the dungeon below."
+      },
+      {
+        "title": "The Grail of Wishes",
+        "text": "The Grail does not give. It takes. Every wish is a trap. The desire of the wisher becomes their prison. The kingdom. The mistake. The darkness. The faith. None of them were ever what they wanted. The Grail feeds on hope, and hope is the cruelest chain."
+      }
+    ],
+    "class": [
+      {
+        "title": "The Last King's Oath (Warrior)",
+        "text": "Sir Aldric was the last king's champion. He swore to protect Valdris with his life. He failed. Now he wanders the dungeon, searching for a way to undo what cannot be undone."
+      },
+      {
+        "title": "The Stolen Shadow (Rogue)",
+        "text": "There was a thief who stole from a god. The god cursed them -- every mistake would be undone, but the memory of what was lost would haunt them forever. They would search for peace but never find it."
+      },
+      {
+        "title": "The Broken Seal (Mage)",
+        "text": "The mages of Valdris sealed the dragon behind a barrier of pure will. One scholar, driven by curiosity, cracked the seal. The darkness poured through. It never stopped pouring."
+      },
+      {
+        "title": "The Abandoned Faith (Paladin)",
+        "text": "The paladins of Valdris drew power from their god. When the dragon came, the god was silent. The paladins prayed. They begged. Nothing answered. Some lost their faith. Some lost their minds."
+      }
+    ]
+  }
+}

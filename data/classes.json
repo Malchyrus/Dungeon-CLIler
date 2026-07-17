@@ -1,0 +1,204 @@
+{
+  "warrior": {
+    "name": "Warrior",
+    "description": "A mighty fighter. Heavy armor and axes are their forte.",
+    "hp": 40,
+    "atk": 6,
+    "def": 5,
+    "mp": 15,
+    "level_up_stats": {"hp": 4, "mp": 1, "atk": 3, "def": 2},
+    "weapon_affinity": ["axe"],
+    "damage_mult": 1.5,
+    "wish": "Restore my kingdom",
+    "wish_id": "warrior_wish",
+    "abilities": {
+      "war_cry": {
+        "name": "War Cry",
+        "description": "Stun enemy for 1 turn",
+        "mp_cost": 3,
+        "cooldown": 4,
+        "level_req": 1
+      },
+      "shield_bash": {
+        "name": "Shield Bash",
+        "description": "Reduce enemy ATK by 3",
+        "mp_cost": 3,
+        "cooldown": 3,
+        "level_req": 1
+      },
+      "cleave": {
+        "name": "Cleave",
+        "description": "Deal 150% damage, ignore 2 DEF",
+        "mp_cost": 5,
+        "cooldown": 3,
+        "level_req": 3
+      },
+      "battle_stance": {
+        "name": "Battle Stance",
+        "description": "+5 DEF for 3 turns, bigger shield",
+        "mp_cost": 5,
+        "cooldown": 5,
+        "level_req": 5
+      },
+      "execute": {
+        "name": "Execute",
+        "description": "2x damage if enemy below 30% HP",
+        "mp_cost": 7,
+        "cooldown": 6,
+        "level_req": 7
+      }
+    }
+  },
+  "rogue": {
+    "name": "Rogue",
+    "description": "A swift shadow. Daggers and crits are their game.",
+    "hp": 30,
+    "atk": 8,
+    "def": 3,
+    "mp": 10,
+    "level_up_stats": {"hp": 2, "mp": 2, "atk": 4, "def": 2},
+    "weapon_affinity": ["dagger"],
+    "damage_mult": 1.5,
+    "crit_chance": 0.25,
+    "crit_mult": 2.0,
+    "wish": "Undo my greatest mistake",
+    "wish_id": "rogue_wish",
+    "abilities": {
+      "backstab": {
+        "name": "Backstab",
+        "description": "First attack deals double damage",
+        "mp_cost": 2,
+        "cooldown": 4,
+        "level_req": 1
+      },
+      "poison_blade": {
+        "name": "Poison Blade",
+        "description": "3 poison damage per turn for 3 turns",
+        "mp_cost": 3,
+        "cooldown": 5,
+        "level_req": 1
+      },
+      "smoke_bomb": {
+        "name": "Smoke Bomb",
+        "description": "+25% dodge for 3 turns",
+        "mp_cost": 3,
+        "cooldown": 4,
+        "level_req": 3
+      },
+      "steal": {
+        "name": "Steal",
+        "description": "Chance to steal gold or an item",
+        "mp_cost": 4,
+        "cooldown": 4,
+        "level_req": 5
+      },
+      "assassinate": {
+        "name": "Assassinate",
+        "description": "Deal triple damage",
+        "mp_cost": 5,
+        "cooldown": 7,
+        "level_req": 7
+      }
+    }
+  },
+  "mage": {
+    "name": "Mage",
+    "description": "A wielder of arcane forces. Staffs and spells are their domain.",
+    "hp": 25,
+    "atk": 3,
+    "def": 2,
+    "mp": 30,
+    "level_up_stats": {"hp": 1, "mp": 5, "atk": 2, "def": 2},
+    "weapon_affinity": ["staff"],
+    "damage_mult": 1.5,
+    "wish": "Seal the darkness I unleashed",
+    "wish_id": "mage_wish",
+    "abilities": {
+      "fireball": {
+        "name": "Fireball",
+        "description": "Deal 10 + ATK/2 magic damage",
+        "mp_cost": 8,
+        "cooldown": 2,
+        "level_req": 1
+      },
+      "ice_shield": {
+        "name": "Ice Shield",
+        "description": "Block all damage this turn",
+        "mp_cost": 10,
+        "cooldown": 4,
+        "level_req": 1
+      },
+      "heal": {
+        "name": "Heal",
+        "description": "Restore 15 HP",
+        "mp_cost": 12,
+        "cooldown": 3,
+        "level_req": 1
+      },
+      "lightning_bolt": {
+        "name": "Lightning Bolt",
+        "description": "Magic damage + 30% stun chance",
+        "mp_cost": 10,
+        "cooldown": 3,
+        "level_req": 4
+      },
+      "mana_shield": {
+        "name": "Mana Shield",
+        "description": "Next 3 attacks drain MP instead of HP",
+        "mp_cost": 15,
+        "cooldown": 5,
+        "level_req": 6
+      }
+    }
+  },
+  "paladin": {
+    "name": "Paladin",
+    "description": "A holy knight. Balanced stats with divine smite.",
+    "hp": 35,
+    "atk": 5,
+    "def": 4,
+    "mp": 15,
+    "level_up_stats": {"hp": 3, "mp": 3, "atk": 2, "def": 2},
+    "weapon_affinity": ["holy"],
+    "damage_mult": 1.5,
+    "wish": "Feel my god's presence again",
+    "wish_id": "paladin_wish",
+    "abilities": {
+      "holy_smite": {
+        "name": "Holy Smite",
+        "description": "Deal 8 holy damage (bonus vs undead)",
+        "mp_cost": 6,
+        "cooldown": 3,
+        "level_req": 1
+      },
+      "bless": {
+        "name": "Bless",
+        "description": "Regenerate 5 HP per turn for 3 turns",
+        "mp_cost": 8,
+        "cooldown": 5,
+        "level_req": 1
+      },
+      "lay_on_hands": {
+        "name": "Lay on Hands",
+        "description": "Restore 40% max HP",
+        "mp_cost": 10,
+        "cooldown": 6,
+        "level_req": 3
+      },
+      "retribution": {
+        "name": "Retribution",
+        "description": "Deal damage based on missing HP",
+        "mp_cost": 8,
+        "cooldown": 4,
+        "level_req": 5
+      },
+      "divine_shield": {
+        "name": "Divine Shield",
+        "description": "Immune to all damage for 1 turn",
+        "mp_cost": 12,
+        "cooldown": 8,
+        "level_req": 8
+      }
+    }
+  }
+}

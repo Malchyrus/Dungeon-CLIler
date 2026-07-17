@@ -1,0 +1,1205 @@
+{
+  "floor_1": {
+    "rat": {
+      "name": "Giant Rat",
+      "hp": 10,
+      "atk": 3,
+      "def": 0,
+      "speed": 12,
+      "accuracy": 100,
+      "crit": 0.05,
+      "xp": 7,
+      "gold": 3,
+      "description": "A rat the size of a dog. Its eyes glow red.",
+      "loot_table": [
+        {"item": "health_potion", "chance": 0.2},
+        {"item": "rusty_dagger", "chance": 0.1}
+      ],
+      "abilities": {
+        "diseased_bite": {
+          "name": "Diseased Bite",
+          "chance": 0.4,
+          "accuracy": 100,
+          "type": "damage",
+          "value": 2,
+          "dmg_scale": 0.3,
+          "message": "The rat bites with diseased fangs!"
+        }
+      }
+    },
+    "bat": {
+      "name": "Cave Bat",
+      "hp": 8,
+      "atk": 4,
+      "def": 0,
+      "speed": 14,
+      "accuracy": 100,
+      "crit": 0.05,
+      "xp": 6,
+      "gold": 2,
+      "description": "A leathery bat with razor-sharp fangs.",
+      "loot_table": [
+        {"item": "health_potion", "chance": 0.15}
+      ],
+      "abilities": {
+        "sonic_screech": {
+          "name": "Sonic Screech",
+          "chance": 0.35,
+          "accuracy": 90,
+          "type": "debuff",
+          "effect": "blinded",
+          "value": 1,
+          "duration": 1,
+          "message": "The bat screeches! You're blinded!"
+        }
+      }
+    },
+    "slime": {
+      "name": "Slime",
+      "hp": 15,
+      "atk": 2,
+      "def": 1,
+      "speed": 6,
+      "accuracy": 100,
+      "crit": 0.0,
+      "xp": 9,
+      "gold": 4,
+      "description": "A quivering blob of green goo.",
+      "loot_table": [
+        {"item": "health_potion", "chance": 0.3},
+        {"item": "mana_crystal", "chance": 0.1}
+      ],
+      "abilities": {
+        "split_body": {
+          "name": "Split Body",
+          "chance": 0.3,
+          "threshold": 0.3,
+          "type": "heal",
+          "value": 3,
+          "message": "The slime splits and regenerates!"
+        }
+      }
+    },
+    "giant_spider": {
+      "name": "Giant Spider",
+      "hp": 12,
+      "atk": 4,
+      "def": 0,
+      "speed": 11,
+      "accuracy": 100,
+      "crit": 0.05,
+      "xp": 10,
+      "gold": 4,
+      "description": "A spider the size of a dog. Its webs shimmer with poison.",
+      "loot_table": [
+        {"item": "health_potion", "chance": 0.2},
+        {"item": "rusty_dagger", "chance": 0.08}
+      ],
+      "abilities": {
+        "web_shot": {
+          "name": "Web Shot",
+          "chance": 0.4,
+          "accuracy": 90,
+          "type": "stun",
+          "duration": 1,
+          "message": "The spider shoots a web! You're ensnared!"
+        }
+      }
+    },
+    "mushroom_crawler": {
+      "name": "Mushroom Crawler",
+      "hp": 10,
+      "atk": 3,
+      "def": 1,
+      "speed": 8,
+      "accuracy": 100,
+      "crit": 0.0,
+      "xp": 9,
+      "gold": 3,
+      "description": "A walking fungus. Spores drift from its cap.",
+      "loot_table": [
+        {"item": "health_potion", "chance": 0.25},
+        {"item": "mana_crystal", "chance": 0.15}
+      ],
+      "abilities": {
+        "poison_spores": {
+          "name": "Poison Spores",
+          "chance": 0.35,
+          "accuracy": 90,
+          "type": "dot",
+          "value": 2,
+          "duration": 3,
+          "message": "Spores fill the air! You're poisoned!"
+        }
+      }
+    }
+  },
+  "floor_2": {
+    "standard": {
+      "goblin": {
+        "name": "Goblin",
+        "hp": 20,
+        "atk": 5,
+        "def": 1,
+        "speed": 11,
+        "accuracy": 100,
+        "crit": 0.05,
+        "xp": 17,
+        "gold": 8,
+        "description": "A snarling green creature with a crude sword.",
+        "loot_table": [
+          {"item": "health_potion", "chance": 0.25},
+          {"item": "iron_blade", "chance": 0.1},
+          {"item": "silver_key", "chance": 0.08}
+        ],
+        "abilities": {
+          "throw_knife": {
+            "name": "Throw Knife",
+            "chance": 0.35,
+            "accuracy": 90,
+            "type": "damage",
+            "value": 5,
+            "dmg_scale": 0.3,
+            "message": "The goblin hurls a knife at you!"
+          }
+        }
+      },
+      "skeleton": {
+        "name": "Skeleton",
+        "hp": 18,
+        "atk": 6,
+        "def": 2,
+        "speed": 10,
+        "accuracy": 100,
+        "crit": 0.05,
+        "xp": 20,
+        "gold": 6,
+        "description": "Bones rattle as it raises a rusted blade.",
+        "loot_table": [
+          {"item": "rusty_sword", "chance": 0.15},
+          {"item": "chainmail", "chance": 0.08},
+          {"item": "silver_key", "chance": 0.1}
+        ],
+        "abilities": {
+          "bone_throw": {
+            "name": "Bone Throw",
+            "chance": 0.35,
+            "accuracy": 90,
+            "type": "damage",
+            "value": 6,
+            "dmg_scale": 0.4,
+            "message": "The skeleton hurls a bone at you!"
+          }
+        }
+      },
+      "wolf": {
+        "name": "Dire Wolf",
+        "hp": 22,
+        "atk": 7,
+        "def": 1,
+        "speed": 13,
+        "accuracy": 100,
+        "crit": 0.10,
+        "xp": 21,
+        "gold": 5,
+        "description": "A massive wolf with frost-covered fur.",
+        "loot_table": [
+          {"item": "strength_elixir", "chance": 0.2}
+        ],
+        "abilities": {
+          "pounce": {
+            "name": "Pounce",
+            "chance": 0.35,
+            "accuracy": 100,
+            "type": "buff",
+            "value": 2,
+            "message": "The wolf howls and its attack surges!"
+          }
+        }
+      },
+      "cultist": {
+        "name": "Cultist",
+        "hp": 18,
+        "atk": 5,
+        "def": 1,
+        "speed": 9,
+        "accuracy": 100,
+        "crit": 0.05,
+        "xp": 20,
+        "gold": 10,
+        "description": "A robed figure chanting in a dead language.",
+        "loot_table": [
+          {"item": "mana_crystal", "chance": 0.25},
+          {"item": "iron_blade", "chance": 0.12},
+          {"item": "silver_key", "chance": 0.1}
+        ],
+        "abilities": {
+          "dark_bolt": {
+            "name": "Dark Bolt",
+            "chance": 0.35,
+            "accuracy": 90,
+            "type": "damage",
+            "value": 7,
+            "dmg_scale": 0.5,
+            "message": "The cultist hurls a bolt of dark energy!"
+          }
+        }
+      },
+      "giant_snake": {
+        "name": "Giant Snake",
+        "hp": 16,
+        "atk": 6,
+        "def": 1,
+        "speed": 12,
+        "accuracy": 100,
+        "crit": 0.10,
+        "xp": 18,
+        "gold": 7,
+        "description": "A massive serpent with diamond-patterned scales.",
+        "loot_table": [
+          {"item": "health_potion", "chance": 0.2},
+          {"item": "strength_elixir", "chance": 0.15}
+        ],
+        "abilities": {
+          "venom_bite": {
+            "name": "Venom Bite",
+            "chance": 0.4,
+            "accuracy": 90,
+            "type": "dot",
+            "value": 2,
+            "duration": 2,
+            "message": "The snake sinks its fangs in! Venom courses through you!"
+          }
+        }
+      }
+    },
+    "alt": {
+      "crystal_beetle": {
+        "name": "Crystal Beetle",
+        "hp": 20,
+        "atk": 5,
+        "def": 2,
+        "speed": 8,
+        "accuracy": 100,
+        "crit": 0.0,
+        "xp": 17,
+        "gold": 8,
+        "description": "A beetle with a crystalline shell that refracts light.",
+        "loot_table": [
+          {"item": "health_potion", "chance": 0.25},
+          {"item": "mana_crystal", "chance": 0.15}
+        ],
+        "abilities": {
+          "crystal_armor": {
+            "name": "Crystal Armor",
+            "chance": 0.35,
+            "accuracy": 100,
+            "type": "buff",
+            "value": 2,
+            "stat": "def",
+            "message": "The beetle's shell hardens! Defense increases!"
+          }
+        }
+      },
+      "cave_dweller": {
+        "name": "Cave Dweller",
+        "hp": 18,
+        "atk": 6,
+        "def": 2,
+        "speed": 10,
+        "accuracy": 100,
+        "crit": 0.05,
+        "xp": 18,
+        "gold": 7,
+        "description": "A hunched humanoid with glowing eyes and a rusty pickaxe.",
+        "loot_table": [
+          {"item": "iron_blade", "chance": 0.12},
+          {"item": "health_potion", "chance": 0.2}
+        ],
+        "abilities": {
+          "pickaxe_strike": {
+            "name": "Pickaxe Strike",
+            "chance": 0.4,
+            "accuracy": 90,
+            "type": "damage",
+            "value": 7,
+            "dmg_scale": 0.4,
+            "message": "The cave dweller swings its pickaxe!"
+          }
+        }
+      },
+      "stone_golem": {
+        "name": "Stone Golem",
+        "hp": 25,
+        "atk": 4,
+        "def": 5,
+        "speed": 5,
+        "accuracy": 80,
+        "crit": 0.0,
+        "xp": 21,
+        "gold": 10,
+        "description": "A towering construct of living stone. It moves with grinding purpose.",
+        "loot_table": [
+          {"item": "greater_health_potion", "chance": 0.2},
+          {"item": "chainmail", "chance": 0.1}
+        ],
+        "abilities": {
+          "harden": {
+            "name": "Harden",
+            "chance": 0.3,
+            "accuracy": 100,
+            "type": "buff",
+            "value": 3,
+            "stat": "def",
+            "message": "The golem's stone shell hardens!"
+          }
+        }
+      },
+      "lantern_spirit": {
+        "name": "Lantern Spirit",
+        "hp": 16,
+        "atk": 7,
+        "def": 1,
+        "speed": 12,
+        "accuracy": 100,
+        "crit": 0.10,
+        "xp": 20,
+        "gold": 8,
+        "description": "A flickering spirit bound to an ancient lantern. Its light burns.",
+        "loot_table": [
+          {"item": "mana_crystal", "chance": 0.3},
+          {"item": "health_potion", "chance": 0.2}
+        ],
+        "abilities": {
+          "blind_light": {
+            "name": "Blind Light",
+            "chance": 0.35,
+            "accuracy": 90,
+            "type": "debuff",
+            "effect": "blinded",
+            "value": 1,
+            "duration": 1,
+            "message": "The spirit's lantern flashes! You're blinded!"
+          }
+        }
+      },
+      "tunnel_worm": {
+        "name": "Tunnel Worm",
+        "hp": 22,
+        "atk": 6,
+        "def": 2,
+        "speed": 11,
+        "accuracy": 100,
+        "crit": 0.05,
+        "xp": 20,
+        "gold": 9,
+        "description": "A massive burrowing worm. It strikes from the darkness.",
+        "loot_table": [
+          {"item": "health_potion", "chance": 0.25},
+          {"item": "strength_elixir", "chance": 0.15}
+        ],
+        "first_strike": true,
+        "abilities": {
+          "ambush_strike": {
+            "name": "Ambush Strike",
+            "chance": 0.35,
+            "accuracy": 90,
+            "type": "damage",
+            "value": 7,
+            "dmg_scale": 0.4,
+            "message": "The worm lunges from the shadows!"
+          }
+        }
+      }
+    }
+  },
+  "floor_3": {
+    "orc": {
+      "name": "Orc Warrior",
+      "hp": 35,
+      "atk": 8,
+      "def": 3,
+      "speed": 10,
+      "accuracy": 100,
+      "crit": 0.05,
+      "xp": 31,
+      "gold": 15,
+      "description": "A hulking orc in rusted iron armor.",
+      "loot_table": [
+        {"item": "battle_axe", "chance": 0.12},
+        {"item": "greater_health_potion", "chance": 0.25},
+        {"item": "chainmail", "chance": 0.1}
+      ],
+      "abilities": {
+        "war_cry": {
+          "name": "War Cry",
+          "chance": 0.35,
+          "accuracy": 100,
+          "type": "buff",
+          "value": 2,
+          "message": "The orc roars! Its attack surges!"
+        }
+      }
+    },
+    "dark_mage": {
+      "name": "Dark Mage",
+      "hp": 25,
+      "atk": 9,
+      "def": 1,
+      "speed": 10,
+      "accuracy": 100,
+      "crit": 0.10,
+      "xp": 35,
+      "gold": 20,
+      "description": "A cloaked figure crackling with dark energy.",
+      "loot_table": [
+        {"item": "arcane_staff", "chance": 0.1},
+        {"item": "mana_crystal", "chance": 0.3},
+        {"item": "robes_of_arcana", "chance": 0.05}
+      ],
+      "abilities": {
+        "shadow_blast": {
+          "name": "Shadow Blast",
+          "chance": 0.4,
+          "accuracy": 90,
+          "type": "damage",
+          "value": 10,
+          "dmg_scale": 0.6,
+          "message": "The dark mage hurls a bolt of shadow!"
+        }
+      }
+    },
+    "wraith": {
+      "name": "Wraith",
+      "hp": 28,
+      "atk": 7,
+      "def": 4,
+      "speed": 12,
+      "accuracy": 100,
+      "crit": 0.05,
+      "xp": 28,
+      "gold": 12,
+      "description": "A ghostly figure that phases through walls.",
+      "loot_table": [
+        {"item": "shadow_dagger", "chance": 0.12},
+        {"item": "shadow_cloak", "chance": 0.05}
+      ],
+      "abilities": {
+        "phase_shift": {
+          "name": "Phase Shift",
+          "chance": 0.3,
+          "accuracy": 100,
+          "type": "buff",
+          "value": 15,
+          "stat": "dodge",
+          "message": "The wraith phases out of reality! It becomes harder to hit!"
+        }
+      }
+    },
+    "fire_elemental": {
+      "name": "Fire Elemental",
+      "hp": 22,
+      "atk": 8,
+      "def": 2,
+      "speed": 11,
+      "accuracy": 100,
+      "crit": 0.05,
+      "xp": 34,
+      "gold": 18,
+      "description": "A living flame that scorches everything it touches.",
+      "loot_table": [
+        {"item": "mana_crystal", "chance": 0.3},
+        {"item": "greater_health_potion", "chance": 0.2},
+        {"item": "arcane_staff", "chance": 0.08}
+      ],
+      "abilities": {
+        "burn": {
+          "name": "Burn",
+          "chance": 0.4,
+          "accuracy": 90,
+          "type": "dot",
+          "value": 3,
+          "duration": 3,
+          "message": "The elemental engulfs you in flames! You're burning!"
+        }
+      }
+    },
+    "ghoul": {
+      "name": "Ghoul",
+      "hp": 30,
+      "atk": 7,
+      "def": 3,
+      "speed": 10,
+      "accuracy": 100,
+      "crit": 0.05,
+      "xp": 31,
+      "gold": 14,
+      "description": "A hunched corpse that feeds on the living.",
+      "loot_table": [
+        {"item": "greater_health_potion", "chance": 0.25},
+        {"item": "rusty_sword", "chance": 0.15}
+      ],
+      "abilities": {
+        "life_feast": {
+          "name": "Life Feast",
+          "chance": 0.35,
+          "accuracy": 90,
+          "type": "drain",
+          "value": 5,
+          "dmg_scale": 0.3,
+          "message": "The ghoul sinks its claws into you!"
+        }
+      }
+    }
+  },
+  "floor_4": {
+    "standard": {
+      "troll": {
+        "name": "Cave Troll",
+        "hp": 50,
+        "atk": 10,
+        "def": 5,
+        "speed": 7,
+        "accuracy": 100,
+        "crit": 0.05,
+        "xp": 50,
+        "gold": 25,
+        "description": "A towering troll with mossy green skin. It regenerates before your eyes.",
+        "passive_regen": 5,
+        "loot_table": [
+          {"item": "war_hammer", "chance": 0.1},
+          {"item": "plate_armor", "chance": 0.08},
+          {"item": "greater_health_potion", "chance": 0.3}
+        ]
+      },
+      "vampire": {
+        "name": "Vampire",
+        "hp": 40,
+        "atk": 11,
+        "def": 3,
+        "speed": 12,
+        "accuracy": 100,
+        "crit": 0.10,
+        "xp": 56,
+        "gold": 30,
+        "description": "A pale aristocrat with blood-red eyes.",
+        "loot_table": [
+          {"item": "holy_sword", "chance": 0.08},
+          {"item": "full_restore", "chance": 0.15},
+          {"item": "thief_cloak", "chance": 0.06}
+        ],
+        "abilities": {
+          "blood_drain": {
+            "name": "Blood Drain",
+            "chance": 0.4,
+            "accuracy": 90,
+            "type": "drain",
+            "value": 8,
+            "dmg_scale": 0.5,
+            "message": "The vampire sinks its fangs into your neck!"
+          }
+        }
+      },
+      "minotaur": {
+        "name": "Minotaur",
+        "hp": 55,
+        "atk": 12,
+        "def": 6,
+        "speed": 9,
+        "accuracy": 100,
+        "crit": 0.10,
+        "xp": 63,
+        "gold": 35,
+        "description": "A bull-headed beast wielding a massive axe.",
+        "loot_table": [
+          {"item": "battle_axe", "chance": 0.15},
+          {"item": "berserker_belt", "chance": 0.08},
+          {"item": "greater_health_potion", "chance": 0.2}
+        ],
+        "abilities": {
+          "bull_rush": {
+            "name": "Bull Rush",
+            "chance": 0.35,
+            "accuracy": 90,
+            "type": "stun",
+            "duration": 1,
+            "value": 8,
+            "dmg_scale": 0.4,
+            "message": "The minotaur charges and rams you!"
+          }
+        }
+      },
+      "demon": {
+        "name": "Demon",
+        "hp": 45,
+        "atk": 11,
+        "def": 4,
+        "speed": 11,
+        "accuracy": 100,
+        "crit": 0.05,
+        "xp": 53,
+        "gold": 28,
+        "description": "Red-skinned and horned. The air burns around it.",
+        "loot_table": [
+          {"item": "shadow_dagger", "chance": 0.12},
+          {"item": "full_restore", "chance": 0.15},
+          {"item": "shadow_cloak", "chance": 0.08}
+        ],
+        "abilities": {
+          "hellfire": {
+            "name": "Hellfire",
+            "chance": 0.4,
+            "accuracy": 90,
+            "type": "damage",
+            "value": 12,
+            "dmg_scale": 0.5,
+            "message": "The demon unleashes hellfire!"
+          }
+        }
+      },
+      "lich": {
+        "name": "Lich",
+        "hp": 35,
+        "atk": 10,
+        "def": 3,
+        "speed": 10,
+        "accuracy": 100,
+        "crit": 0.10,
+        "xp": 59,
+        "gold": 32,
+        "description": "A skeletal mage bound to a phylactery.",
+        "loot_table": [
+          {"item": "arcane_staff", "chance": 0.15},
+          {"item": "mana_crystal", "chance": 0.35},
+          {"item": "robes_of_arcana", "chance": 0.08}
+        ],
+        "abilities": {
+          "curse": {
+            "name": "Curse",
+            "chance": 0.4,
+            "accuracy": 90,
+            "type": "debuff",
+            "effect": "def_down",
+            "value": 2,
+            "duration": 3,
+            "message": "The lich curses you! Your defense weakens!"
+          }
+        }
+      }
+    },
+    "alt": {
+      "frost_giant": {
+        "name": "Frost Giant",
+        "hp": 55,
+        "atk": 11,
+        "def": 5,
+        "speed": 6,
+        "accuracy": 100,
+        "crit": 0.05,
+        "xp": 53,
+        "gold": 28,
+        "description": "A towering giant encased in frost. The temperature drops around it.",
+        "loot_table": [
+          {"item": "war_hammer", "chance": 0.1},
+          {"item": "greater_health_potion", "chance": 0.3}
+        ],
+        "abilities": {
+          "ice_smash": {
+            "name": "Ice Smash",
+            "chance": 0.4,
+            "accuracy": 90,
+            "type": "damage",
+            "value": 8,
+            "dmg_scale": 0.4,
+            "message": "The giant smashes you with a fist of ice!"
+          }
+        }
+      },
+      "ice_wraith": {
+        "name": "Ice Wraith",
+        "hp": 40,
+        "atk": 10,
+        "def": 3,
+        "speed": 12,
+        "accuracy": 100,
+        "crit": 0.10,
+        "xp": 56,
+        "gold": 25,
+        "description": "A ghostly figure wreathed in perpetual frost.",
+        "loot_table": [
+          {"item": "mana_crystal", "chance": 0.3},
+          {"item": "shadow_cloak", "chance": 0.06}
+        ],
+        "abilities": {
+          "frost_touch": {
+            "name": "Frost Touch",
+            "chance": 0.4,
+            "accuracy": 90,
+            "type": "stun",
+            "duration": 1,
+            "value": 8,
+            "dmg_scale": 0.4,
+            "message": "The wraith's touch freezes you solid!"
+          }
+        }
+      },
+      "crystal_golem": {
+        "name": "Crystal Golem",
+        "hp": 55,
+        "atk": 7,
+        "def": 8,
+        "speed": 4,
+        "accuracy": 80,
+        "crit": 0.0,
+        "xp": 59,
+        "gold": 30,
+        "description": "A massive golem of living crystal. Its surface reflects all light.",
+        "loot_table": [
+          {"item": "full_restore", "chance": 0.15},
+          {"item": "mana_crystal", "chance": 0.3}
+        ],
+        "abilities": {
+          "reflect_shield": {
+            "name": "Reflect Shield",
+            "chance": 0.3,
+            "accuracy": 100,
+            "type": "reflect",
+            "value": 20,
+            "duration": 3,
+            "message": "The golem's crystal surface glows with reflective energy!"
+          }
+        }
+      },
+      "winter_spirit": {
+        "name": "Winter Spirit",
+        "hp": 35,
+        "atk": 12,
+        "def": 2,
+        "speed": 13,
+        "accuracy": 100,
+        "crit": 0.10,
+        "xp": 56,
+        "gold": 25,
+        "description": "A howling spirit of pure cold. It tears warmth from the air.",
+        "loot_table": [
+          {"item": "mana_crystal", "chance": 0.3},
+          {"item": "greater_health_potion", "chance": 0.2}
+        ],
+        "abilities": {
+          "blizzard": {
+            "name": "Blizzard",
+            "chance": 0.4,
+            "accuracy": 90,
+            "type": "damage",
+            "value": 10,
+            "dmg_scale": 0.6,
+            "message": "The spirit conjures a blizzard around you!"
+          }
+        }
+      },
+      "frost_drake": {
+        "name": "Frost Drake",
+        "hp": 50,
+        "atk": 11,
+        "def": 4,
+        "speed": 11,
+        "accuracy": 100,
+        "crit": 0.05,
+        "xp": 59,
+        "gold": 30,
+        "description": "A young dragon coated in crystalline frost. Its breath freezes stone.",
+        "loot_table": [
+          {"item": "full_restore", "chance": 0.15},
+          {"item": "war_hammer", "chance": 0.08}
+        ],
+        "abilities": {
+          "ice_breath": {
+            "name": "Ice Breath",
+            "chance": 0.4,
+            "accuracy": 90,
+            "type": "damage",
+            "value": 12,
+            "dmg_scale": 0.5,
+            "message": "The drake breathes a cone of frost!"
+          }
+        }
+      }
+    }
+  },
+  "floor_5": {
+    "dragonkin": {
+      "name": "Dragonkin Guard",
+      "hp": 45,
+      "atk": 11,
+      "def": 5,
+      "speed": 10,
+      "accuracy": 100,
+      "crit": 0.05,
+      "xp": 42,
+      "gold": 20,
+      "description": "A humanoid dragon warrior, sworn to protect the Elder Dragon.",
+      "loot_table": [
+        {"item": "iron_blade", "chance": 0.15},
+        {"item": "greater_health_potion", "chance": 0.25}
+      ],
+      "abilities": {
+        "guard_stance": {
+          "name": "Guard Stance",
+          "chance": 0.3,
+          "accuracy": 100,
+          "type": "buff",
+          "value": 3,
+          "stat": "def",
+          "message": "The dragonkin assumes a guard stance! Defense increases!"
+        }
+      }
+    },
+    "archmage": {
+      "name": "Archmage",
+      "hp": 40,
+      "atk": 13,
+      "def": 4,
+      "speed": 10,
+      "accuracy": 100,
+      "crit": 0.10,
+      "xp": 63,
+      "gold": 30,
+      "description": "A corrupted wizard wielding primal forces.",
+      "loot_table": [
+        {"item": "arcane_staff", "chance": 0.15},
+        {"item": "mana_crystal", "chance": 0.35},
+        {"item": "full_restore", "chance": 0.15}
+      ],
+      "abilities": {
+        "meteor_bolt": {
+          "name": "Meteor Bolt",
+          "chance": 0.4,
+          "accuracy": 90,
+          "type": "damage",
+          "value": 15,
+          "dmg_scale": 0.5,
+          "message": "The archmage hurls a bolt of meteoric fire!"
+        }
+      }
+    },
+    "death_knight": {
+      "name": "Death Knight",
+      "hp": 50,
+      "atk": 12,
+      "def": 6,
+      "speed": 10,
+      "accuracy": 100,
+      "crit": 0.05,
+      "xp": 67,
+      "gold": 35,
+      "description": "An undead paladin sworn to the dragon. Its blade drains souls.",
+      "loot_table": [
+        {"item": "battle_axe", "chance": 0.15},
+        {"item": "plate_armor", "chance": 0.1},
+        {"item": "full_restore", "chance": 0.2}
+      ],
+      "abilities": {
+        "soul_strike": {
+          "name": "Soul Strike",
+          "chance": 0.4,
+          "accuracy": 90,
+          "type": "drain",
+          "value": 5,
+          "dmg_scale": 0.3,
+          "message": "The death knight's blade drains your soul!"
+        }
+      }
+    },
+    "drake": {
+      "name": "Drake",
+      "hp": 42,
+      "atk": 11,
+      "def": 3,
+      "speed": 12,
+      "accuracy": 100,
+      "crit": 0.10,
+      "xp": 56,
+      "gold": 28,
+      "description": "An undead dragon, reduced to a mindless husk. Flames drip from its jaws.",
+      "loot_table": [
+        {"item": "full_restore", "chance": 0.15},
+        {"item": "shadow_dagger", "chance": 0.1}
+      ],
+      "abilities": {
+        "flame_lash": {
+          "name": "Flame Lash",
+          "chance": 0.4,
+          "accuracy": 90,
+          "type": "dot",
+          "value": 3,
+          "duration": 3,
+          "message": "The drake lashes you with fire!"
+        }
+      }
+    },
+    "dragon": {
+      "name": "Elder Dragon",
+      "hp": 100,
+      "atk": 16,
+      "def": 8,
+      "speed": 11,
+      "accuracy": 100,
+      "crit": 0.10,
+      "xp": 250,
+      "gold": 100,
+      "description": "An ancient dragon. Flames drip from its jaws. The walls tremble.",
+      "boss": true,
+      "loot_table": [
+        {"item": "dragon_slayer", "chance": 0.5},
+        {"item": "dragon_scale", "chance": 0.5}
+      ],
+      "abilities": {
+        "dragon_breath": {
+          "name": "Dragon Breath",
+          "chance": 0.4,
+          "accuracy": 90,
+          "type": "damage",
+          "value": 20,
+          "dmg_scale": 0.6,
+          "message": "The Elder Dragon unleashes a torrent of flame!",
+          "threshold": 0.5
+        },
+        "tail_swipe": {
+          "name": "Tail Swipe",
+          "chance": 0.3,
+          "accuracy": 90,
+          "type": "stun",
+          "duration": 1,
+          "value": 10,
+          "dmg_scale": 0.3,
+          "message": "The dragon swings its massive tail!"
+        },
+        "ancient_roar": {
+          "name": "Ancient Roar",
+          "chance": 0.2,
+          "accuracy": 100,
+          "type": "buff",
+          "value": 3,
+          "message": "The Elder Dragon roars! Its power surges!"
+        },
+        "skyfall": {
+          "name": "Skyfall",
+          "chance": 0.25,
+          "accuracy": 80,
+          "type": "damage",
+          "value": 25,
+          "dmg_scale": 0.8,
+          "threshold": 0.3,
+          "message": "The Elder Dragon takes flight and crashes down upon you!"
+        }
+      }
+    }
+  },
+  "floor_2_5": {
+    "elite_goblin": {
+      "name": "Goblin Shaman",
+      "hp": 35,
+      "atk": 8,
+      "def": 2,
+      "speed": 9,
+      "accuracy": 100,
+      "crit": 0.05,
+      "xp": 38,
+      "gold": 15,
+      "description": "A goblin crackling with dark magic. Its eyes glow with malevolent power.",
+      "loot_table": [
+        {"item": "greater_health_potion", "chance": 0.3},
+        {"item": "mana_crystal", "chance": 0.2},
+        {"item": "shadow_dagger", "chance": 0.1}
+      ],
+      "abilities": {
+        "dark_ritual": {
+          "name": "Dark Ritual",
+          "chance": 0.3,
+          "accuracy": 100,
+          "type": "heal",
+          "value": 12,
+          "threshold": 0.4,
+          "message": "The goblin shaman chants a dark ritual and heals!"
+        },
+        "fire_bolt": {
+          "name": "Fire Bolt",
+          "chance": 0.35,
+          "accuracy": 90,
+          "type": "damage",
+          "value": 8,
+          "dmg_scale": 0.4,
+          "message": "The goblin hurls a fire bolt at you!"
+        }
+      }
+    },
+    "bone_champion": {
+      "name": "Bone Champion",
+      "hp": 40,
+      "atk": 9,
+      "def": 4,
+      "speed": 8,
+      "accuracy": 100,
+      "crit": 0.05,
+      "xp": 44,
+      "gold": 12,
+      "description": "A towering skeleton clad in rusted armor. It wields a massive bone sword.",
+      "loot_table": [
+        {"item": "chainmail", "chance": 0.2},
+        {"item": "iron_blade", "chance": 0.15},
+        {"item": "silver_key", "chance": 0.1}
+      ],
+      "abilities": {
+        "bone_volley": {
+          "name": "Bone Volley",
+          "chance": 0.35,
+          "accuracy": 90,
+          "type": "damage",
+          "value": 7,
+          "dmg_scale": 0.4,
+          "message": "The bone champion hurls a volley of bones!"
+        },
+        "crushing_blow": {
+          "name": "Crushing Blow",
+          "chance": 0.25,
+          "accuracy": 90,
+          "type": "damage",
+          "value": 10,
+          "dmg_scale": 0.5,
+          "message": "The bone champion smashes down with its massive sword!"
+        }
+      }
+    },
+    "shadow_wolf": {
+      "name": "Shadow Wolf",
+      "hp": 30,
+      "atk": 10,
+      "def": 2,
+      "speed": 13,
+      "accuracy": 100,
+      "crit": 0.10,
+      "xp": 35,
+      "gold": 10,
+      "description": "A wolf made of living shadow. Its eyes burn with cold fire.",
+      "loot_table": [
+        {"item": "strength_elixir", "chance": 0.25},
+        {"item": "shadow_cloak", "chance": 0.1}
+      ],
+      "abilities": {
+        "shadow_bite": {
+          "name": "Shadow Bite",
+          "chance": 0.4,
+          "accuracy": 90,
+          "type": "damage",
+          "value": 8,
+          "dmg_scale": 0.5,
+          "message": "The shadow wolf bites with void-touched fangs!"
+        },
+        "terrifying_howl": {
+          "name": "Terrifying Howl",
+          "chance": 0.3,
+          "accuracy": 90,
+          "type": "debuff",
+          "effect": "atk_down",
+          "value": 2,
+          "duration": 2,
+          "message": "The shadow wolf's howl weakens your resolve!"
+        }
+      }
+    },
+    "dark_cultist": {
+      "name": "Dark Cultist",
+      "hp": 28,
+      "atk": 7,
+      "def": 2,
+      "speed": 9,
+      "accuracy": 100,
+      "crit": 0.05,
+      "xp": 40,
+      "gold": 18,
+      "description": "A cultist wreathed in darkness. It channels forbidden magic.",
+      "loot_table": [
+        {"item": "mana_crystal", "chance": 0.3},
+        {"item": "robes_of_arcana", "chance": 0.1},
+        {"item": "full_restore", "chance": 0.08}
+      ],
+      "abilities": {
+        "drain_life": {
+          "name": "Drain Life",
+          "chance": 0.35,
+          "accuracy": 90,
+          "type": "drain",
+          "value": 8,
+          "dmg_scale": 0.4,
+          "message": "The cultist drains your life force!"
+        },
+        "dark_bolt": {
+          "name": "Dark Bolt",
+          "chance": 0.3,
+          "accuracy": 90,
+          "type": "damage",
+          "value": 9,
+          "dmg_scale": 0.5,
+          "message": "The cultist hurls a bolt of dark energy!"
+        }
+      }
+    },
+    "sealed_guardian": {
+      "name": "The Sealed Guardian",
+      "hp": 120,
+      "atk": 14,
+      "def": 6,
+      "speed": 8,
+      "accuracy": 100,
+      "crit": 0.05,
+      "xp": 125,
+      "gold": 50,
+      "description": "A massive armored figure bound by ancient seals. It guards the sealed depths.",
+      "boss": true,
+      "loot_table": [
+        {"item": "full_restore", "chance": 0.5},
+        {"item": "shadow_dagger", "chance": 0.3},
+        {"item": "holy_sword", "chance": 0.2}
+      ],
+      "abilities": {
+        "sealing_strike": {
+          "name": "Sealing Strike",
+          "chance": 0.3,
+          "accuracy": 90,
+          "type": "stun",
+          "duration": 1,
+          "value": 12,
+          "dmg_scale": 0.3,
+          "message": "The guardian's fist seals your movements! You're stunned!"
+        },
+        "dark_wave": {
+          "name": "Dark Wave",
+          "chance": 0.35,
+          "accuracy": 90,
+          "type": "damage",
+          "value": 12,
+          "dmg_scale": 0.5,
+          "message": "The guardian unleashes a wave of dark energy!"
+        },
+        "life_drain": {
+          "name": "Life Drain",
+          "chance": 0.25,
+          "accuracy": 90,
+          "type": "drain",
+          "value": 10,
+          "dmg_scale": 0.4,
+          "message": "The guardian drains your life force!"
+        },
+        "summon_shield": {
+          "name": "Summon Shield",
+          "chance": 0.2,
+          "accuracy": 100,
+          "type": "buff",
+          "value": 3,
+          "stat": "def",
+          "message": "The guardian summons a magical shield! Its defense increases!"
+        }
+      }
+    }
+  }
+}
