@@ -172,9 +172,9 @@ def random_relic_for_tier(tier):
 def random_equipment_for_tier(tier, player=None):
     roll = random.random()
     if roll < 0.5:
-        return random_weapon(1, tier, player)
+        return random_weapon(tier, tier, player)
     else:
-        return random_armor(1, tier, player)
+        return random_armor(tier, tier, player)
 
 
 def random_equipment_chest(floor, chest_tier, player=None):
@@ -208,6 +208,24 @@ def random_relic_chest(floor, chest_tier):
         extra = random_relic_for_tier(5)
         if extra:
             loot.append(extra)
+
+    return loot
+
+
+def random_gatekeeper_loot(floor, player=None):
+    from constants import CHEST_TIER_TABLE
+    loot_floor = min(floor + 2, 5)
+    probs = CHEST_TIER_TABLE.get(loot_floor, CHEST_TIER_TABLE[5])
+    tier = _roll_from_probs(probs)
+    gold = random.randint(floor * 8, floor * 15)
+    loot = [{"name": "Gold", "type": "gold", "value": gold}]
+
+    if random.random() < 0.5:
+        item = random_equipment_for_tier(tier, player)
+    else:
+        item = random_relic_for_tier(tier)
+    if item:
+        loot.append(dict(item))
 
     return loot
 

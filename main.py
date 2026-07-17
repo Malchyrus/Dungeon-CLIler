@@ -944,6 +944,17 @@ class Game:
         if enemy.get("gatekeeper"):
             print()
             print("  The guardian falls! The path to the stairs is now clear.")
+            from items import random_gatekeeper_loot
+            gatekeeper_loot = random_gatekeeper_loot(self.player.floor, self.player)
+            print("  The guardian drops a treasure:")
+            for item in gatekeeper_loot:
+                if item.get("type") == "gold":
+                    gold = int(item["value"] * self.player.gold_mult)
+                    self.player.gold += gold
+                    print(f"    {gold} gold!")
+                else:
+                    success, msg = add_item(self.player, item)
+                    print(f"    {item['name']}! ({msg})")
 
         input("  Press Enter...")
         return "victory"

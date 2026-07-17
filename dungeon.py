@@ -94,6 +94,11 @@ def generate_dungeon(floor, ascension=0, variant=None):
             opposite = {"north": "south", "south": "north", "east": "west", "west": "east"}
             rooms[(bx, by)].doors[opposite[entry_dir]] = True
 
+            for dx, dy, direction in [(0, -1, "north"), (0, 1, "south"), (-1, 0, "west"), (1, 0, "east")]:
+                nx, ny = sx + dx, sy + dy
+                if (nx, ny) in rooms and (nx, ny) != (bx, by):
+                    rooms[(nx, ny)].doors[opposite[direction]] = False
+
             room_list = [(x, y) for (x, y) in room_list if (x, y) != (bx, by) and (x, y) != farthest]
         else:
             room_list = [(x, y) for (x, y) in room_list if (x, y) != farthest]
@@ -145,13 +150,14 @@ def generate_dungeon(floor, ascension=0, variant=None):
             rooms[pos].npc = get_random_npc(npc_type)
             idx += 1
 
-    boss_count = min(len(assignable) - idx, 1)
-    for i in range(boss_count):
-        if idx < len(assignable):
-            pos = assignable[idx]
-            rooms[pos].room_type = "boss"
-            rooms[pos].enemy = spawn_boss(floor, ascension)
-            idx += 1
+    if floor >= 5:
+        boss_count = min(len(assignable) - idx, 1)
+        for i in range(boss_count):
+            if idx < len(assignable):
+                pos = assignable[idx]
+                rooms[pos].room_type = "boss"
+                rooms[pos].enemy = spawn_boss(floor, ascension)
+                idx += 1
 
     if ascension >= 2:
         lore_positions = [p for p in assignable[idx:] if rooms[p].room_type == "empty"]
