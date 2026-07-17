@@ -70,6 +70,23 @@ def _get_floor_bosses(floor):
     return {k: v for k, v in enemies.items() if v.get("boss")}
 
 
+def _get_gatekeeper(floor):
+    data = load_json("enemies.json")
+    floor_key = f"floor_{min(floor, 5)}"
+    enemies = data.get(floor_key, {})
+    gatekeepers = {k: v for k, v in enemies.items() if v.get("gatekeeper")}
+    if gatekeepers:
+        return gatekeepers
+    return {k: v for k, v in enemies.items() if v.get("boss")}
+
+
+def spawn_gatekeeper(floor, ascension=0):
+    pool = _get_gatekeeper(floor)
+    if not pool:
+        return spawn_boss(floor, ascension)
+    return _spawn_from_pool(pool, ascension=ascension)
+
+
 def _get_bonus_enemies(boss=False):
     data = load_json("enemies.json")
     pool = data.get("floor_2_5", {})

@@ -1,7 +1,7 @@
 import random
 from room import Room, LORE_NOTES
 from items import random_loot, random_artifact, roll_chest_tier
-from enemies import spawn_enemy, spawn_boss, spawn_bonus_enemy, spawn_bonus_boss
+from enemies import spawn_enemy, spawn_boss, spawn_bonus_enemy, spawn_bonus_boss, spawn_gatekeeper
 from npc import get_random_npc, get_celdric_npc
 from player import MEMORY_FRAGMENTS
 
@@ -70,6 +70,34 @@ def generate_dungeon(floor, ascension=0, variant=None):
             "A shaft in the floor reveals a ladder going deeper.",
         ])
 
+        sx, sy = farthest
+        adjacent_empty = []
+        for dx, dy, direction in [(0, -1, "north"), (0, 1, "south"), (-1, 0, "west"), (1, 0, "east")]:
+            nx, ny = sx + dx, sy + dy
+            if (nx, ny) in rooms and rooms[(nx, ny)].room_type == "empty" and (nx, ny) != start:
+                adjacent_empty.append(((nx, ny), direction))
+
+        if adjacent_empty:
+            (bx, by), entry_dir = random.choice(adjacent_empty)
+            rooms[(bx, by)].room_type = "gatekeeper"
+            rooms[(bx, by)].enemy = spawn_gatekeeper(floor, ascension)
+            rooms[(bx, by)].description = random.choice([
+                "A dark presence pervades this chamber. The air tastes of iron.",
+                "This room radiates dread. Something powerful lurks here.",
+                "The walls are scarred with claw marks. A guardian awaits.",
+                "An oppressive force presses down on you. The way forward is guarded.",
+            ])
+
+            for d in rooms[farthest].doors:
+                rooms[farthest].doors[d] = False
+            rooms[farthest].doors[entry_dir] = True
+            opposite = {"north": "south", "south": "north", "east": "west", "west": "east"}
+            rooms[(bx, by)].doors[opposite[entry_dir]] = True
+
+            room_list = [(x, y) for (x, y) in room_list if (x, y) != (bx, by) and (x, y) != farthest]
+        else:
+            room_list = [(x, y) for (x, y) in room_list if (x, y) != farthest]
+
     if floor == 2:
         locked_candidates = [p for p in room_list if p != start and p != farthest and rooms[p].room_type == "empty"]
         if locked_candidates:
@@ -82,7 +110,7 @@ def generate_dungeon(floor, ascension=0, variant=None):
                 "Ancient iron bars block a descending stairway. They radiate cold energy.",
             ])
 
-    assignable = [p for p in room_list if p != start and p != farthest and rooms[p].room_type == "empty"]
+    assignable = [p for p in room_list if p != start and rooms[p].room_type == "empty"]
     random.shuffle(assignable)
 
     idx = 0

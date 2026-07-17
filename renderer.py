@@ -236,6 +236,7 @@ ROOM_SYMBOLS = {
     "trap": "T",
     "stairs": ">",
     "boss": "B",
+    "gatekeeper": "B",
     "locked_door": "L",
 }
 

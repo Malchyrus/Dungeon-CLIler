@@ -45,6 +45,15 @@ class Room:
         if self.enemy and not self.cleared:
             lines.append(f"A {self.enemy['name']} blocks your path!")
 
+        if self.room_type == "gatekeeper" and not self.cleared:
+            terror_texts = [
+                "A chilling aura presses against your skin. Something terrible guards the way.",
+                "The air grows thick with dread. You feel your bones tremble.",
+                "An ancient malice permeates this room. The guardian stirs.",
+                "Goosebumps rise on your arms. Death lingers here.",
+            ]
+            lines.append(f"\n  {random.choice(terror_texts)}")
+
         if self.npc:
             lines.append(f"{self.npc['name']} is here.")
 
@@ -59,6 +68,9 @@ class Room:
 
         if self.room_type == "locked_door":
             lines.append("An iron door seals the stairway down. A skeleton keyhole glows faintly.")
+
+        if self.room_type == "gatekeeper":
+            lines.append("A powerful presence blocks the path to the stairs. You must defeat it to proceed.")
 
         if self.room_type == "empty" and not self.cleared and not self.enemy:
             lines.append("The room is empty. You could search for scraps.")
@@ -75,7 +87,6 @@ class Room:
                 lines.append(f"  [go down]   Descend to next floor")
             if self.room_type == "locked_door":
                 lines.append(f"  [use skeleton key]  Open the sealed door (Floor 2.5)")
-                lines.append(f"  [go down]           Skip to Floor 3")
             if self.items and not self.cleared:
                 lines.append("  [take all]  Pick up items")
                 for item in self.items:

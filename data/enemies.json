@@ -1,15 +1,15 @@
 {
   "floor_1": {
-    "rat": {
-      "name": "Giant Rat",
-      "hp": 10,
-      "atk": 3,
-      "def": 0,
-      "speed": 12,
-      "accuracy": 100,
-      "crit": 0.05,
-      "xp": 7,
-      "gold": 3,
+      "rat": {
+        "name": "Giant Rat",
+        "hp": 18,
+        "atk": 5,
+        "def": 1,
+        "speed": 12,
+        "accuracy": 100,
+        "crit": 0.05,
+        "xp": 7,
+        "gold": 3,
       "description": "A rat the size of a dog. Its eyes glow red.",
       "loot_table": [
         {"item": "health_potion", "chance": 0.2},
@@ -29,8 +29,8 @@
     },
     "bat": {
       "name": "Cave Bat",
-      "hp": 8,
-      "atk": 4,
+      "hp": 14,
+      "atk": 6,
       "def": 0,
       "speed": 14,
       "accuracy": 100,
@@ -56,9 +56,9 @@
     },
     "slime": {
       "name": "Slime",
-      "hp": 15,
-      "atk": 2,
-      "def": 1,
+      "hp": 25,
+      "atk": 4,
+      "def": 2,
       "speed": 6,
       "accuracy": 100,
       "crit": 0.0,
@@ -82,9 +82,9 @@
     },
     "giant_spider": {
       "name": "Giant Spider",
-      "hp": 12,
-      "atk": 4,
-      "def": 0,
+      "hp": 20,
+      "atk": 6,
+      "def": 1,
       "speed": 11,
       "accuracy": 100,
       "crit": 0.05,
@@ -108,8 +108,8 @@
     },
     "mushroom_crawler": {
       "name": "Mushroom Crawler",
-      "hp": 10,
-      "atk": 3,
+      "hp": 16,
+      "atk": 5,
       "def": 1,
       "speed": 8,
       "accuracy": 100,
@@ -132,15 +132,63 @@
           "message": "Spores fill the air! You're poisoned!"
         }
       }
+    },
+    "rat_king": {
+      "name": "The Rat King",
+      "hp": 50,
+      "atk": 8,
+      "def": 2,
+      "speed": 10,
+      "accuracy": 100,
+      "crit": 0.05,
+      "xp": 40,
+      "gold": 25,
+      "description": "A grotesque mass of writhing rats, crowned with bone. The swarm has a mind.",
+      "boss": true,
+      "gatekeeper": true,
+      "loot_table": [
+        {"item": "health_potion", "chance": 0.4},
+        {"item": "rusty_dagger", "chance": 0.3},
+        {"item": "mana_crystal", "chance": 0.3}
+      ],
+      "abilities": {
+        "swarm": {
+          "name": "Swarm",
+          "chance": 0.35,
+          "accuracy": 90,
+          "type": "multi",
+          "value": 3,
+          "hits": 3,
+          "message": "The Rat King unleashes a swarm of biting rats!"
+        },
+        "rat_bite": {
+          "name": "Rat Bite",
+          "chance": 0.3,
+          "accuracy": 90,
+          "type": "debuff",
+          "effect": "atk_down",
+          "value": 2,
+          "duration": 2,
+          "message": "Diseased fangs sink into you! Your strength fades!"
+        },
+        "squeal": {
+          "name": "Squeal",
+          "chance": 0.2,
+          "accuracy": 100,
+          "type": "buff",
+          "value": 2,
+          "message": "The Rat King squeals! The swarm grows bolder!"
+        }
+      }
     }
   },
   "floor_2": {
     "standard": {
       "goblin": {
         "name": "Goblin",
-        "hp": 20,
-        "atk": 5,
-        "def": 1,
+        "hp": 28,
+        "atk": 7,
+        "def": 2,
         "speed": 11,
         "accuracy": 100,
         "crit": 0.05,
@@ -166,9 +214,9 @@
       },
       "skeleton": {
         "name": "Skeleton",
-        "hp": 18,
-        "atk": 6,
-        "def": 2,
+        "hp": 26,
+        "atk": 8,
+        "def": 3,
         "speed": 10,
         "accuracy": 100,
         "crit": 0.05,
@@ -194,9 +242,9 @@
       },
       "wolf": {
         "name": "Dire Wolf",
-        "hp": 22,
-        "atk": 7,
-        "def": 1,
+        "hp": 30,
+        "atk": 9,
+        "def": 2,
         "speed": 13,
         "accuracy": 100,
         "crit": 0.10,
@@ -219,9 +267,9 @@
       },
       "cultist": {
         "name": "Cultist",
-        "hp": 18,
-        "atk": 5,
-        "def": 1,
+        "hp": 26,
+        "atk": 7,
+        "def": 2,
         "speed": 9,
         "accuracy": 100,
         "crit": 0.05,
@@ -247,9 +295,9 @@
       },
       "giant_snake": {
         "name": "Giant Snake",
-        "hp": 16,
-        "atk": 6,
-        "def": 1,
+        "hp": 24,
+        "atk": 8,
+        "def": 2,
         "speed": 12,
         "accuracy": 100,
         "crit": 0.10,
@@ -276,9 +324,9 @@
     "alt": {
       "crystal_beetle": {
         "name": "Crystal Beetle",
-        "hp": 20,
-        "atk": 5,
-        "def": 2,
+        "hp": 28,
+        "atk": 7,
+        "def": 3,
         "speed": 8,
         "accuracy": 100,
         "crit": 0.0,
@@ -303,9 +351,9 @@
       },
       "cave_dweller": {
         "name": "Cave Dweller",
-        "hp": 18,
-        "atk": 6,
-        "def": 2,
+        "hp": 26,
+        "atk": 8,
+        "def": 3,
         "speed": 10,
         "accuracy": 100,
         "crit": 0.05,
@@ -330,9 +378,9 @@
       },
       "stone_golem": {
         "name": "Stone Golem",
-        "hp": 25,
-        "atk": 4,
-        "def": 5,
+        "hp": 35,
+        "atk": 6,
+        "def": 6,
         "speed": 5,
         "accuracy": 80,
         "crit": 0.0,
@@ -357,9 +405,9 @@
       },
       "lantern_spirit": {
         "name": "Lantern Spirit",
-        "hp": 16,
-        "atk": 7,
-        "def": 1,
+        "hp": 24,
+        "atk": 9,
+        "def": 2,
         "speed": 12,
         "accuracy": 100,
         "crit": 0.10,
@@ -385,9 +433,9 @@
       },
       "tunnel_worm": {
         "name": "Tunnel Worm",
-        "hp": 22,
-        "atk": 6,
-        "def": 2,
+        "hp": 30,
+        "atk": 8,
+        "def": 3,
         "speed": 11,
         "accuracy": 100,
         "crit": 0.05,
@@ -409,6 +457,54 @@
             "dmg_scale": 0.4,
             "message": "The worm lunges from the shadows!"
           }
+        }
+      }
+    },
+    "orc_warchief": {
+      "name": "Orc Warchief",
+      "hp": 70,
+      "atk": 12,
+      "def": 5,
+      "speed": 9,
+      "accuracy": 100,
+      "crit": 0.10,
+      "xp": 55,
+      "gold": 40,
+      "description": "A massive orc clad in black iron. War scars cover its body. It commands fear.",
+      "boss": true,
+      "gatekeeper": true,
+      "loot_table": [
+        {"item": "battle_axe", "chance": 0.35},
+        {"item": "chainmail", "chance": 0.3},
+        {"item": "greater_health_potion", "chance": 0.35}
+      ],
+      "abilities": {
+        "war_cry": {
+          "name": "War Cry",
+          "chance": 0.3,
+          "accuracy": 100,
+          "type": "buff",
+          "value": 3,
+          "message": "The Warchief roars! Its power surges!"
+        },
+        "cleave": {
+          "name": "Cleave",
+          "chance": 0.35,
+          "accuracy": 90,
+          "type": "multi",
+          "value": 5,
+          "hits": 2,
+          "message": "The Warchief swings its massive axe in a wide arc!"
+        },
+        "shield_bash": {
+          "name": "Shield Bash",
+          "chance": 0.25,
+          "accuracy": 90,
+          "type": "stun",
+          "duration": 1,
+          "value": 6,
+          "dmg_scale": 0.3,
+          "message": "The Warchief slams its shield into you! You're dazed!"
         }
       }
     }
@@ -548,6 +644,64 @@
           "value": 5,
           "dmg_scale": 0.3,
           "message": "The ghoul sinks its claws into you!"
+        }
+      }
+    },
+    "lich_lord": {
+      "name": "The Lich Lord",
+      "hp": 55,
+      "atk": 11,
+      "def": 3,
+      "speed": 10,
+      "accuracy": 100,
+      "crit": 0.10,
+      "xp": 70,
+      "gold": 50,
+      "description": "A skeletal sorcerer wreathed in necrotic flame. Its phylactery pulses with stolen souls.",
+      "boss": true,
+      "gatekeeper": true,
+      "loot_table": [
+        {"item": "arcane_staff", "chance": 0.3},
+        {"item": "robes_of_arcana", "chance": 0.25},
+        {"item": "full_restore", "chance": 0.45}
+      ],
+      "abilities": {
+        "life_drain": {
+          "name": "Life Drain",
+          "chance": 0.3,
+          "accuracy": 90,
+          "type": "drain",
+          "value": 8,
+          "dmg_scale": 0.4,
+          "message": "The Lich Lord drains your life force!"
+        },
+        "dark_bolt": {
+          "name": "Dark Bolt",
+          "chance": 0.3,
+          "accuracy": 90,
+          "type": "damage",
+          "value": 10,
+          "dmg_scale": 0.5,
+          "message": "The Lich Lord hurls a bolt of shadow energy!"
+        },
+        "curse": {
+          "name": "Curse",
+          "chance": 0.25,
+          "accuracy": 90,
+          "type": "debuff",
+          "effect": "def_down",
+          "value": 3,
+          "duration": 3,
+          "message": "The Lich Lord curses you! Your armor crumbles!"
+        },
+        "soul_rend": {
+          "name": "Soul Rend",
+          "chance": 0.2,
+          "accuracy": 90,
+          "type": "dot",
+          "value": 4,
+          "duration": 3,
+          "message": "Necrotic energy tears at your soul! You're burning!"
         }
       }
     }
@@ -822,6 +976,65 @@
             "dmg_scale": 0.5,
             "message": "The drake breathes a cone of frost!"
           }
+        }
+      }
+    },
+    "abyssal_sentinel": {
+      "name": "The Abyssal Sentinel",
+      "hp": 85,
+      "atk": 14,
+      "def": 6,
+      "speed": 8,
+      "accuracy": 100,
+      "crit": 0.10,
+      "xp": 100,
+      "gold": 60,
+      "description": "A towering demon bound to guard the deepest gates. Hellfire burns in its eyes.",
+      "boss": true,
+      "gatekeeper": true,
+      "loot_table": [
+        {"item": "war_hammer", "chance": 0.3},
+        {"item": "plate_armor", "chance": 0.25},
+        {"item": "full_restore", "chance": 0.45}
+      ],
+      "abilities": {
+        "abyssal_slam": {
+          "name": "Abyssal Slam",
+          "chance": 0.3,
+          "accuracy": 90,
+          "type": "stun",
+          "duration": 1,
+          "value": 10,
+          "dmg_scale": 0.4,
+          "message": "The Sentinel slams the ground! You're stunned!"
+        },
+        "hellfire": {
+          "name": "Hellfire",
+          "chance": 0.3,
+          "accuracy": 90,
+          "type": "dot",
+          "value": 4,
+          "duration": 3,
+          "message": "Hellfire engulfs you! You're burning!"
+        },
+        "armor_crush": {
+          "name": "Armor Crush",
+          "chance": 0.25,
+          "accuracy": 90,
+          "type": "armor_pierce",
+          "value": 0.5,
+          "dmg_scale": 0.3,
+          "message": "The Sentinel's fist crushes through your defenses!"
+        },
+        "fear": {
+          "name": "Fear",
+          "chance": 0.2,
+          "accuracy": 90,
+          "type": "debuff",
+          "effect": "atk_down",
+          "value": 3,
+          "duration": 2,
+          "message": "The Sentinel's gaze fills you with terror! Your attack weakens!"
         }
       }
     }

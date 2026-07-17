@@ -246,6 +246,21 @@ class Game:
             print_separator("-")
             print()
             print(room.describe(ascension=self.ascension))
+
+            if room.room_type != "gatekeeper" and not room.cleared:
+                px, py = self.player.x, self.player.y
+                for dx, dy in [(0, -1), (0, 1), (-1, 0), (1, 0)]:
+                    adj = self.rooms.get((px + dx, py + dy))
+                    if adj and adj.room_type == "gatekeeper" and not adj.cleared:
+                        terror_texts = [
+                            "A chill runs down your spine. Something powerful lurks nearby.",
+                            "The air tastes of iron. A dark presence is close.",
+                            "Your bones tremble. Death waits in the adjacent chamber.",
+                            "Goosebumps cover your skin. A guardian guards the way forward.",
+                        ]
+                        print(f"\n  {random.choice(terror_texts)}")
+                        break
+
             print()
             print_minimap(self.rooms, (self.player.x, self.player.y),
                           self._get_display_explored(), floor_label)
@@ -323,6 +338,19 @@ class Game:
 
         if direction == "down":
             if self.current_room.room_type == "stairs":
+                gatekeeper_alive = False
+                for pos, rm in self.rooms.items():
+                    if rm.room_type == "gatekeeper" and not rm.cleared:
+                        gatekeeper_alive = True
+                        break
+                if gatekeeper_alive:
+                    clear_screen()
+                    print()
+                    print_header("The Way is Blocked")
+                    print()
+                    print("  A dark presence seals the stairs. You must defeat the guardian first.")
+                    input("  Press Enter...")
+                    return
                 clear_screen()
                 print()
                 print_header("Descending deeper...")
@@ -359,19 +387,7 @@ class Game:
                     return
                 else:
                     print("  The iron door is sealed shut. You need a skeleton key.")
-                    print("  Or you could just continue to Floor 3.")
-                    print()
-                    print("  1. Go down to Floor 3 (skip sealed floor)")
-                    print("  2. Stay here")
-                    choice = input("  > ").strip()
-                    if choice == "1":
-                        clear_screen()
-                        print()
-                        print_header("Descending to Floor 3...")
-                        print()
-                        input("  Press Enter...")
-                        self.start_floor(3)
-                    return
+                    input("  Press Enter...")
             else:
                 print("  There are no stairs here.")
                 input("  Press Enter...")
@@ -925,6 +941,10 @@ class Game:
                 print("  The Sealed Guardian falls! The sealed depths are conquered!")
                 print("  The path to Floor 3 is now clear.")
 
+        if enemy.get("gatekeeper"):
+            print()
+            print("  The guardian falls! The path to the stairs is now clear.")
+
         input("  Press Enter...")
         return "victory"
 
@@ -1037,10 +1057,16 @@ class Game:
         input("  Press Enter...")
 
     def _get_display_explored(self):
-        if (self.player.accessory and
-                self.player.accessory.get("effect") == "map_reveal"):
+        explored = set(self.player.explored)
+        if self.player.accessory and self.player.accessory.get("effect") == "map_reveal":
             return set(self.rooms.keys())
-        return self.player.explored
+        px, py = self.player.x, self.player.y
+        for dx, dy in [(0, -1), (0, 1), (-1, 0), (1, 0)]:
+            nx, ny = px + dx, py + dy
+            room = self.rooms.get((nx, ny))
+            if room and room.room_type == "gatekeeper" and not room.cleared:
+                explored.add((nx, ny))
+        return explored
 
     def show_map(self):
         clear_screen()

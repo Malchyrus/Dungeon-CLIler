@@ -84,6 +84,15 @@
     ],
     "danger": 0.0
   },
+  "gatekeeper": {
+    "description": [
+      "A dark presence pervades this chamber. The air tastes of iron.",
+      "This room radiates dread. Something powerful lurks here.",
+      "The walls are scarred with claw marks. A guardian awaits.",
+      "An oppressive force presses down on you. The way forward is guarded."
+    ],
+    "danger": 1.0
+  },
   "lore_notes": [
     "Scratched into the wall: \"The Grail does not give. It takes.\"",
     "A faded note on the floor: \"I wished. I regretted. I came back. I wished again.\"",
