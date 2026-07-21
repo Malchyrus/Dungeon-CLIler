@@ -63,6 +63,8 @@ def generate_dungeon(floor, ascension=0, variant=None):
 
     farthest = _find_farthest(room_list, start)
 
+    total_enemy_gold = 0
+
     if floor < 5:
         rooms[farthest].room_type = "stairs"
         rooms[farthest].description = random.choice([
@@ -121,7 +123,6 @@ def generate_dungeon(floor, ascension=0, variant=None):
     random.shuffle(assignable)
 
     idx = 0
-    total_enemy_gold = 0
 
     monster_count = min(len(assignable), random.randint(3, 5))
     for i in range(monster_count):
