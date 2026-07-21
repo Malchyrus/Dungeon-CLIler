@@ -3,123 +3,57 @@
   "player": {
     "name": "Td",
     "class_key": "warrior",
-    "hp": 60,
-    "max_hp": 60,
+    "hp": 50,
+    "max_hp": 52,
     "mp": 18,
-    "max_mp": 20,
-    "base_atk": 21,
-    "base_def": 15,
-    "xp": 28,
-    "level": 6,
-    "gold": 92,
+    "max_mp": 18,
+    "base_atk": 15,
+    "base_def": 11,
+    "xp": 31,
+    "level": 4,
+    "gold": 75,
     "weapon": {
-      "name": "War Hammer",
+      "name": "Holy Sword",
       "type": "weapon",
-      "weapon_type": "axe",
-      "atk": 7,
-      "speed_penalty": 2,
-      "description": "Forged for the siege of the northern wall. It crushes steel and hope alike.",
-      "value": 60,
-      "tier": 3
+      "weapon_type": "holy",
+      "atk": 5,
+      "description": "Blessed by the temple of Valdris. The light is fading -- the god has turned away.",
+      "value": 50,
+      "tier": 2
     },
     "armor": null,
     "accessory": null,
-    "relics": [],
+    "relics": [
+      {
+        "name": "Bronze Locket",
+        "type": "relic",
+        "atk_bonus": 2,
+        "tier": 2,
+        "description": "Etched with a war cry from a dead age.",
+        "lore": "The war cry of the First King. Speak it aloud and feel strength return."
+      }
+    ],
     "inventory": [
       {
-        "name": "Health Potion",
-        "type": "consumable",
-        "effect": "heal",
-        "value": 15,
-        "description": "Valdris alchemists once perfected healing draughts. This is all that remains.",
-        "tier": 1
-      },
-      {
-        "name": "Rare Loot Bag",
-        "type": "loot_bag",
-        "effect": "open_loot_bag",
-        "tier": 2,
-        "description": "A reinforced leather pouch. It glows faintly."
-      },
-      {
-        "name": "Silver Key",
+        "name": "Chest Key",
         "type": "key",
-        "key_type": "silver",
-        "description": "A tarnished silver key from Valdris's treasury. Opens silver locks.",
-        "value": 0,
-        "id": "silver_key",
-        "buy_price": 1
+        "key_type": "chest",
+        "description": "A sturdy iron key. Opens any sealed chest found in the dungeon.",
+        "value": 15
       },
       {
-        "name": "Mana Crystal",
-        "type": "consumable",
-        "effect": "restore_mp",
-        "value": 15,
-        "description": "Crystallized mana from the arcane wells beneath Valdris. It hums with power.",
-        "tier": 1
+        "name": "Chest Key",
+        "type": "key",
+        "key_type": "chest",
+        "description": "A sturdy iron key. Opens any sealed chest found in the dungeon.",
+        "value": 15
       },
       {
-        "name": "Rare Loot Bag",
-        "type": "loot_bag",
-        "effect": "open_loot_bag",
-        "tier": 2,
-        "description": "A reinforced leather pouch. It glows faintly."
-      },
-      {
-        "name": "Rusty Sword",
-        "type": "weapon",
-        "weapon_type": "sword",
-        "atk": 2,
-        "description": "A corroded blade from Valdris's armory. The kingdom's last defenders fell with these.",
-        "value": 10,
-        "tier": 1
-      },
-      {
-        "name": "Health Potion",
-        "type": "consumable",
-        "effect": "heal",
-        "value": 15,
-        "description": "Valdris alchemists once perfected healing draughts. This is all that remains.",
-        "tier": 1
-      },
-      {
-        "name": "Strength Elixir",
-        "type": "consumable",
-        "effect": "buff_atk",
-        "value": 3,
-        "description": "Brewed for Valdris's champions. It surges through your veins.",
-        "tier": 2
-      },
-      {
-        "name": "Rare Loot Bag",
-        "type": "loot_bag",
-        "effect": "open_loot_bag",
-        "tier": 2,
-        "description": "A reinforced leather pouch. It glows faintly."
-      },
-      {
-        "name": "Rusty Sword",
-        "type": "weapon",
-        "weapon_type": "sword",
-        "atk": 2,
-        "description": "A corroded blade from Valdris's armory. The kingdom's last defenders fell with these.",
-        "value": 10,
-        "tier": 1
-      },
-      {
-        "name": "Strength Elixir",
-        "type": "consumable",
-        "effect": "buff_atk",
-        "value": 3,
-        "description": "Brewed for Valdris's champions. It surges through your veins.",
-        "tier": 2
-      },
-      {
-        "name": "Rare Loot Bag",
-        "type": "loot_bag",
-        "effect": "open_loot_bag",
-        "tier": 2,
-        "description": "A reinforced leather pouch. It glows faintly."
+        "name": "Chest Key",
+        "type": "key",
+        "key_type": "chest",
+        "description": "A sturdy iron key. Opens any sealed chest found in the dungeon.",
+        "value": 15
       },
       {
         "name": "Chest Key",
@@ -138,49 +72,46 @@
         "tier": 2
       },
       {
-        "name": "Ice Resist Potion",
+        "name": "Mana Crystal",
         "type": "consumable",
-        "effect": "ele_resist_ice",
-        "value": 50,
-        "description": "A shimmering blue draught that numbs the senses to cold. From the frost caves.",
-        "tier": 2
-      },
-      {
-        "name": "Purple Mushroom",
-        "type": "consumable",
-        "effect": "full_heal_small",
-        "value": 12,
-        "description": "A deep violet mushroom that restores both body and mind.",
-        "tier": 1,
-        "scavenge_item": true
-      },
-      {
-        "name": "Rusty Dagger",
-        "type": "weapon",
-        "weapon_type": "dagger",
-        "atk": 2,
-        "description": "A small blade favored by Valdris's thieves' guild. Quick and silent.",
-        "value": 10,
+        "effect": "restore_mp",
+        "value": 15,
+        "description": "Crystallized mana from the arcane wells beneath Valdris. It hums with power.",
         "tier": 1
+      },
+      {
+        "name": "Skeleton Key",
+        "type": "key",
+        "key_type": "skeleton",
+        "description": "A key shaped like a skeleton. It radiates cold energy."
+      },
+      {
+        "name": "Silver Key",
+        "type": "key",
+        "key_type": "silver",
+        "description": "A tarnished silver key from Valdris's treasury. Opens silver locks.",
+        "value": 0
       }
     ],
     "floor": 2,
-    "x": 2,
-    "y": 4,
+    "x": 3,
+    "y": 1,
     "explored": [
       [
+        3,
+        1
+      ],
+      [
         2,
-        4
+        1
       ]
     ],
     "kills": {
       "slime": 1,
-      "giant_spider": 2,
-      "mushroom_crawler": 2,
-      "giant_snake": 2,
-      "skeleton": 2,
-      "wolf": 1,
-      "goblin": 2
+      "bat": 3,
+      "rat": 1,
+      "rat_king": 1,
+      "cultist": 1
     },
     "revive_used": false,
     "cooldowns": {
@@ -193,12 +124,120 @@
     "statuses": []
   },
   "rooms": {
-    "2,4": {
-      "x": 2,
-      "y": 4,
-      "room_type": "empty",
+    "0,1": {
+      "x": 0,
+      "y": 1,
+      "room_type": "gatekeeper",
       "floor": 2,
-      "description": "You descend into the sealed depths. The air is thick with ancient power.",
+      "description": "A dark presence pervades this chamber. The air tastes of iron.",
+      "doors": {
+        "north": true,
+        "south": true,
+        "east": true,
+        "west": false
+      },
+      "items": [],
+      "enemy": {
+        "name": "Orc Warchief",
+        "hp": 101,
+        "atk": 17,
+        "def": 7,
+        "speed": 9,
+        "accuracy": 100,
+        "crit": 0.1,
+        "xp": 55,
+        "gold": 40,
+        "description": "A massive orc clad in black iron. War scars cover its body. It commands fear.",
+        "boss": true,
+        "gatekeeper": true,
+        "loot_table": [
+          {
+            "item": "battle_axe",
+            "chance": 0.35
+          },
+          {
+            "item": "chainmail",
+            "chance": 0.3
+          },
+          {
+            "item": "greater_health_potion",
+            "chance": 0.35
+          }
+        ],
+        "abilities": {
+          "war_cry": {
+            "name": "War Cry",
+            "chance": 0.3,
+            "accuracy": 100,
+            "type": "buff",
+            "value": 3,
+            "message": "The Warchief roars! Its power surges!"
+          },
+          "cleave": {
+            "name": "Cleave",
+            "chance": 0.35,
+            "accuracy": 90,
+            "type": "multi",
+            "value": 5,
+            "hits": 2,
+            "message": "The Warchief swings its massive axe in a wide arc!"
+          },
+          "shield_bash": {
+            "name": "Shield Bash",
+            "chance": 0.25,
+            "accuracy": 90,
+            "type": "stun",
+            "duration": 1,
+            "value": 6,
+            "dmg_scale": 0.3,
+            "message": "The Warchief slams its shield into you! You're dazed!"
+          }
+        },
+        "key": "orc_warchief",
+        "max_hp": 101,
+        "statuses": []
+      },
+      "npc": null,
+      "chest": null,
+      "chest_opened": false,
+      "cleared": false,
+      "locked": null,
+      "visited": false,
+      "memory_fragment": null,
+      "lore_note": null
+    },
+    "4,0": {
+      "x": 4,
+      "y": 0,
+      "room_type": "treasure",
+      "floor": 2,
+      "description": "A bare room. Water drips from the ceiling.",
+      "doors": {
+        "north": false,
+        "south": true,
+        "east": false,
+        "west": true
+      },
+      "items": [],
+      "enemy": null,
+      "npc": null,
+      "chest": {
+        "type": "equipment",
+        "tier": 1
+      },
+      "chest_opened": false,
+      "cleared": false,
+      "locked": null,
+      "visited": false,
+      "memory_fragment": null,
+      "lore_note": null
+    },
+    "2,1": {
+      "x": 2,
+      "y": 1,
+      "room_type": "monster",
+      "floor": 2,
+      "description": "An empty chamber. Dust settles on cracked stone.",
       "doors": {
         "north": true,
         "south": false,
@@ -214,14 +253,14 @@
       "locked": null,
       "visited": true,
       "memory_fragment": null,
-      "lore_note": "A weathered scroll: \"The paladins prayed. The god was silent. The paladins stopped praying.\""
+      "lore_note": null
     },
-    "1,2": {
-      "x": 1,
-      "y": 2,
+    "0,0": {
+      "x": 0,
+      "y": 0,
       "room_type": "stairs",
       "floor": 2,
-      "description": "A staircase descends to the floor below. The sealed guardian's power fades.",
+      "description": "Stone steps lead down. Cold air rises from the depths.",
       "doors": {
         "north": false,
         "south": true,
@@ -239,38 +278,61 @@
       "memory_fragment": null,
       "lore_note": null
     },
-    "3,4": {
+    "3,1": {
       "x": 3,
-      "y": 4,
+      "y": 1,
+      "room_type": "empty",
+      "floor": 2,
+      "description": "The entrance to the dungeon. Cold air rushes past you.",
+      "doors": {
+        "north": true,
+        "south": true,
+        "east": true,
+        "west": true
+      },
+      "items": [],
+      "enemy": null,
+      "npc": null,
+      "chest": null,
+      "chest_opened": false,
+      "cleared": true,
+      "locked": null,
+      "visited": true,
+      "memory_fragment": null,
+      "lore_note": null
+    },
+    "1,1": {
+      "x": 1,
+      "y": 1,
       "room_type": "monster",
       "floor": 2,
-      "description": "A silent room. Your torch flickers in the breeze.",
+      "description": "A bare room. Water drips from the ceiling.",
       "doors": {
-        "north": false,
+        "north": true,
         "south": false,
-        "east": false,
+        "east": true,
         "west": true
       },
       "items": [],
       "enemy": {
-        "name": "Bone Champion",
+        "name": "Skeleton",
         "hp": 40,
-        "atk": 9,
+        "atk": 12,
         "def": 4,
-        "speed": 8,
+        "speed": 10,
         "accuracy": 100,
         "crit": 0.05,
-        "xp": 44,
-        "gold": 12,
-        "description": "A towering skeleton clad in rusted armor. It wields a massive bone sword.",
+        "xp": 20,
+        "gold": 6,
+        "description": "Bones rattle as it raises a rusted blade.",
         "loot_table": [
           {
-            "item": "chainmail",
-            "chance": 0.2
+            "item": "rusty_sword",
+            "chance": 0.15
           },
           {
-            "item": "iron_blade",
-            "chance": 0.15
+            "item": "chainmail",
+            "chance": 0.08
           },
           {
             "item": "silver_key",
@@ -278,26 +340,17 @@
           }
         ],
         "abilities": {
-          "bone_volley": {
-            "name": "Bone Volley",
+          "bone_throw": {
+            "name": "Bone Throw",
             "chance": 0.35,
             "accuracy": 90,
             "type": "damage",
-            "value": 7,
+            "value": 6,
             "dmg_scale": 0.4,
-            "message": "The bone champion hurls a volley of bones!"
-          },
-          "crushing_blow": {
-            "name": "Crushing Blow",
-            "chance": 0.25,
-            "accuracy": 90,
-            "type": "damage",
-            "value": 10,
-            "dmg_scale": 0.5,
-            "message": "The bone champion smashes down with its massive sword!"
+            "message": "The skeleton hurls a bone at you!"
           }
         },
-        "key": "bone_champion",
+        "key": "skeleton",
         "max_hp": 40,
         "statuses": []
       },
@@ -310,12 +363,99 @@
       "memory_fragment": null,
       "lore_note": null
     },
-    "1,5": {
-      "x": 1,
-      "y": 5,
-      "room_type": "treasure",
+    "2,0": {
+      "x": 2,
+      "y": 0,
+      "room_type": "npc",
+      "floor": 2,
+      "description": "A silent room. Your torch flickers in the breeze.",
+      "doors": {
+        "north": false,
+        "south": true,
+        "east": true,
+        "west": true
+      },
+      "items": [],
+      "enemy": null,
+      "npc": {
+        "name": "Trapped Adventurer",
+        "type": "trapped",
+        "dialogue": {
+          "greeting": "Hey! Over here! I've been stuck for days.",
+          "lore": "The mimics... they look just like chests. Don't trust anything that looks too perfect.",
+          "hint": "Listen for the faint breathing. Real chests don't breathe.",
+          "rescue": "Thank you! I thought I'd die down here. Take this as thanks.",
+          "trade_offer": "I found something valuable but can't use it. Want to trade? I need a Health Potion.",
+          "trade_accept": "Deal! Here, take this. It served me well.",
+          "trade_refuse": "No worries. If you change your mind, I'll be here.",
+          "follow": "I'll follow you for a bit. Watch my back and I'll watch yours.",
+          "no_gold": "I don't have much... but I can share what I know.",
+          "farewell": "Be careful out there. And thanks again."
+        },
+        "trade_item": "silver_key",
+        "trade_want": "health_potion",
+        "reward_item": "iron_blade"
+      },
+      "chest": null,
+      "chest_opened": false,
+      "cleared": false,
+      "locked": null,
+      "visited": false,
+      "memory_fragment": null,
+      "lore_note": null
+    },
+    "4,2": {
+      "x": 4,
+      "y": 2,
+      "room_type": "empty",
       "floor": 2,
       "description": "Nothing of interest here. Just cold, damp walls.",
+      "doors": {
+        "north": true,
+        "south": false,
+        "east": false,
+        "west": true
+      },
+      "items": [],
+      "enemy": null,
+      "npc": null,
+      "chest": null,
+      "chest_opened": false,
+      "cleared": false,
+      "locked": null,
+      "visited": false,
+      "memory_fragment": null,
+      "lore_note": null
+    },
+    "3,0": {
+      "x": 3,
+      "y": 0,
+      "room_type": "locked_door",
+      "floor": 2,
+      "description": "Ancient iron bars block a descending stairway. They radiate cold energy.",
+      "doors": {
+        "north": false,
+        "south": true,
+        "east": true,
+        "west": true
+      },
+      "items": [],
+      "enemy": null,
+      "npc": null,
+      "chest": null,
+      "chest_opened": false,
+      "cleared": false,
+      "locked": null,
+      "visited": false,
+      "memory_fragment": null,
+      "lore_note": null
+    },
+    "0,2": {
+      "x": 0,
+      "y": 2,
+      "room_type": "treasure",
+      "floor": 2,
+      "description": "A silent room. Your torch flickers in the breeze.",
       "doors": {
         "north": true,
         "south": false,
@@ -327,7 +467,7 @@
       "npc": null,
       "chest": {
         "type": "relic",
-        "tier": 5
+        "tier": 2
       },
       "chest_opened": false,
       "cleared": false,
@@ -336,66 +476,48 @@
       "memory_fragment": null,
       "lore_note": null
     },
-    "1,4": {
+    "1,0": {
       "x": 1,
-      "y": 4,
+      "y": 0,
       "room_type": "monster",
       "floor": 2,
-      "description": "A silent room. Your torch flickers in the breeze.",
+      "description": "Nothing of interest here. Just cold, damp walls.",
       "doors": {
-        "north": true,
+        "north": false,
         "south": true,
         "east": true,
         "west": false
       },
       "items": [],
       "enemy": {
-        "name": "Bone Champion",
-        "hp": 40,
-        "atk": 9,
-        "def": 4,
-        "speed": 8,
+        "name": "Dire Wolf",
+        "hp": 47,
+        "atk": 14,
+        "def": 2,
+        "speed": 13,
         "accuracy": 100,
-        "crit": 0.05,
-        "xp": 44,
-        "gold": 12,
-        "description": "A towering skeleton clad in rusted armor. It wields a massive bone sword.",
+        "crit": 0.1,
+        "xp": 21,
+        "gold": 5,
+        "description": "A massive wolf with frost-covered fur.",
         "loot_table": [
           {
-            "item": "chainmail",
+            "item": "strength_elixir",
             "chance": 0.2
-          },
-          {
-            "item": "iron_blade",
-            "chance": 0.15
-          },
-          {
-            "item": "silver_key",
-            "chance": 0.1
           }
         ],
         "abilities": {
-          "bone_volley": {
-            "name": "Bone Volley",
+          "pounce": {
+            "name": "Pounce",
             "chance": 0.35,
-            "accuracy": 90,
-            "type": "damage",
-            "value": 7,
-            "dmg_scale": 0.4,
-            "message": "The bone champion hurls a volley of bones!"
-          },
-          "crushing_blow": {
-            "name": "Crushing Blow",
-            "chance": 0.25,
-            "accuracy": 90,
-            "type": "damage",
-            "value": 10,
-            "dmg_scale": 0.5,
-            "message": "The bone champion smashes down with its massive sword!"
+            "accuracy": 100,
+            "type": "buff",
+            "value": 2,
+            "message": "The wolf howls and its attack surges!"
           }
         },
-        "key": "bone_champion",
-        "max_hp": 40,
+        "key": "wolf",
+        "max_hp": 47,
         "statuses": []
       },
       "npc": null,
@@ -407,25 +529,36 @@
       "memory_fragment": null,
       "lore_note": null
     },
-    "2,3": {
-      "x": 2,
-      "y": 3,
-      "room_type": "treasure",
+    "3,2": {
+      "x": 3,
+      "y": 2,
+      "room_type": "npc",
       "floor": 2,
       "description": "Nothing of interest here. Just cold, damp walls.",
       "doors": {
-        "north": false,
-        "south": true,
-        "east": false,
-        "west": true
+        "north": true,
+        "south": false,
+        "east": true,
+        "west": false
       },
       "items": [],
       "enemy": null,
-      "npc": null,
-      "chest": {
-        "type": "equipment",
-        "tier": 4
+      "npc": {
+        "name": "Cursed Alchemist",
+        "type": "item_trader",
+        "dialogue": {
+          "greeting": "I transmute... Give me two of worth, and I shall give you one of greater worth.",
+          "trade_success": "The alchemy holds! Behold your new treasure.",
+          "trade_fail": "You lack the necessary components. Two weapons or artifacts, please.",
+          "farewell": "The transmutation circle never forgets."
+        },
+        "required_count": 2,
+        "accepted_types": [
+          "weapon",
+          "accessory"
+        ]
       },
+      "chest": null,
       "chest_opened": false,
       "cleared": false,
       "locked": null,
@@ -433,66 +566,57 @@
       "memory_fragment": null,
       "lore_note": null
     },
-    "1,3": {
-      "x": 1,
-      "y": 3,
+    "4,1": {
+      "x": 4,
+      "y": 1,
       "room_type": "monster",
       "floor": 2,
-      "description": "A silent room. Your torch flickers in the breeze.",
+      "description": "Nothing of interest here. Just cold, damp walls.",
       "doors": {
         "north": true,
         "south": true,
-        "east": true,
-        "west": false
+        "east": false,
+        "west": true
       },
       "items": [],
       "enemy": {
-        "name": "Goblin Shaman",
-        "hp": 35,
-        "atk": 8,
-        "def": 2,
-        "speed": 9,
+        "name": "Skeleton",
+        "hp": 40,
+        "atk": 12,
+        "def": 4,
+        "speed": 10,
         "accuracy": 100,
         "crit": 0.05,
-        "xp": 38,
-        "gold": 15,
-        "description": "A goblin crackling with dark magic. Its eyes glow with malevolent power.",
+        "xp": 20,
+        "gold": 6,
+        "description": "Bones rattle as it raises a rusted blade.",
         "loot_table": [
           {
-            "item": "greater_health_potion",
-            "chance": 0.3
+            "item": "rusty_sword",
+            "chance": 0.15
           },
           {
-            "item": "mana_crystal",
-            "chance": 0.2
+            "item": "chainmail",
+            "chance": 0.08
           },
           {
-            "item": "shadow_dagger",
+            "item": "silver_key",
             "chance": 0.1
           }
         ],
         "abilities": {
-          "dark_ritual": {
-            "name": "Dark Ritual",
-            "chance": 0.3,
-            "accuracy": 100,
-            "type": "heal",
-            "value": 12,
-            "threshold": 0.4,
-            "message": "The goblin shaman chants a dark ritual and heals!"
-          },
-          "fire_bolt": {
-            "name": "Fire Bolt",
+          "bone_throw": {
+            "name": "Bone Throw",
             "chance": 0.35,
             "accuracy": 90,
             "type": "damage",
-            "value": 8,
+            "value": 6,
             "dmg_scale": 0.4,
-            "message": "The goblin hurls a fire bolt at you!"
+            "message": "The skeleton hurls a bone at you!"
           }
         },
-        "key": "elite_goblin",
-        "max_hp": 35,
+        "key": "skeleton",
+        "max_hp": 40,
         "statuses": []
       },
       "npc": null,
@@ -506,7 +630,5 @@
     }
   },
   "ascension": 0,
-  "lore_entries": [
-    "lore_wandering_spirit"
-  ]
+  "lore_entries": []
 }

@@ -137,6 +137,10 @@ def _execute_enemy_intent(player, enemy, intent, player_blocked):
 
         raw = enemy["atk"] + random.randint(-1, 2) + extra_dmg
 
+        if player.chaos_double_damage > 0 and random.random() < player.chaos_double_damage:
+            raw *= 2
+            messages.append("CHAOS! The enemy's attack deals double damage!")
+
         if has_status(player.statuses, "divine_shield"):
             messages.append("Divine Shield absorbs all damage!")
             remove_status(player.statuses, "divine_shield")
@@ -160,12 +164,27 @@ def _execute_enemy_intent(player, enemy, intent, player_blocked):
             from constants import ARMOR_DR_K, ARMOR_DR_CAP
             dr = min(ARMOR_DR_CAP, player.defense / (player.defense + ARMOR_DR_K * enemy.get("level", 1))) if player.defense > 0 else 0.0
             reduced = max(1, int(raw * (1 - dr)))
-            player.hp = max(0, player.hp - reduced)
+
+            dmg_taken_mult = player.damage_taken_mult
+            if dmg_taken_mult != 1.0:
+                reduced = max(1, int(reduced * dmg_taken_mult))
+
+            if player.second_wind_heal_pct > 0 and not player._second_wind_used and player.hp - reduced <= 0:
+                heal = int(player.max_hp * player.second_wind_heal_pct / 100)
+                player.hp = heal
+                player._second_wind_used = True
+                messages.append(f"Second Wind! You refuse to fall! Restored {heal} HP!")
+            else:
+                player.hp = max(0, player.hp - reduced)
             messages.append(f"The {enemy['name']} hits you for {reduced} damage!")
             damage_dealt = reduced
             if player.thorns > 0:
                 enemy["hp"] = max(0, enemy["hp"] - player.thorns)
                 messages.append(f"Thorns deals {player.thorns} damage back!")
+            if player.reflect_pct > 0:
+                reflected = max(1, int(reduced * player.reflect_pct / 100))
+                enemy["hp"] = max(0, enemy["hp"] - reflected)
+                messages.append(f"Thornplate reflects {reflected} damage back!")
         else:
             messages.append(f"The {enemy['name']}'s attack is fully absorbed!")
 
@@ -188,6 +207,10 @@ def _execute_enemy_intent(player, enemy, intent, player_blocked):
 
     raw = enemy["atk"] + random.randint(-1, 2)
 
+    if player.chaos_double_damage > 0 and random.random() < player.chaos_double_damage:
+        raw *= 2
+        messages.append("CHAOS! The enemy's attack deals double damage!")
+
     if player_blocked:
         raw = raw // 2
 
@@ -197,16 +220,43 @@ def _execute_enemy_intent(player, enemy, intent, player_blocked):
         from constants import ARMOR_DR_K, ARMOR_DR_CAP
         dr = min(ARMOR_DR_CAP, player.defense / (player.defense + ARMOR_DR_K * enemy.get("level", 1))) if player.defense > 0 else 0.0
         reduced = max(1, int(raw * (1 - dr)))
-        player.hp = max(0, player.hp - reduced)
+
+        dmg_taken_mult = player.damage_taken_mult
+        if dmg_taken_mult != 1.0:
+            reduced = max(1, int(reduced * dmg_taken_mult))
+
+        if player.second_wind_heal_pct > 0 and not player._second_wind_used and player.hp - reduced <= 0:
+            heal = int(player.max_hp * player.second_wind_heal_pct / 100)
+            player.hp = heal
+            player._second_wind_used = True
+            messages.append(f"Second Wind! You refuse to fall! Restored {heal} HP!")
+        else:
+            player.hp = max(0, player.hp - reduced)
         messages.append(f"The {enemy['name']} hits you for {reduced} damage!")
         damage_dealt = reduced
         if player.thorns > 0:
             enemy["hp"] = max(0, enemy["hp"] - player.thorns)
             messages.append(f"Thorns deals {player.thorns} damage back!")
+        if player.reflect_pct > 0:
+            reflected = max(1, int(reduced * player.reflect_pct / 100))
+            enemy["hp"] = max(0, enemy["hp"] - reflected)
+            messages.append(f"Thornplate reflects {reflected} damage back!")
     else:
         messages.append(f"The {enemy['name']}'s attack is fully absorbed!")
 
     return messages, damage_dealt
+
+
+def _apply_debuff_to_enemy(player, enemy, status_id, duration, value):
+    enemy.setdefault("statuses", [])
+    actual_dur = duration
+    actual_val = value
+    if player.first_debuff_double and not player._first_debuff_used:
+        actual_dur *= 2
+        actual_val *= 2
+        player._first_debuff_used = True
+    add_status(enemy["statuses"], status_id, actual_dur, actual_val)
+    return actual_dur, actual_val
 
 
 ABILITY_HANDLERS = {}
@@ -233,8 +283,7 @@ def _ability_lightning_bolt(player, enemy):
     enemy["hp"] = max(0, enemy["hp"] - dmg)
     msgs = [f"A bolt of lightning strikes! {dmg} magic damage!"]
     if random.random() < 0.3:
-        enemy.setdefault("statuses", [])
-        add_status(enemy["statuses"], "stunned", 1)
+        _apply_debuff_to_enemy(player, enemy, "stunned", 1, 0)
         msgs.append("The enemy is stunned by the lightning!")
     return msgs, "lightning_bolt", False
 
@@ -281,8 +330,7 @@ def _ability_divine_shield(player, enemy):
 
 
 def _ability_war_cry(player, enemy):
-    enemy.setdefault("statuses", [])
-    add_status(enemy["statuses"], "stunned", 1)
+    _apply_debuff_to_enemy(player, enemy, "stunned", 1, 0)
     return ["You roar! The enemy is stunned for 1 turn!"], "war_cry", False
 
 
@@ -321,9 +369,8 @@ def _ability_backstab(player, enemy):
 
 
 def _ability_poison_blade(player, enemy):
-    enemy.setdefault("statuses", [])
-    add_status(enemy["statuses"], "poison", 3, 3)
-    return ["You coat your blade in poison!"], "poison_blade", False
+    dur, val = _apply_debuff_to_enemy(player, enemy, "poison", 3, 3)
+    return [f"You coat your blade in poison! Poison deals {val}/turn for {dur} turns!"], "poison_blade", False
 
 
 def _ability_smoke_bomb(player, enemy):
@@ -386,15 +433,41 @@ def _execute_player_action(player, enemy, action, player_ability):
     ability_used = None
 
     if action == "attack":
+        mp_cost = player.basic_atk_mp_cost
+        if mp_cost > 0 and player.mp < mp_cost:
+            messages.append(f"Not enough MP for basic attack! ({mp_cost} MP required)")
+            return messages, False, ability_used
+
         crit = player.calc_crit()
         damage = player.calc_damage()
+
+        atk_mult = player.basic_atk_mult
+        if atk_mult != 1.0:
+            damage = int(damage * atk_mult)
+
+        if player.chaos_double_chance > 0 and random.random() < player.chaos_double_chance:
+            damage *= 2
+            messages.append("CHAOS! Your attack deals double damage!")
+
+        if player.low_hp_damage_mult > 1.0 and player.hp < player.max_hp * 0.3:
+            damage = int(damage * player.low_hp_damage_mult)
+            messages.append("Berserker's rage! Bonus damage!")
+
         if crit:
             damage = int(damage * player.crit_mult)
             messages.append("CRITICAL HIT!")
+            if player.on_crit_double > 0 and random.random() < player.on_crit_double:
+                damage *= 2
+                messages.append("Thunderstrike! Double crit damage!")
+
         enemy_def = enemy.get("def", 0)
         ap = player.armor_pen
         effective_def = max(0, enemy_def - int(enemy_def * ap / 100)) if ap > 0 else enemy_def
         reduced = max(1, damage - effective_def)
+
+        if mp_cost > 0:
+            player.mp -= mp_cost
+            messages.append(f"Basic attack costs {mp_cost} MP!")
 
         if enemy.get("first_strike") and not enemy.get("_first_strike_used"):
             reduced *= 2
@@ -404,8 +477,23 @@ def _execute_player_action(player, enemy, action, player_ability):
         enemy["hp"] = max(0, enemy["hp"] - reduced)
         messages.append(f"You deal {reduced} damage to the {enemy['name']}!")
 
+        if player.execute_bonus_pct > 0 and enemy["hp"] > 0:
+            enemy_max = enemy.get("max_hp", enemy["hp"])
+            if enemy_max > 0 and enemy["hp"] / enemy_max < 0.25:
+                bonus = int(reduced * player.execute_bonus_pct / 100)
+                enemy["hp"] = max(0, enemy["hp"] - bonus)
+                messages.append(f"Execute! +{bonus} bonus damage!")
+
+        if player.on_hit_poison > 0:
+            dur, val = _apply_debuff_to_enemy(player, enemy, "poison", player.on_hit_poison_dur or 3, player.on_hit_poison)
+            messages.append(f"Poison infects the {enemy['name']} for {val} damage!")
+
         ls = player.lifesteal
-        if ls > 0 and reduced > 0:
+        if crit and player.on_crit_heal_pct > 0:
+            heal = max(1, int(reduced * player.on_crit_heal_pct / 100))
+            player.heal(heal)
+            messages.append(f"Soul Reaver restores {heal} HP!")
+        elif ls > 0 and reduced > 0:
             heal = max(1, int(reduced * ls / 100))
             player.heal(heal)
             messages.append(f"Lifesteal restores {heal} HP!")
@@ -417,7 +505,11 @@ def _execute_player_action(player, enemy, action, player_ability):
             messages.append(f"Reflect deals {reflected} damage back to you!")
 
     elif action == "defend":
-        armor_val = player.defense
+        armor_val = int(player.defense * player.defend_shield_mult)
+        hp_cost = player.defend_hp_cost
+        if hp_cost > 0:
+            player.hp = max(1, player.hp - hp_cost)
+            messages.append(f"Defense costs {hp_cost} HP!")
         existing = get_status(player.statuses, "shield")
         if existing:
             remove_status(player.statuses, "shield")
@@ -441,17 +533,31 @@ def _execute_player_action(player, enemy, action, player_ability):
                 return messages, False, ability_used
 
             mp_cost = ability.get("mp_cost", 0)
-            if player.mp < mp_cost:
-                messages.append(f"Not enough MP for {ability['name']}!")
+            overhead = player.ability_mp_overhead
+            mp_mult = player.ability_mp_mult
+            effective_cost = int((mp_cost + overhead) * mp_mult)
+
+            if player.mp < effective_cost:
+                messages.append(f"Not enough MP for {ability['name']}! (Need {effective_cost} MP)")
                 return messages, False, ability_used
 
-            player.mp -= mp_cost
+            player.mp -= effective_cost
             player.cooldowns[player_ability] = ability.get("cooldown", 1)
 
             handler = ABILITY_HANDLERS.get(player_ability)
             if handler:
+                enemy_hp_before = enemy["hp"]
                 msgs, ability_used, player_blocked = handler(player, enemy)
                 messages.extend(msgs)
+
+                dmg_mult = player.ability_dmg_mult
+                if dmg_mult > 1.0:
+                    actual_dmg = enemy_hp_before - enemy["hp"]
+                    if actual_dmg > 0:
+                        bonus_dmg = int(actual_dmg * (dmg_mult - 1.0))
+                        enemy["hp"] = max(0, enemy["hp"] - bonus_dmg)
+                        messages.append(f"Empowered ability deals {bonus_dmg} bonus damage!")
+
                 if ability_used and player.lifesteal > 0:
                     dmg_dealt = max(0, int((enemy.get("max_hp", enemy["hp"]) - enemy["hp"]) * 0))
                     for m in msgs:

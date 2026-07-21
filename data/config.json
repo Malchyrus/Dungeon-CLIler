@@ -34,7 +34,7 @@
     "npc_count_min": 1,
     "npc_count_max": 3,
     "room_types_weight_empty": 0.3,
-    "celdric_price_fraction": 0.9
+    "celdric_price_fraction": 0.7
   },
   "ascension": {
     "hp_mult": {"0": 1.0, "1": 0.9, "2": 0.8},

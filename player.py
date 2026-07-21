@@ -48,6 +48,8 @@ class Player:
         self.explored = set()
         self.kills = {}
         self.revive_used = False
+        self._second_wind_used = False
+        self._first_debuff_used = False
         self.statuses = []
 
     def get_available_abilities(self):
@@ -113,6 +115,7 @@ class Player:
         up = get_status(self.statuses, "def_up")
         if up:
             total += up.get("value", 0)
+        total += self.def_reduction
         return max(0, total)
 
     @property
@@ -252,6 +255,164 @@ class Player:
             total *= r.get("gold_mult", 1.0)
         return total
 
+    @property
+    def basic_atk_mult(self):
+        total = 1.0
+        for r in self.relics:
+            total *= r.get("basic_atk_mult", 1.0)
+        return total
+
+    @property
+    def basic_atk_mp_cost(self):
+        total = 0
+        for r in self.relics:
+            total += r.get("basic_atk_mp_cost", 0)
+        return total
+
+    @property
+    def ability_mp_overhead(self):
+        total = 0
+        for r in self.relics:
+            total += r.get("ability_mp_overhead", 0)
+        return total
+
+    @property
+    def ability_dmg_mult(self):
+        total = 1.0
+        for r in self.relics:
+            total *= r.get("ability_dmg_mult", 1.0)
+        return total
+
+    @property
+    def ability_mp_mult(self):
+        total = 1.0
+        for r in self.relics:
+            total *= r.get("ability_mp_mult", 1.0)
+        return total
+
+    @property
+    def damage_taken_mult(self):
+        total = 1.0
+        for r in self.relics:
+            total *= r.get("damage_taken_mult", 1.0)
+        return total
+
+    @property
+    def on_hit_poison(self):
+        total = 0
+        for r in self.relics:
+            total += r.get("on_hit_poison", 0)
+        return total
+
+    @property
+    def on_hit_poison_dur(self):
+        total = 0
+        for r in self.relics:
+            dur = r.get("on_hit_poison_dur", 0)
+            if dur > total:
+                total = dur
+        return total
+
+    @property
+    def on_crit_double(self):
+        total = 0.0
+        for r in self.relics:
+            total += r.get("on_crit_double", 0.0)
+        return min(total, 1.0)
+
+    @property
+    def on_crit_heal_pct(self):
+        total = 0
+        for r in self.relics:
+            total += r.get("on_crit_heal_pct", 0)
+        return total
+
+    @property
+    def reflect_pct(self):
+        total = 0
+        for r in self.relics:
+            total += r.get("reflect_pct", 0)
+        return min(total, 50)
+
+    @property
+    def chaos_double_chance(self):
+        total = 0.0
+        for r in self.relics:
+            total += r.get("chaos_double_chance", 0.0)
+        return min(total, 1.0)
+
+    @property
+    def chaos_double_damage(self):
+        total = 0.0
+        for r in self.relics:
+            total += r.get("chaos_double_damage", 0.0)
+        return min(total, 1.0)
+
+    @property
+    def double_item_chance(self):
+        total = 0.0
+        for r in self.relics:
+            total += r.get("double_item_chance", 0.0)
+        return min(total, 0.50)
+
+    @property
+    def first_debuff_double(self):
+        for r in self.relics:
+            if r.get("first_debuff_double"):
+                return True
+        return False
+
+    @property
+    def heal_on_kill(self):
+        total = 0
+        for r in self.relics:
+            total += r.get("heal_on_kill", 0)
+        return total
+
+    @property
+    def low_hp_damage_mult(self):
+        total = 1.0
+        for r in self.relics:
+            total *= r.get("low_hp_damage_mult", 1.0)
+        return total
+
+    @property
+    def execute_bonus_pct(self):
+        total = 0
+        for r in self.relics:
+            total += r.get("execute_bonus_pct", 0)
+        return total
+
+    @property
+    def second_wind_heal_pct(self):
+        total = 0
+        for r in self.relics:
+            val = r.get("second_wind_heal_pct", 0)
+            if val > total:
+                total = val
+        return total
+
+    @property
+    def def_reduction(self):
+        total = 0
+        for r in self.relics:
+            total += r.get("def_reduction", 0)
+        return total
+
+    @property
+    def defend_shield_mult(self):
+        total = 1.0
+        for r in self.relics:
+            total *= r.get("defend_shield_mult", 1.0)
+        return total
+
+    @property
+    def defend_hp_cost(self):
+        total = 0
+        for r in self.relics:
+            total += r.get("defend_hp_cost", 0)
+        return total
+
     def calc_dr(self, enemy_level):
         return calc_dr(self.defense, enemy_level)
 
@@ -372,17 +533,27 @@ class Player:
         return removed, f"Unequipped {removed['name']}."
 
     def get_stats_display(self):
-        from status import format_statuses
+        from status import format_statuses, get_status
         weapon_name = self.weapon["name"] if self.weapon else "None"
         armor_name = self.armor["name"] if self.armor else "None"
         acc_name = self.accessory["name"] if self.accessory else "None"
         affinity = " [AFFINITY BONUS!]" if self.is_weapon_affinity() else ""
         dr = int(self.calc_dr(self.level) * 100)
         status_str = format_statuses(self.statuses)
+
+        atk_up = get_status(self.statuses, "atk_up")
+        atk_down = get_status(self.statuses, "atk_down")
+        def_up = get_status(self.statuses, "def_up")
+        def_down = get_status(self.statuses, "def_down")
+        atk_buff = (atk_up.get("value", 0) if atk_up else 0) - (atk_down.get("value", 0) if atk_down else 0)
+        def_buff = (def_up.get("value", 0) if def_up else 0) - (def_down.get("value", 0) if def_down else 0)
+        atk_str = f"ATK: {self.atk}" + (f" ({self.atk - atk_buff:+d}{'+' if atk_buff >= 0 else ''}{atk_buff})" if atk_buff != 0 else "")
+        def_str = f"DEF: {self.defense}" + (f" ({self.defense - def_buff:+d}{'+' if def_buff >= 0 else ''}{def_buff})" if def_buff != 0 else "")
+
         lines = [
             f"  {self.name} the {self.class_name} (Lv.{self.level})",
             f"  HP: {self.hp}/{self.max_hp}  MP: {self.mp}/{self.max_mp}",
-            f"  ATK: {self.atk}  DEF: {self.defense}  DR: {dr}%  Dodge: {self.dodge_chance}%",
+            f"  {atk_str}  {def_str}  DR: {dr}%  Dodge: {self.dodge_chance}%",
             f"  SPD: {self.speed}  ACC: {self.accuracy}  Crit: {self.crit}%",
             f"  Lifesteal: {self.lifesteal}%  Thorns: {self.thorns}  Armor Pen: {self.armor_pen}%",
             f"  Regen: {self.regen_per_turn}/t  MP Regen: {self.mp_regen_per_turn}/t",

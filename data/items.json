@@ -1690,6 +1690,227 @@
       "curse_duration": 999,
       "description": "The face behind it is no longer yours.",
       "lore": "Worn by the court jester who saw the dragon coming. He laughed. He was the only one who knew."
+    },
+    "berserkers_sigil": {
+      "name": "Berserker's Sigil",
+      "type": "relic",
+      "basic_atk_mult": 1.5,
+      "basic_atk_mp_cost": 2,
+      "tier": 3,
+      "description": "Basic attacks deal +50% damage, cost 2 MP.",
+      "lore": "The warriors who wore it hit harder. They also bled more. The sigil does not distinguish between the two."
+    },
+    "venomous_fang": {
+      "name": "Venomous Fang",
+      "type": "relic",
+      "on_hit_poison": 2,
+      "on_hit_poison_dur": 3,
+      "tier": 3,
+      "description": "Basic attacks apply 2 poison for 3 turns.",
+      "lore": "A serpent's fang, still dripping. The venom is ancient. It remembers the first thing it killed."
+    },
+    "arcane_overload": {
+      "name": "Arcane Overload",
+      "type": "relic",
+      "ability_mp_overhead": 3,
+      "ability_dmg_mult": 1.30,
+      "tier": 4,
+      "description": "Abilities cost 3 more MP but deal +30% damage.",
+      "lore": "The mage who bound too much power into one spell. Her hands still smoke."
+    },
+    "glass_cannon": {
+      "name": "Glass Cannon",
+      "type": "relic",
+      "basic_atk_mult": 1.5,
+      "damage_taken_mult": 1.25,
+      "tier": 4,
+      "description": "Deal +50% damage but take +25% damage.",
+      "lore": "All offense. No defense. The dwarven forge-masters loved this strategy. They died loving it."
+    },
+    "thunderstrike_ring": {
+      "name": "Thunderstrike Ring",
+      "type": "relic",
+      "on_crit_double": 0.30,
+      "tier": 4,
+      "description": "Critical hits have 30% chance to deal double damage.",
+      "lore": "Forged in the storm titan's fist. Lightning crackles when the wearer's blood runs hot."
+    },
+    "thornplate": {
+      "name": "Thornplate",
+      "type": "relic",
+      "reflect_pct": 25,
+      "tier": 5,
+      "description": "Reflect 25% of all damage taken back to attacker.",
+      "lore": "The armor of the Thorn King. Every blow against him was returned tenfold. He died by his own hand."
+    },
+    "soul_reaver": {
+      "name": "Soul Reaver",
+      "type": "relic",
+      "on_crit_heal_pct": 30,
+      "tier": 5,
+      "description": "Critical hits heal 30% of damage dealt.",
+      "lore": "A blade that drinks the soul, not the blood. The difference matters to the dying."
+    },
+    "blood_pact_blade": {
+      "name": "Blood Pact Blade",
+      "type": "relic",
+      "ability_dmg_mult": 1.40,
+      "ability_mp_mult": 2.0,
+      "tier": 6,
+      "description": "Abilities deal +40% damage but cost double MP.",
+      "lore": "The blade remembers every promise made in blood. It collects on them all."
+    },
+    "chaos_shard": {
+      "name": "Chaos Shard",
+      "type": "relic",
+      "chaos_double_chance": 0.25,
+      "chaos_double_damage": 0.10,
+      "tier": 6,
+      "description": "25% chance to deal double damage. 10% chance to take double damage.",
+      "lore": "A fragment of the Primordial Chaos. It does not care who wins. It cares that someone bleeds."
+    },
+    "regenerating_moss": {
+      "name": "Regenerating Moss",
+      "type": "relic",
+      "regen_per_turn": 2,
+      "tier": 1,
+      "description": "Regenerates 2 HP per combat turn.",
+      "lore": "It grows on tombstones. It feeds on the dead."
+    },
+    "mana_crystal_shard": {
+      "name": "Mana Crystal Shard",
+      "type": "relic",
+      "mp_regen_per_turn": 1,
+      "tier": 1,
+      "description": "Regenerates 1 MP per combat turn.",
+      "lore": "A splinter of something larger. It hums with forgotten power."
+    },
+    "copper_purse": {
+      "name": "Copper Purse",
+      "type": "relic",
+      "gold_mult": 1.10,
+      "tier": 2,
+      "description": "Gain 10% more gold from all sources.",
+      "lore": "Someone else's misfortune, pocketed."
+    },
+    "scholars_page": {
+      "name": "Scholar's Page",
+      "type": "relic",
+      "xp_mult": 1.15,
+      "tier": 2,
+      "description": "Gain 15% more XP from all sources.",
+      "lore": "Torn from a textbook that taught its last student too well."
+    },
+    "twin_fate_amulet": {
+      "name": "Twin Fate Amulet",
+      "type": "relic",
+      "double_item_chance": 0.15,
+      "tier": 3,
+      "description": "15% chance to receive a duplicate item from chests and loot bags.",
+      "lore": "Two fates intertwined. Sometimes both are kind."
+    },
+    "mark_of_the_plague": {
+      "name": "Mark of the Plague",
+      "type": "relic",
+      "first_debuff_double": true,
+      "tier": 3,
+      "description": "The first debuff applied each combat has doubled value and duration.",
+      "lore": "Patient zero wore this. The disease remembers."
+    },
+    "bloodstone_ring": {
+      "name": "Bloodstone Ring",
+      "type": "relic",
+      "heal_on_kill": 8,
+      "def_reduction": -3,
+      "tier": 3,
+      "description": "Restore 8 HP on kill. -3 DEF.",
+      "lore": "Every kill feeds the stone. The stone feeds you."
+    },
+    "fortified_mantle": {
+      "name": "Fortified Mantle",
+      "type": "relic",
+      "defend_shield_mult": 1.5,
+      "defend_hp_cost": 5,
+      "tier": 3,
+      "description": "Defend grants +50% shield but costs 5 HP.",
+      "lore": "The old guard's cloak. Defense costs blood."
+    },
+    "plaguebringers_glove": {
+      "name": "Plaguebringer's Glove",
+      "type": "relic",
+      "first_debuff_double": true,
+      "on_hit_poison": 2,
+      "on_hit_poison_dur": 3,
+      "tier": 4,
+      "description": "First debuff doubled. Basic attacks apply 2 poison for 3 turns.",
+      "lore": "The glove remembers every plague it spread."
+    },
+    "gamblers_bone": {
+      "name": "Gambler's Bone",
+      "type": "relic",
+      "double_item_chance": 0.25,
+      "def_reduction": -5,
+      "tier": 4,
+      "description": "25% chance for double items. -5 DEF.",
+      "lore": "Fortune favors the reckless."
+    },
+    "berserkers_blood": {
+      "name": "Berserker's Blood",
+      "type": "relic",
+      "low_hp_damage_mult": 1.5,
+      "def_reduction": -3,
+      "tier": 4,
+      "description": "Deal +50% damage when below 30% HP. -3 DEF.",
+      "lore": "When the blood runs hot, the steel runs deep."
+    },
+    "dragons_hoard_ring": {
+      "name": "Dragon's Hoard Ring",
+      "type": "relic",
+      "gold_mult": 1.30,
+      "heal_on_kill": 15,
+      "tier": 5,
+      "description": "Gain 30% more gold. Restore 15 HP on kill.",
+      "lore": "Forged from a dragon's greed. It wants more."
+    },
+    "world_tree_seed": {
+      "name": "World Tree Seed",
+      "type": "relic",
+      "regen_per_turn": 5,
+      "mp_regen_per_turn": 3,
+      "hp_bonus": 25,
+      "tier": 5,
+      "description": "Regenerates 5 HP and 3 MP per turn. +25 Max HP.",
+      "lore": "The last seed. It remembers the forest."
+    },
+    "obsidian_aegis": {
+      "name": "Obsidian Aegis",
+      "type": "relic",
+      "defend_shield_mult": 2.0,
+      "defend_hp_cost": 10,
+      "def_bonus": 4,
+      "tier": 5,
+      "description": "Defend grants double shield but costs 10 HP. +4 DEF.",
+      "lore": "The shield of the Obsidian Guard. Defense was all they had."
+    },
+    "pandoras_box": {
+      "name": "Pandora's Box",
+      "type": "relic",
+      "double_item_chance": 0.35,
+      "second_wind_heal_pct": 20,
+      "execute_bonus_pct": 30,
+      "tier": 6,
+      "description": "35% double items. Heal 20% HP on near-death. +30% damage to low HP enemies.",
+      "lore": "Everything you want. Some of what you deserve."
+    },
+    "fate_weavers_thread": {
+      "name": "Fate Weaver's Thread",
+      "type": "relic",
+      "first_debuff_double": true,
+      "on_crit_double": 0.25,
+      "atk_bonus": 5,
+      "tier": 6,
+      "description": "First debuff doubled. 25% double crit damage. +5 ATK.",
+      "lore": "She wove the threads of fate. She cut the ones she liked."
     }
   },
   "loot_bags": {

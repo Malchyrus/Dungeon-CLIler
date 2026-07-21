@@ -33,7 +33,20 @@ def print_combat_ui(player, enemy, intent=None):
             print(f"  Intent: Stunned (cannot act)")
         elif intent["type"] == "ability":
             abil = intent["ability"]
-            print(f"  Intent: {abil.get('name', 'Skill')} ({abil.get('type', 'special')})")
+            atype = abil.get("type", "special")
+            val = abil.get("value", 0)
+            hint = ""
+            if atype in ("damage", "drain") and val > 0:
+                hint = f" ~{val}"
+            elif atype == "heal":
+                hint = f" heal {val}"
+            elif atype == "stun":
+                hint = f" stun"
+            elif atype == "buff":
+                hint = f" buff"
+            elif atype == "debuff":
+                hint = f" debuff"
+            print(f"  Intent: {abil.get('name', 'Skill')}{hint}")
         else:
             print(f"  Intent: Basic Attack")
 
@@ -60,22 +73,30 @@ def print_combat_ui(player, enemy, intent=None):
                 status = f" (CD:{cd})"
             elif player.mp < mp_cost:
                 status = " (NO MP)"
-            print(f"  [{key[0]}] {ab['name']}{status}")
+            cost_str = f" [{mp_cost}MP]" if mp_cost > 0 else ""
+            print(f"  [{key[0]}] {ab['name']}{cost_str}{status}")
 
 
 def print_shop_ui(player, npc, shop_items):
+    from inventory import _format_weapon, _format_armor, _format_accessory, _format_relic, _format_consumable
     print_header(f"  {npc['name']}'s Shop")
     print(f"  Your Gold: {player.gold}")
     print()
     for i, item in enumerate(shop_items, 1):
         itype = item.get("type", "")
         if itype == "weapon":
-            stat = f"ATK+{item.get('atk', 0)}"
+            stat = _format_weapon(item)
         elif itype == "armor":
-            stat = f"DEF+{item.get('def', 0)}"
+            stat = _format_armor(item)
+        elif itype == "accessory":
+            stat = _format_accessory(item)
+        elif itype == "relic":
+            stat = _format_relic(item)
+        elif itype == "consumable":
+            stat = _format_consumable(item)
         else:
             stat = item.get("description", "")[:30]
-        print(f"  {i}. {item['name']:<20} {stat:<20} {item['buy_price']}g")
+        print(f"  {i}. {item['name']:<20} {stat}  {item['buy_price']}g")
     print()
     print("  Type: buy <number> to purchase")
     print("  Type: sell to browse and sell from inventory")
@@ -262,21 +283,18 @@ def print_class_selection(ascension=0):
     print()
     print_header("Choose Your Hero", "-")
     print()
-    print("  1. WARRIOR - High HP, heavy armor, axes (1.5x dmg)")
-    print(f"     Wish: \"{CLASSES['warrior']['wish']}\"")
-    print(f"     Abilities: War Cry, Shield Bash, Cleave, Battle Stance, Execute")
-    print()
-    print("  2. ROGUE   - High ATK, daggers (1.5x dmg + crits)")
-    print(f"     Wish: \"{CLASSES['rogue']['wish']}\"")
-    print(f"     Abilities: Backstab, Poison Blade, Smoke Bomb, Steal, Assassinate")
-    print()
-    print("  3. MAGE    - Spells, staffs (1.5x dmg), ranged magic")
-    print(f"     Wish: \"{CLASSES['mage']['wish']}\"")
-    print(f"     Abilities: Fireball, Ice Shield, Heal, Lightning Bolt, Mana Shield")
-    print()
-    print("  4. PALADIN - Balanced, holy swords (1.5x dmg)")
-    print(f"     Wish: \"{CLASSES['paladin']['wish']}\"")
-    print(f"     Abilities: Holy Smite, Bless, Lay on Hands, Retribution, Divine Shield")
+    for i, (key, cls) in enumerate(CLASSES.items(), 1):
+        abilities = cls.get("abilities", {})
+        ability_strs = []
+        for ak, av in abilities.items():
+            mp = av.get("mp_cost", 0)
+            cd = av.get("cooldown", 1)
+            lr = av.get("level_req", 1)
+            ability_strs.append(f"{av['name']}({mp}MP,CD:{cd},Lv{lr})")
+        print(f"  {i}. {cls['name'].upper()} - HP:{cls['hp']} ATK:{cls['atk']} DEF:{cls['def']} MP:{cls['mp']} (1.5x dmg)")
+        print(f"     Wish: \"{cls['wish']}\"")
+        print(f"     Abilities: {', '.join(ability_strs)}")
+        print()
     print()
     print_separator("-", 50)
     print()

@@ -3,8 +3,10 @@ from status import add_status, remove_status, has_status
 
 
 def add_item(player, item):
-    if len(player.inventory) >= player.max_inventory:
-        return False, "Inventory full!"
+    if item.get("type") != "key":
+        non_key_count = sum(1 for i in player.inventory if i.get("type") != "key")
+        if non_key_count >= player.max_inventory:
+            return False, "Inventory full!"
     player.inventory.append(dict(item))
     return True, f"Picked up {item['name']}."
 
@@ -130,38 +132,48 @@ def _effect_open_loot_bag(player, item):
     contents = LOOT_BAG_TIER_CONTENTS.get(tier, LOOT_BAG_TIER_CONTENTS[1])
     roll = random.random()
     item_name = None
+    granted_item = None
 
     if roll < contents["relic"]:
         relic = random_relic(player.floor)
         if relic:
             add_item(player, relic)
             item_name = relic["name"]
+            granted_item = relic
     elif roll < contents["relic"] + contents["accessory"]:
         from items import random_accessory
         acc = random_accessory(player.floor, player)
         if acc:
             add_item(player, acc)
             item_name = acc["name"]
+            granted_item = acc
     elif roll < contents["relic"] + contents["accessory"] + contents["armor"]:
         armor = random_armor(1, min(player.floor + 1, 6), player)
         if armor:
             add_item(player, armor)
             item_name = armor["name"]
+            granted_item = armor
     elif roll < contents["relic"] + contents["accessory"] + contents["armor"] + contents["weapon"]:
         weapon = random_weapon(1, min(player.floor + 1, 6), player)
         if weapon:
             add_item(player, weapon)
             item_name = weapon["name"]
+            granted_item = weapon
     elif roll < 1.0:
         cons = random_consumable(min(player.floor + 1, 5))
         if cons:
             add_item(player, cons)
             item_name = cons["name"]
+            granted_item = cons
 
     lines = [f"You open the {item['name']}!"]
     lines.append(f"  Found {int(gold * player.gold_mult)} gold!")
     if item_name:
         lines.append(f"  Found: {item_name}!")
+
+    if granted_item and player.double_item_chance > 0 and random.random() < player.double_item_chance:
+        success2, msg2 = add_item(player, granted_item)
+        lines.append(f"  Double loot! Found another: {granted_item['name']}!")
 
     if random.random() < KEY_FROM_BAG_CHANCE:
         from items import get_item
@@ -296,6 +308,48 @@ def _format_relic(item):
         parts.append(f"XP x{item['xp_mult']}")
     if item.get("gold_mult") and item["gold_mult"] != 1.0:
         parts.append(f"Gold x{item['gold_mult']}")
+    if item.get("basic_atk_mult") and item["basic_atk_mult"] != 1.0:
+        parts.append(f"AtkMult x{item['basic_atk_mult']}")
+    if item.get("basic_atk_mp_cost"):
+        parts.append(f"AtkCost {item['basic_atk_mp_cost']}MP")
+    if item.get("ability_mp_overhead"):
+        parts.append(f"AbilCost+{item['ability_mp_overhead']}MP")
+    if item.get("ability_dmg_mult") and item["ability_dmg_mult"] != 1.0:
+        parts.append(f"AbilDmg x{item['ability_dmg_mult']}")
+    if item.get("ability_mp_mult") and item["ability_mp_mult"] != 1.0:
+        parts.append(f"AbilMP x{item['ability_mp_mult']}")
+    if item.get("damage_taken_mult") and item["damage_taken_mult"] != 1.0:
+        parts.append(f"DmgTaken x{item['damage_taken_mult']}")
+    if item.get("on_hit_poison"):
+        parts.append(f"Poison+{item['on_hit_poison']}/hit")
+    if item.get("on_crit_double"):
+        parts.append(f"CritDouble {int(item['on_crit_double']*100)}%")
+    if item.get("on_crit_heal_pct"):
+        parts.append(f"CritHeal {item['on_crit_heal_pct']}%")
+    if item.get("reflect_pct"):
+        parts.append(f"Reflect {item['reflect_pct']}%")
+    if item.get("chaos_double_chance"):
+        parts.append(f"ChaosDmg {int(item['chaos_double_chance']*100)}%")
+    if item.get("chaos_double_damage"):
+        parts.append(f"ChaosVuln {int(item['chaos_double_damage']*100)}%")
+    if item.get("double_item_chance"):
+        parts.append(f"DoubleItem {int(item['double_item_chance']*100)}%")
+    if item.get("first_debuff_double"):
+        parts.append("Debuff x2")
+    if item.get("heal_on_kill"):
+        parts.append(f"KillHeal {item['heal_on_kill']}")
+    if item.get("low_hp_damage_mult") and item["low_hp_damage_mult"] != 1.0:
+        parts.append(f"RageDmg x{item['low_hp_damage_mult']}")
+    if item.get("execute_bonus_pct"):
+        parts.append(f"Execute +{item['execute_bonus_pct']}%")
+    if item.get("second_wind_heal_pct"):
+        parts.append(f"SecondWind {item['second_wind_heal_pct']}%")
+    if item.get("def_reduction"):
+        parts.append(f"DEF {item['def_reduction']}")
+    if item.get("defend_shield_mult") and item["defend_shield_mult"] != 1.0:
+        parts.append(f"DefShield x{item['defend_shield_mult']}")
+    if item.get("defend_hp_cost"):
+        parts.append(f"DefCost {item['defend_hp_cost']}HP")
     stats = f" [{', '.join(parts)}]" if parts else ""
     cursed = " [CURSED]" if item.get("cursed") else ""
     return f" [{tier_name} Relic]{stats}{cursed}"
@@ -327,7 +381,9 @@ ITEM_FORMATTERS = {
 
 
 def show_inventory(player):
-    lines = [f"  === Inventory ({len(player.inventory)}/{player.max_inventory}) ==="]
+    non_key_items = [i for i in player.inventory if i.get("type") != "key"]
+    key_items = [i for i in player.inventory if i.get("type") == "key"]
+    lines = [f"  === Inventory ({len(non_key_items)}/{player.max_inventory}) ==="]
 
     if player.weapon:
         aff = " [AFFINITY]" if player.is_weapon_affinity() else ""
@@ -341,24 +397,24 @@ def show_inventory(player):
         lines.append("  [Armor]  Empty")
 
     if player.accessory:
-        lines.append(f"  [Acc.]   {player.accessory['name']}")
+        lines.append(f"  [Acc.]   {player.accessory['name']}{_format_accessory(player.accessory)}")
     else:
         lines.append("  [Acc.]   Empty")
 
     if player.relics:
         for i, r in enumerate(player.relics):
             tag = " [CURSED]" if r.get("cursed") else ""
-            lines.append(f"  [Relic]  {r['name']}{tag}")
+            lines.append(f"  [Relic]  {r['name']}{tag}{_format_relic(r)}")
     else:
         lines.append("  [Relic]  None")
 
     lines.append("")
 
-    if not player.inventory:
+    if not non_key_items:
         lines.append("  (empty)")
     else:
         grouped = {}
-        for item in player.inventory:
+        for item in non_key_items:
             key = item.get("name", "Unknown")
             if key not in grouped:
                 grouped[key] = {"item": item, "count": 0}
@@ -371,5 +427,18 @@ def show_inventory(player):
             itype = item.get("type", "")
             formatter = ITEM_FORMATTERS.get(itype, _format_default)
             lines.append(f"  {i}. {name}{tag}{formatter(item)}")
+
+    if key_items:
+        lines.append("")
+        lines.append(f"  Keys ({len(key_items)}):")
+        key_grouped = {}
+        for item in key_items:
+            name = item.get("name", "Unknown")
+            if name not in key_grouped:
+                key_grouped[name] = 0
+            key_grouped[name] += 1
+        for name, count in key_grouped.items():
+            tag = f" x{count}" if count > 1 else ""
+            lines.append(f"    {name}{tag}")
 
     return "\n".join(lines)

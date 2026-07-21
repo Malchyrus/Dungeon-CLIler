@@ -1,5 +1,5 @@
 from items import get_item, random_artifact
-from npc import get_shop_inventory, get_sell_price
+from npc import get_shop_inventory, get_sell_price, generate_merchant_inventory, generate_key_trader_inventory
 from inventory import add_item, drop_item
 from renderer import print_shop_ui
 
@@ -18,7 +18,7 @@ class NPC:
 
 class MerchantNPC(NPC):
     def interact(self, player, game):
-        shop_items = get_shop_inventory(self.data)
+        shop_items = generate_merchant_inventory(self.data, player.floor)
         print(f"  {self.get_dialogue('greeting')}")
         print()
 
@@ -53,6 +53,8 @@ class MerchantNPC(NPC):
                     print()
                     grouped = {}
                     for item in player.inventory:
+                        if item.get("type") == "key":
+                            continue
                         key = item.get("name", "Unknown")
                         if key not in grouped:
                             grouped[key] = {"item": item, "count": 0}
@@ -74,6 +76,8 @@ class MerchantNPC(NPC):
                             found = items[idx]["item"]
                     except ValueError:
                         for inv_item in player.inventory:
+                            if inv_item.get("type") == "key":
+                                continue
                             if query in inv_item["name"].lower():
                                 found = inv_item
                                 break
@@ -90,10 +94,13 @@ class MerchantNPC(NPC):
                 found = None
                 try:
                     idx = int(query) - 1
-                    if 0 <= idx < len(player.inventory):
-                        found = player.inventory[idx]
+                    non_key = [i for i in player.inventory if i.get("type") != "key"]
+                    if 0 <= idx < len(non_key):
+                        found = non_key[idx]
                 except ValueError:
                     for inv_item in player.inventory:
+                        if inv_item.get("type") == "key":
+                            continue
                         if query.lower() in inv_item["name"].lower():
                             found = inv_item
                             break
@@ -104,6 +111,81 @@ class MerchantNPC(NPC):
                     print(f"  Sold {found['name']} for {price}g!")
                 else:
                     print("  You don't have that item.")
+
+
+class KeyTraderNPC(NPC):
+    def interact(self, player, game):
+        shop_items = generate_key_trader_inventory(self.data, player.floor)
+        print(f"  {self.get_dialogue('greeting')}")
+        print()
+
+        chest_key_count = sum(
+            1 for k in player.inventory
+            if k.get("type") == "key" and k.get("key_type") == "chest"
+        )
+
+        while True:
+            print_key_trader_ui(player, self.data, shop_items, chest_key_count)
+            cmd = input("\n  > ").strip().lower()
+
+            if cmd in ("leave", "exit", "q"):
+                print(f"\n  {self.get_dialogue('farewell')}")
+                break
+
+            if cmd.startswith("buy "):
+                try:
+                    idx = int(cmd[4:].strip()) - 1
+                    if 0 <= idx < len(shop_items):
+                        item = shop_items[idx]
+                        key_cost = item.get("key_cost", 2)
+                        if chest_key_count >= key_cost:
+                            for _ in range(key_cost):
+                                for i, k in enumerate(player.inventory):
+                                    if k.get("type") == "key" and k.get("key_type") == "chest":
+                                        player.inventory.pop(i)
+                                        break
+                            chest_key_count -= key_cost
+                            add_item(player, item)
+                            print(f"  Bought {item['name']} for {key_cost} Chest Key(s)!")
+                        else:
+                            print(f"  {self.get_dialogue('no_keys')}")
+                    else:
+                        print("  Invalid item number.")
+                except ValueError:
+                    print("  Usage: buy <number>")
+
+            elif cmd.startswith("sell"):
+                print("  I only buy with keys, not gold. Leave something behind?")
+
+            else:
+                print("  Type 'buy <number>' or 'leave'.")
+
+
+def print_key_trader_ui(player, npc, shop_items, key_count):
+    from renderer import print_header
+    from inventory import _format_weapon, _format_armor, _format_accessory, _format_relic, _format_consumable
+    print_header(f"  {npc['name']}'s Wares")
+    print(f"  Chest Keys: {key_count}")
+    print()
+    for i, item in enumerate(shop_items, 1):
+        itype = item.get("type", "")
+        if itype == "weapon":
+            stat = _format_weapon(item)
+        elif itype == "armor":
+            stat = _format_armor(item)
+        elif itype == "accessory":
+            stat = _format_accessory(item)
+        elif itype == "relic":
+            stat = _format_relic(item)
+        elif itype == "consumable":
+            stat = _format_consumable(item)
+        else:
+            stat = item.get("description", "")[:30]
+        key_cost = item.get("key_cost", 2)
+        print(f"  {i}. {item['name']:<20} {stat}  {key_cost} key(s)")
+    print()
+    print("  Type: buy <number> to purchase")
+    print("  Type: leave to exit")
 
 
 class QuestGiverNPC(NPC):
@@ -236,8 +318,9 @@ class KeySellerNPC(NPC):
             return
 
         price = game.celdric_price
+        cumulative = sum(game.floor_gold_totals.get(f, 0) for f in range(1, player.floor + 1))
         print(f"  The Skeleton Key costs {price} gold.")
-        print(f"  (Total enemy gold on this floor: {game.floor_gold_totals.get(player.floor, '???')} gold)")
+        print(f"  (Total gold across floors 1-{player.floor}: {cumulative} gold)")
         print()
 
         has_enough = player.gold >= price
@@ -453,6 +536,7 @@ NPC_TYPES = {
     "key_seller": KeySellerNPC,
     "healer": HealerNPC,
     "item_trader": ItemTraderNPC,
+    "key_trader": KeyTraderNPC,
     "map_seeker": MapSeekerNPC,
     "lore": LoreNPC,
 }

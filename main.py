@@ -17,6 +17,7 @@ from data_loader import load_json
 from inventory import add_item, use_item, drop_item, show_inventory
 from save_load import save_game, load_game, has_save, delete_save
 from npc_types import wrap_npc
+from constants import CELDRIC_PRICE_FRACTION
 from renderer import (
     clear_screen, print_separator, print_header,
     print_combat_ui, print_dungeon_map, print_minimap,
@@ -152,7 +153,8 @@ class Game:
         self.floor_gold_totals[2] = gold2
 
         self.celdric_floor = random.choice([1, 2])
-        self.celdric_price = int(self.floor_gold_totals[self.celdric_floor] * 0.9)
+        cumulative_gold = sum(self.floor_gold_totals[f] for f in range(1, self.celdric_floor + 1))
+        self.celdric_price = int(cumulative_gold * CELDRIC_PRICE_FRACTION)
 
         celdric_rooms, celdric_start = self.pre_generated_floors[self.celdric_floor]
         place_celdric(celdric_rooms)
@@ -571,6 +573,9 @@ class Game:
             else:
                 success, msg = add_item(self.player, item)
                 print(f"  Found: {item['name']}! ({msg})")
+                if self.player.double_item_chance > 0 and random.random() < self.player.double_item_chance:
+                    success2, msg2 = add_item(self.player, item)
+                    print(f"  Double loot! Found another: {item['name']}! ({msg2})")
         print()
         input("  Press Enter...")
 
@@ -714,6 +719,9 @@ class Game:
         enemy = self.current_room.enemy
         if not enemy:
             return "victory"
+
+        self.player._second_wind_used = False
+        self.player._first_debuff_used = False
 
         clear_screen()
         print()
@@ -860,6 +868,7 @@ class Game:
 
     def _inspect_enemy(self, enemy, intent):
         from status import format_statuses
+        from constants import ARMOR_DR_K, ARMOR_DR_CAP
         lines = [
             f"  === {enemy['name']} ===",
             f"  {enemy.get('description', '')}",
@@ -882,11 +891,22 @@ class Game:
             atype = abil.get("type", "special")
             val = abil.get("value", 0)
             scale = abil.get("dmg_scale", 0)
+            hits = abil.get("hits", 1)
             desc = f"{abil.get('name', key)} [{atype}] (ACC:{acc}%)"
-            if val > 0 and scale > 0:
+            if atype in ("damage", "drain") and val > 0 and scale > 0:
+                raw = val + int(enemy["atk"] * scale)
+                dr = min(ARMOR_DR_CAP, self.player.defense / (self.player.defense + ARMOR_DR_K * enemy.get("level", 1))) if self.player.defense > 0 else 0.0
+                est = max(1, int(raw * (1 - dr)))
+                if hits > 1:
+                    desc += f" ({val}+{int(scale*100)}% ATK = ~{est}x{hits})"
+                else:
+                    desc += f" ({val}+{int(scale*100)}% ATK = ~{est})"
+            elif val > 0 and scale > 0:
                 desc += f" ({val}+{int(scale*100)}% ATK)"
             elif val > 0:
                 desc += f" (val:{val})"
+            if hits > 1 and atype in ("damage", "multi"):
+                desc += f" x{hits} hits"
             threshold = abil.get("threshold", 0)
             if threshold > 0:
                 desc += f" [<{int(threshold*100)}% HP]"
@@ -897,9 +917,33 @@ class Game:
                 lines.append("  Intent: Stunned (cannot act)")
             elif intent["type"] == "ability":
                 abil = intent["ability"]
-                lines.append(f"  Intent: {abil.get('name', 'Skill')}")
+                atype = abil.get("type", "special")
+                val = abil.get("value", 0)
+                scale = abil.get("dmg_scale", 0)
+                hits = abil.get("hits", 1)
+                intent_line = f"  Intent: {abil.get('name', 'Skill')}"
+                if atype in ("damage", "drain") and val > 0:
+                    raw = val + int(enemy["atk"] * scale) if scale > 0 else val
+                    dr = min(ARMOR_DR_CAP, self.player.defense / (self.player.defense + ARMOR_DR_K * enemy.get("level", 1))) if self.player.defense > 0 else 0.0
+                    est = max(1, int(raw * (1 - dr)))
+                    if hits > 1:
+                        intent_line += f" (~{est * hits} total)"
+                    else:
+                        intent_line += f" (~{est})"
+                elif atype == "heal":
+                    intent_line += f" (heals {val})"
+                elif atype == "buff":
+                    intent_line += f" (buffs +{val})"
+                elif atype == "debuff":
+                    intent_line += f" (debuffs -{val})"
+                elif atype == "stun":
+                    intent_line += f" (stun {val}t)"
+                lines.append(intent_line)
             else:
-                lines.append("  Intent: Basic Attack")
+                raw = enemy["atk"]
+                dr = min(ARMOR_DR_CAP, self.player.defense / (self.player.defense + ARMOR_DR_K * enemy.get("level", 1))) if self.player.defense > 0 else 0.0
+                est = max(1, int(raw * (1 - dr)))
+                lines.append(f"  Intent: Basic Attack (~{est})")
         return "\n".join(lines)
 
     def _tick_cooldowns(self):
@@ -913,6 +957,11 @@ class Game:
         xp = int(enemy.get("xp", 0) * self.player.xp_mult)
         self.player.xp += xp
         print(f"  Gained {xp} XP!")
+
+        if self.player.heal_on_kill > 0:
+            healed = self.player.heal(self.player.heal_on_kill)
+            if healed > 0:
+                print(f"  Kill restores {healed} HP!")
 
         key = enemy.get("key", "unknown")
         self.player.kills[key] = self.player.kills.get(key, 0) + 1

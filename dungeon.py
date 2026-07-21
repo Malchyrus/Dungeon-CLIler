@@ -1,6 +1,7 @@
 import random
 from room import Room, LORE_NOTES
 from items import random_loot, random_artifact, roll_chest_tier
+from constants import LOOT_GOLD_MIN_MULT, LOOT_GOLD_MAX_MULT
 from enemies import spawn_enemy, spawn_boss, spawn_bonus_enemy, spawn_bonus_boss, spawn_gatekeeper
 from npc import get_random_npc, get_celdric_npc
 from player import MEMORY_FRAGMENTS
@@ -81,6 +82,7 @@ def generate_dungeon(floor, ascension=0, variant=None):
             (bx, by), entry_dir = random.choice(adjacent_empty)
             rooms[(bx, by)].room_type = "gatekeeper"
             rooms[(bx, by)].enemy = spawn_gatekeeper(floor, ascension)
+            total_enemy_gold += rooms[(bx, by)].enemy.get("gold", 0)
             rooms[(bx, by)].description = random.choice([
                 "A dark presence pervades this chamber. The air tastes of iron.",
                 "This room radiates dread. Something powerful lurks here.",
@@ -140,7 +142,9 @@ def generate_dungeon(floor, ascension=0, variant=None):
             rooms[pos].chest = {"type": chest_types[i], "tier": chest_tier}
             idx += 1
 
-    npc_pool = ["merchant", "quest_giver", "lore", "trapped", "healer", "item_trader", "map_seeker"]
+    total_enemy_gold += treasure_count * floor * (LOOT_GOLD_MIN_MULT + LOOT_GOLD_MAX_MULT) // 2
+
+    npc_pool = ["merchant", "quest_giver", "lore", "trapped", "healer", "item_trader", "key_trader", "map_seeker"]
     npc_count = min(len(assignable) - idx, random.randint(1, 3))
     for i in range(npc_count):
         if idx < len(assignable):

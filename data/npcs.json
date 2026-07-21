@@ -183,6 +183,26 @@
       "accepted_types": ["weapon", "accessory"]
     }
   },
+  "key_traders": {
+    "locksmith": {
+      "name": "The Locksmith",
+      "type": "key_trader",
+      "dialogue": {
+        "greeting": "Keys are currency in the deep places. I deal in locked things... and the things behind them.",
+        "no_keys": "You don't have enough chest keys. Find them in chests or slay the guardians.",
+        "farewell": "May your keys open more than doors."
+      }
+    },
+    "shadow_broker": {
+      "name": "Shadow Broker",
+      "type": "key_trader",
+      "dialogue": {
+        "greeting": "Everything has a price. Mine just happens to be iron and teeth.",
+        "no_keys": "Not enough keys. The dungeon doesn't give them freely.",
+        "farewell": "Come back when you've got the goods."
+      }
+    }
+  },
   "map_seekers": {
     "blind_prophet": {
       "name": "Blind Prophet",
